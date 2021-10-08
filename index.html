@@ -14,8 +14,10 @@
 	<link rel="stylesheet" href="css/line-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css" media="screen">
 
+	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/3.6.2/fetch.min.js" integrity="sha512-1Gn7//DzfuF67BGkg97Oc6jPN6hqxuZXnaTpC9P5uw8C6W4yUNj5hoS/APga4g1nO2X6USBb/rXtGzADdaVDeA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+	<script src="./js/actions.js" ></script>
 </head>
-<body>
+<body onload="setupActions()">
 
 	<!-- Container -->
 	<div id="container">
@@ -37,8 +39,8 @@
 
 					<!-- Collect the nav links, forms, and other content for toggling -->
 					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-						<a class="button-two target-link" href="#download-area">Download</a>
-						<ul class="nav navbar-nav navbar-right navigate-section">
+						<a class="button-two target-link hidden" href="#download-area">Download</a>
+						<ul class="nav navbar-nav navbar-right navigate-section hidden">
 							<li><a href="#features-section2">Features</a></li>
 							<li><a href="#about-section">About</a></li>
 							<li><a href="#screenshots-section">Screenshots</a></li>
@@ -56,7 +58,7 @@
 				<div class="container">
 					<h1>Automated Peer-to-peer exchange for </h1>
 					<h1>Fiat and Crypto. </h1>
-					<h2>Designed with passion and coded to perfection.</h2>
+					<h2>Designed for every day users of crypto.</h2>
 					<a class="button-one target-link" href="#title-section">
 						Get Notified first
 					</a>
@@ -69,7 +71,7 @@
 
 		<!-- features-section 
 			================================================== -->
-		<section id="features-section2">
+		<section id="features-section2" class="hidden">
 			<div class="container">
 				<ul class="client-list">
 					<li><a href="#"><img src="images/clients/1.png" alt=""></a></li>
@@ -148,7 +150,7 @@
 
 		<!-- about-section 
 			================================================== -->
-		<section id="about-section">
+		<section id="about-section" class="hidden">
 			<div class="about-app-section second-style">
 				<div class="container">
 					<div class="row">
@@ -226,7 +228,7 @@
 
 		<!-- screenshots-section 
 			================================================== -->
-		<section id="screenshots-section">
+		<section id="screenshots-section" class="hidden">
 			<div class="container">
 				<div class="title-section">
 					<span>Screenshots of App</span>
@@ -265,7 +267,7 @@
 
 		<!-- app-available-section 
 			================================================== -->
-		<section class="app-available-section second-style" id="download-area">
+		<section class="app-available-section second-style hidden" id="download-area">
 			<div class="container">
 				<div class="title-section">
 					<span>Get Started Instantly</span>
@@ -291,10 +293,13 @@
 					<h1>Subscribe to Our Newsletter</h1>
 					<p>If you want to receive monthly updates from us just pop your email in the box.</p>
 				</div>
-				<form class="subscribe-form">
-					<input type="text" name="email2" id="email2" placeholder="your email address:"/>
+				<form class="subscribe-form" onsubmit="return submitEmail()">
+					<input type="email" name="email2" id="email2" placeholder="your email address:" required/>
 					<input type="submit" id="submit-subscribe-form" value="subscribe"/>
 				</form>
+				<img src="images/bx_loader.gif" class="form-loading hidden" id="form-loader" />
+				<img src="images/bx_loader.gif" class="form-loading hidden" id="form-loader" />
+				
 				<ul class="social-icons">
 					<li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
 					<li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
@@ -303,6 +308,7 @@
 				</ul>
 			</div>
 			<p class="copyright">
+				<div>Icons made by <a href="https://www.flaticon.com/authors/pixel-perfect" title="Pixel perfect">Pixel perfect</a></div>
 				&copy; Copyright 2021. Fiatswap. All rights reserved.
 			</p>
 		</footer>
