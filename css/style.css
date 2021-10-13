@@ -56,6 +56,31 @@
 
 .form-loading {
   margin-bottom: 48px;
+  max-width: 50px;
+  max-height: 50px;
+}
+
+.form-done,
+footer .container form.subscribe-form {
+  margin-bottom: 48px;
+}
+
+.form-done img {
+  margin-bottom: 16px;
+  max-width: 40px;
+  max-height: 40px;
+}
+
+#form-loaded {
+}
+
+#form-loaded img {
+}
+
+#form-errored img {
+  margin-bottom: 16px;
+  max-width: 40px;
+  max-height: 40px;
 }
 
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,400,400i,600,600i,700");
