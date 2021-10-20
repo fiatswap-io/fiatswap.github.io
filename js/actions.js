@@ -33,7 +33,6 @@ function submitEmail(event) {
     body: prepSub(email),
   });
 
-  console.log("fetchCall", fetchCall);
   fetchCall
     .then(function (resp) {
       loading.classList.add("hidden");

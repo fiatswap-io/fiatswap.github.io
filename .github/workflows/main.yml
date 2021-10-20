@@ -16,7 +16,13 @@ jobs:
         with:
           node-version: "^10"
 
+      - name: Commit exccuse
+        shell: bash
+        run: |
+          sed -i 's/*.DS_Store/*.DS_Store*/g' .gitignore
+
       - name: Simple deploy with git
         uses: rdarida/simple-github-pages-deploy-action@v1
         with: # optional
-          git-base-folder: ""
+          git-base-folder: "./"
+          branch: "gh-pages"
