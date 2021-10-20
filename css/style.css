@@ -54,6 +54,10 @@
   display: none !important;
 }
 
+.navbar-header .navbar-brand img {
+  max-height: 25px;
+}
+
 .form-loading {
   margin-bottom: 48px;
   max-width: 50px;
