@@ -18,5 +18,11 @@ jobs:
         with:
           node-version: "^10"
 
+      - name: clear bare
+        shell: bash
+        run: git config --unset core.bare
+
       - name: Simple deploy with git
         uses: rdarida/simple-github-pages-deploy-action@v1
+        with: # optional
+          git-base-folder: ""
