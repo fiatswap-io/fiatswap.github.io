@@ -27,4 +27,3 @@ jobs:
         uses: rdarida/simple-github-pages-deploy-action@v1
         with: # optional
           git-base-folder: "./"
-          branch: "gh-pages"
