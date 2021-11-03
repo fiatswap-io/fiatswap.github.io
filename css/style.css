@@ -55,7 +55,17 @@
 }
 
 .navbar-header .navbar-brand img {
-  max-height: 25px;
+  max-height: 40px;
+  display: inline-block;
+}
+
+.navbar-header .navbar-brand span {
+  margin-left: 12px;
+  margin-top: 8px;
+  font-weight: bold;
+  color: white;
+  font-size: 32px;
+  vertical-align: middle;
 }
 
 .form-loading {
@@ -212,7 +222,7 @@ header.fullwidth.light-style .navbar-default {
   visibility: visible !important;
 }
 header.active .navbar {
-  background: #6633cc;
+  background: #0b522fff;
 }
 header.fullwidth.white-header.active .navbar {
   background: #ffffff;
@@ -553,7 +563,7 @@ section#home-section {
 section#home-section .top-block {
   text-align: center;
   padding: 165px 0 0;
-  background: #333333 url("../upload/slide3.jpg") center center fixed;
+  background: #333333 url("../upload/laptop.jpg") center center fixed;
   background-size: cover;
   -webkit-background-size: cover;
   -moz-background-size: cover;
