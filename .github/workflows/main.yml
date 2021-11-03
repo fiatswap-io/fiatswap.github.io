@@ -2,7 +2,7 @@ name: Deploy to gh-pages
 
 on:
   push:
-    branches: [master]
+    branches: [master, optimize/secret]
 
 jobs:
   build:
@@ -16,10 +16,12 @@ jobs:
         with:
           node-version: "^10"
 
-      - name: Commit exccuse
+      - name: Commit excuse
         shell: bash
         run: |
           sed -i 's/*.DS_Store/*.DS_Store*/g' .gitignore
+          sed -i 's/const API_KEY = "/const API_KEY = "${{ secrets.DEFAULT_SENDGRID_ONBOARD_API_KEY }}/g' js/actions.js
+          grep API js/actions.js
 
       - name: Simple deploy with git
         uses: rdarida/simple-github-pages-deploy-action@v1
