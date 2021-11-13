@@ -1,8 +1,7 @@
 function submitEmail(event) {
   const API_URL = "https://api.sendgrid.com/v3/marketing/contacts";
   const NEWSLETTER_ID = "328b3f49-b814-4379-b2e9-b54cd01138cc";
-  const API_KEY =
-    "Bearer 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";
+  const API_KEY = "";
 
   const prepSub = function (email) {
     return JSON.stringify({
@@ -28,7 +27,7 @@ function submitEmail(event) {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",
-      authorization: API_KEY,
+      authorization: `Bearer ${API_KEY}`,
     },
     body: prepSub(email),
   });
