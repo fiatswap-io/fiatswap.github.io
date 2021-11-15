@@ -21,6 +21,9 @@
  18.footer
  19.Responsive part
 -------------------------------------------------*/
+
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,400,400i,600,600i,700");
+
 /*-------------------------------------------------------*/
 /* 1. Isotope filtering
 /*-------------------------------------------------------*/
@@ -50,6 +53,18 @@
 }
 
 /**--- MISC ---*/
+
+@font-face {
+  font-family: "Segoe UI";
+  src: url("fonts/segoeui.ttf") format("truetype");
+}
+
+*,
+body,
+body * {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
 .hidden {
   display: none !important;
 }
@@ -96,8 +111,6 @@ footer .container form.subscribe-form {
   max-width: 40px;
   max-height: 40px;
 }
-
-@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,400,400i,600,600i,700");
 
 /*-----------------------------------------------------------------------------
 
