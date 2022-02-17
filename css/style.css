@@ -23,6 +23,7 @@
 -------------------------------------------------*/
 
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,400,400i,600,600i,700");
+@import url("https://cdn.jsdelivr.net/npm/@xz/fonts@1/serve/plus-jakarta-display.min.css");
 
 /*-------------------------------------------------------*/
 /* 1. Isotope filtering
@@ -57,7 +58,20 @@
 @font-face {
   font-family: "Segoe UI";
   src: url("fonts/segoeui.ttf") format("truetype");
+  /* font-family: "Plus Jakarta Display";
+  src: url("/css/fonts/PlusJakartaDisplay-Bold.otf"); */
+  /* src: url("/css/fonts/CustomFont.woff") format("woff"), */
+  /* url("https://yoursite.com/css/fonts/CustomFont.otf") format("opentype"),
+  url("https://yoursite.com/css/fonts/CustomFont.svg#filename") format("svg"); */
 }
+
+/* @font-face {
+  font-family: "Plus Jakarta Display";
+  src: url("fonts/PlusJakartaDisplay-Regular.otf"),
+       url("fonts/PlusJakartaDisplay-Medium.otf"),
+       url("fonts/PlusJakartaDisplay-Bold.otf");
+} */
+
 
 *,
 body,
@@ -69,6 +83,34 @@ body * {
   display: none !important;
 }
 
+.arrow {
+  border: solid #FFFFFF;
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  padding: 3px;
+}
+
+.right {
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+
+.left {
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+}
+
+.up {
+  transform: rotate(-135deg);
+  -webkit-transform: rotate(-135deg);
+}
+
+.down {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+
+
 .navbar-header .navbar-brand img {
   max-height: 40px;
   display: inline-block;
@@ -77,10 +119,14 @@ body * {
 .navbar-header .navbar-brand span {
   margin-left: 12px;
   margin-top: 8px;
-  font-weight: bold;
-  color: white;
-  font-size: 32px;
+  color: black;
+  font-size: 25px;
   vertical-align: middle;
+  font-family: "Plus Jakarta Display";
+  font-weight: 400;
+  line-height: 1px;
+  letter-spacing: -1px;
+  text-align: left;
 }
 
 .form-loading {
@@ -156,8 +202,8 @@ website:    http://www.themepunch.com
   -moz-transition: all 0.2s ease-in-out;
   -webkit-transition: all 0.2s ease-in-out;
   -o-transition: all 0.2s ease-in-out;
-  margin: 0;
-  padding: 0 30px;
+  margin: 25px 0 0 0;
+  padding: 0 40px;
 }
 .navbar-default .inner-header {
   border-bottom: 1px solid #444444;
@@ -168,9 +214,9 @@ website:    http://www.themepunch.com
   margin-left: 30px;
   padding: 9px 28px;
 }
-header.fullwidth .navbar-default {
+/* header.fullwidth .navbar-default {
   border-bottom: 1px solid #b4abe6;
-}
+} */
 header.fullwidth.white-header .navbar-default {
   border-bottom: none;
 }
@@ -409,21 +455,55 @@ a.button-two {
   -o-transition: all 0.2s ease-in-out;
   color: #fff;
   font-size: 18px;
-  font-family: "Source Sans Pro", sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  -webkit-border-radius: 25px;
-  -moz-border-radius: 25px;
-  -o-border-radius: 25px;
-  border-radius: 25px;
+  font-family: "Plus Jakarta Display";
+  font-style: bold;
+  font-weight: 700;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
   padding: 10px 28px;
-  margin: 0;
-  background-color: transparent;
-  border: 1px solid #fff;
+  margin: 0px;
+  background-color: #000;
+  border: 1px solid #000;
+  Width: 185px;
+  Height: 47px;
+  align-content: center;
+  text-align: center;
 }
 a.button-two:hover {
-  background-color: #fff;
-  color: #6633cc;
+  background-color: #000;
+  color: #fff;
+}
+a.button-three {
+  display: inline-block;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  color: #fff;
+  font-size: 18px;
+  font-family: "Plus Jakarta Display";
+  font-style: bold;
+  font-weight: 500;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+  padding: 10px 28px;
+  margin-top: 30px;
+  background-color: #000;
+  border: 1px solid #000;
+  Width: 90%;
+  Height: 47px;
+  align-content: center;
+  text-align: center;
+  line-height: 23px;
+}
+a.button-three:hover {
+  background-color: #000;
+  color: #fff;
 }
 #container {
   opacity: 0;
@@ -575,8 +655,8 @@ section#home-section {
 }
 section#home-section .top-block {
   text-align: center;
-  padding: 165px 0 0;
-  background: #333333 url("../upload/laptop.jpg") center center fixed;
+  padding: 85px 0px 0;
+  background: #fff;
   background-size: cover;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -588,13 +668,204 @@ section#home-section .top-block .container {
   z-index: 2;
 }
 section#home-section .top-block h1 {
-  color: #fff;
-  font-size: 60px;
+  color: #000;
+  font-size: 96px;
+  font-weight: 500;
+  line-height: 124.22px;
   margin-bottom: 15px;
+  text-align: left;
+  font-family: "Plus Jakarta Display";
 }
-section#home-section .top-block h2 {
+section#home-section .top-block span {
+  color: #35D082;
+  font-size: 96px;
+  margin-bottom: 15px;
+  text-align: left;
+  font-family: "Plus Jakarta Display";
+}
+section#home-section .top-block .card {
+  padding: 80px 30px 0 30px;
+  Width: 486px;
+  Height: 550px;
+  float: right;
+}
+section#home-section .top-block .shadow-lg {
+  box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;
+}
+section#home-section .top-block .rounded {
+  border-radius: 20px!important;
+}
+
+section#home-section .top-block .secured{
+  margin-top: 20px;
+}
+
+section#home-section .top-block .card button {
+  margin: 0 2px 20px 0;
+  background: none;
+  border-radius: 10px;
+  padding: 8px;
+  border: 1px solid #000;
+  font-family: "Plus Jakarta Display";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 8px;
+  line-height: 10px;
+}
+section#home-section .top-block .card button:active{
+  background: #3076FF;
+  border: 1px solid #3076FF;
   color: #fff;
-  margin-bottom: 30px !important;
+}
+section#home-section .top-block .card button:focus{
+  background: #3076FF;
+  border: 1px solid #3076FF;
+  color: #fff;
+}
+
+section#home-section .top-block .card p {
+  color: #000;
+  margin-left: 21px;
+  margin-bottom: 5px;
+  text-align: start;
+  font-family: "Plus Jakarta Display";
+  font-weight: 400;
+  font-style: normal;
+  font-size: 14px;
+}
+
+section#home-section .top-block .card span{
+  color: #3076FF !important;
+  text-align: start;
+  font-family: "Plus Jakarta Display";
+  font-weight: 300;
+  font-style: normal;
+  font-size: 12px;
+  line-height: 15.53px;
+}
+
+section#home-section .top-block .card .rate{
+  margin-top: 5px;
+  color: #3D4C69 !important;
+  text-align: start;
+  font-family: "Plus Jakarta Display";
+  font-weight: 400;
+  font-style: normal;
+  font-size: 12px;
+  line-height: 15.53px;
+  letter-spacing: 6%;
+}
+
+section#home-section .top-block .card .last-updated{
+  margin-top: 5px;
+  color: #000;
+  text-align: start;
+  font-family: "Plus Jakarta Display";
+  font-weight: 300;
+  font-style: normal;
+  font-size: 9px;
+  line-height: 11.65px;
+  text-align: center;
+}
+
+section#home-section .top-block .card .last-updated span{
+  color: #3076FF !important;
+  font-weight: 300 !important;
+  font-style: normal;
+  font-size: 9px !important;
+  line-height: 11.65px !important;
+}
+
+section#home-section .top-block .card form .currency {
+  display: inline-block;
+  background: #35D082;
+  margin-left: -4px;
+  width: 25%;
+  padding-left: 3px;
+  padding-right: 3px;
+}
+
+section#home-section .top-block .card form .currency-flag {
+  height: 12px !important;
+}
+
+section#home-section .top-block .card form input[type="text"],
+section#home-section .top-block .card form input[type="email"] {
+  width:65%;
+  max-width: 100%;
+  padding: 20px 20px;
+  background: #ffffff;
+  border: 1px solid #888888;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -o-border-radius: 0;
+  border-radius: 0;
+  margin: 0 0 5px;
+  color: #888888;
+  font-size: 12px;
+  font-family: "Plus Jakarta Display";
+  font-weight: 500;
+  font-style: normal;
+  line-height: 15.53px;
+  outline: none;
+  -webkit-border-top-left-radius: 3px;
+  -moz-border-top-left-radius: 3px;
+  -o-border-top-left-radius: 3px;
+  border-top-left-radius: 3px;
+  -webkit-border-bottom-left-radius: 3px;
+  -moz-border-bottom-left-radius: 3px;
+  -o-border-bottom-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+section#home-section .top-block .card form input[type="submit"] {
+  background: #35D082;
+  /* width:20%; */
+  color: #ffffff;
+  font-size: 12px;
+  font-family: "Plus Jakarta Display";
+  font-weight: 500;
+  font-style: normal;
+  line-height: 15.53px;
+  border: 1px solid #35D082;
+  outline: none;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  -o-border-radius: 0px;
+  border-radius: 0px;
+  -webkit-border-top-right-radius: 3px;
+  -moz-border-top-right-radius: 3px;
+  -o-border-top-right-radius: 3px;
+  border-top-right-radius: 3px;
+  -webkit-border-bottom-right-radius: 3px;
+  -moz-border-bottom-right-radius: 3px;
+  -o-border-bottom-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+  padding: 20px 10px;
+  transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  margin: 0 0 0px;
+  margin-left: -4px;
+}
+
+section#home-section .top-block .card form input[type="submit"]:hover {
+  opacity: 0.7;
+}
+section#home-section .top-block .card form p {
+  color: #999;
+  font-size: 14px;
+}
+
+section#home-section .top-block h2 {
+  color: #000;
+  margin-top: 50px;
+  text-align: left;
+  font-family: "Plus Jakarta Display";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 31px;
 }
 section#home-section .top-block a {
   margin-bottom: 30px;
@@ -855,12 +1126,11 @@ section#features-section2 ul.client-list {
   text-align: center;
   padding-bottom: 60px;
   margin-bottom: 60px;
-  border-bottom: 1px solid #ebebeb;
+  border-bottom: 0.5px solid #615B5B;
   position: relative;
   z-index: 2;
 }
 section#features-section2 ul.client-list li {
-  float: left;
   display: inline-block;
   width: 20%;
 }
@@ -2046,11 +2316,101 @@ section.app-available-section {
   -o-background-size: cover;
 }
 section.app-available-section .title-section {
+  text-align: start;
   margin-bottom: 40px;
 }
+
+section.app-available-section .title-section h1 {
+  font-family: Plus Jakarta Display;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 47px;
+  color: #000000;
+
+}
+
+
+section.app-available-section .title-section p {
+  font-family: "Plus Jakarta Display";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 31px;
+  /* text-transform: capitalize; */
+
+  color: #000000;
+}
+
 section.app-available-section .title-section h1:after {
   background: #ffffff !important;
 }
+
+section.app-available-section .newsletter {
+  margin: 0;
+}
+
+section.app-available-section .newsletter form input[type="text"],
+section.app-available-section .newsletter form input[type="email"] {
+  width:47%;
+  max-width: 100%;
+  padding: 10px 20px;
+  background: #ffffff;
+  border: 1px solid #000;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -o-border-radius: 0;
+  border-radius: 0;
+  color: #888888;
+  font-size: 18px;
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 400;
+  outline: none;
+  -webkit-border-top-left-radius: 5px;
+  -moz-border-top-left-radius: 5px;
+  -o-border-top-left-radius: 5px;
+  border-top-left-radius: 5px;
+  -webkit-border-bottom-left-radius: 5px;
+  -moz-border-bottom-left-radius: 5px;
+  -o-border-bottom-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+section.app-available-section .newsletter form input[type="submit"] {
+  background: #000;
+  width:13%;
+  padding: 10px 10px 13px 10px;
+  color: #ffffff;
+  font-family: "Plus Jakarta Display";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 23px;
+  border: 1px solid #000;
+  outline: none;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  -o-border-radius: 0px;
+  border-radius: 0px;
+  -webkit-border-top-right-radius: 5px;
+  -moz-border-top-right-radius: 5px;
+  -o-border-top-right-radius: 5px;
+  border-top-right-radius: 5px;
+  -webkit-border-bottom-right-radius: 5px;
+  -moz-border-bottom-right-radius: 5px;
+  -o-border-bottom-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  margin-left: -5px;
+}
+
+/* section#download-area .app-available-section .second-style form input[type="submit"]:hover {
+  opacity: 0.7;
+} */
+
+
 section.app-available-section .app-available-box {
   text-align: center;
 }
@@ -3070,6 +3430,17 @@ footer .title-section h1 {
   line-height: 36px;
   margin-bottom: 10px;
 }
+footer .title-section p {
+  text-align: left;
+  font-family: "Plus Jakarta Display";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 18px;
+  text-transform: capitalize;
+
+  color: #FFFFFF;
+}
 footer form {
   margin: 0;
 }
@@ -3175,7 +3546,8 @@ footer p.copyright {
   border-top: 1px solid #444444;
 }
 footer.white-style {
-  background: #fff;
+  background: #000;
+  padding: 80px;
 }
 footer.white-style form {
   margin: 0;
@@ -3206,12 +3578,14 @@ footer.pattern-style {
 }
 footer.pattern-style .title-section {
   margin-bottom: 40px;
+  
 }
 footer.pattern-style .title-section h1 {
   font-size: 50px;
   line-height: 50px;
   margin-bottom: 10px;
 }
+
 footer.pattern-style ul.download-list {
   margin: 0;
   padding: 0;
@@ -3497,6 +3871,9 @@ footer.pattern-style p.copyright {
   }
 }
 @media (max-width: 767px) {
+  section#home-section .top-block .card {
+    Width: 100%;
+  }
   .navbar-brand {
     padding: 16px 15px 17px;
   }
@@ -3511,6 +3888,9 @@ footer.pattern-style p.copyright {
   }
   header a.button-two {
     display: none;
+  }
+  section#home-section .top-block .card form .currency {
+    width: 31%;
   }
   .navbar-toggle {
     margin-top: 12px;
@@ -3606,6 +3986,8 @@ footer.pattern-style p.copyright {
   div.about-app-section.second-style .image-holder {
     margin: 0;
   }
+
+  
   section.app-available-section.second-style
     .app-available-box
     ul.app-available-list {
@@ -3617,6 +3999,7 @@ footer.pattern-style p.copyright {
     li {
     margin-bottom: 30px;
   }
+  
   section.blog-page-section .news-box.iso-call {
     margin: 0;
   }
