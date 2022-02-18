@@ -111,10 +111,10 @@ body * {
 }
 
 
-.navbar-header .navbar-brand img {
+/* .navbar-header .navbar-brand img {
   max-height: 40px;
   display: inline-block;
-}
+} */
 
 .navbar-header .navbar-brand span {
   margin-left: 12px;
@@ -214,6 +214,7 @@ website:    http://www.themepunch.com
   margin-left: 30px;
   padding: 9px 28px;
 }
+
 /* header.fullwidth .navbar-default {
   border-bottom: 1px solid #b4abe6;
 } */
@@ -666,6 +667,14 @@ section#home-section .top-block {
 section#home-section .top-block .container {
   position: relative;
   z-index: 2;
+}
+
+section#home-section .top-block .container .one{
+  margin-top: 30px; 
+  text-align: left;
+}
+section#home-section .top-block .container .one .waitlist-sm .button-two{
+  display: none;
 }
 section#home-section .top-block h1 {
   color: #000;
@@ -3836,6 +3845,10 @@ footer.pattern-style p.copyright {
   section#home-section .top-block h1 {
     font-size: 50px;
   }
+  /* section#home-section .top-block h1 span {
+    font-size: 50px;
+  } */
+
   div.about-app-section2.second-style .image-holder {
     margin: 0 0 -80px;
   }
@@ -4101,6 +4114,9 @@ footer.pattern-style p.copyright {
   }
 }
 @media (max-width: 500px) {
+  .navbar-header {
+    text-align: center;
+  }
   section#video-section .video-app-box iframe {
     height: 260px;
   }
@@ -4108,11 +4124,50 @@ footer.pattern-style p.copyright {
     font-size: 20px;
     line-height: 32px;
   }
+  section#home-section .top-block {
+    /* text-align: center; */
+    padding: 0;
+  }
+  section#home-section .top-block .container {
+    text-align: center;
+    position: relative;
+    z-index: 2;
+  }
+  section#home-section .top-block .container .one{
+    margin-top: 30px; 
+    margin-bottom: 100px;
+    text-align: center;
+  }
+  section#home-section .top-block .container .one .waitlist-sm .button-two{
+    display: inline-block;
+    text-align: center;
+    width: 90%;
+    margin-top: 70px;
+  }
   section#home-section .top-block h1 {
+    font-size: 32px;
+    text-align: center;
+  }
+  section#home-section .top-block h2 {
+    font-size: 25px;
+    text-align: center;
+    margin-top: 0px;
+  }
+  
+  section#home-section .top-block span {
     font-size: 32px;
   }
   div.about-app-section.third-style .image-holder img {
     max-width: 100%;
+  }
+  section.app-available-section .title-section {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  section.app-available-section .newsletter {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 20px;
   }
 }
 @media (max-width: 430px) {
