@@ -834,6 +834,32 @@ section#home-section .top-block .container .one{
   text-align: left;
 }
 
+section#home-section .top-block .container .one .box-one {
+  /* background-color: coral; */
+  /* width: 20% !important;
+  height: 10%;
+  display:inline-block;
+  margin:10px 0;
+  border-radius:5px; */
+  float: left;
+}
+section#home-section .top-block .container .one p {
+  color: black;
+  font-size: 14px;
+  margin-top: -8px;
+}
+
+section#home-section .top-block .container .one .text {
+  padding: 10px 0;
+  color:black;
+  font-weight:bold;
+  text-align:center;
+}
+section#home-section .top-block .container .one #triple-container {
+  white-space:nowrap;
+  text-align:center;
+}
+
 section#home-section .top-block .container .two{
   border-top-right-radius: 190px; 
   border-bottom-left-radius: 590px; 
