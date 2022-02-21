@@ -88,6 +88,8 @@ body * {
   border-width: 0 2px 2px 0;
   display: inline-block;
   padding: 3px;
+  position: absolute;
+  margin-top: 5px;
 }
 
 .right {
@@ -110,11 +112,169 @@ body * {
   -webkit-transform: rotate(45deg);
 }
 
+.box-outer {
+  background-color: #F4F4F4;
+}
 
-/* .navbar-header .navbar-brand img {
-  max-height: 40px;
+.box {
+  /* background-color: coral; */
+  width: 30%;
+  display:inline-block;
+  margin:10px 0;
+  border-radius:5px;
+}
+.text {
+  padding: 10px 0;
+  color:black;
+  font-weight:bold;
+  text-align:center;
+}
+#triple-container {
+  white-space:nowrap;
+  text-align:center;
+}
+
+.currency-switcher {
+  /* position: relative;
+  margin: 50px auto;
+  width: 268px; */
   display: inline-block;
-} */
+  background: #35D082;
+  margin-left: -4px;
+  width: 25%;
+  /* padding-left: 3px;
+  padding-right: 3px; */
+}
+
+div.dropdown {
+  position: relative;
+  /* width: 268px; */
+  /* width: 20%; */
+}
+
+div.dropdown:after {
+  content: "";
+  position: absolute;
+  margin: 0;
+  width: 100%;
+  height: 17px;
+  background-image: url(http://botkits.ru/img/icons/down.svg);
+  top: 15px;
+  right: 0px;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+div.dropdown.open:after {
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+
+
+div.dropdown>div.caption {
+  background: #35D082;
+  /* border-radius: 12px; */
+  cursor: pointer;
+  padding: 17px 0 19px 0;
+  font-size: 14px;
+  line-height: 150%;
+  letter-spacing: 0.3px;
+}
+
+div.dropdown>div.caption p {
+  color: white !important;
+  display: inline-block;
+  margin-left: 8px !important;
+  margin-right: 10px !important;
+  margin-bottom: 0 !important;
+  font-family: "Plus Jakarta Display";
+  font-style: normal;
+  font-weight: 500 !important;
+  font-size: 12px !important;
+  line-height: 16px !important;
+  /* identical to box height */
+  color: #FFFFFF;
+}
+
+div.dropdown>div.list {
+  position: absolute;
+  background-color: #fff;
+  width: 250%;
+  border-radius: 12px;
+  -webkit-box-shadow: 0px 12px 24px rgba(21, 18, 51, 0.13);
+  box-shadow: 0px 12px 24px rgba(21, 18, 51, 0.13);
+  opacity: 0;
+  overflow: hidden;
+  -webkit-transition: all 0.15s cubic-bezier(0.25, 0, 0.25, 1.75), opacity 0.1s linear;
+  transition: all 0.15s cubic-bezier(0.25, 0, 0.25, 1.75), opacity 0.1s linear;
+  -webkit-transform: scale(0.85);
+  transform: scale(0.85);
+  -webkit-transform-origin: 50% 0;
+  transform-origin: 50% 0;
+  top: 52px;
+  right: 0px;
+  z-index: -1;
+  visibility: hidden;
+  padding: 10px 0;
+}
+
+div.dropdown.open>div.list {
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  opacity: 1;
+  z-index: 1;
+  visibility: visible;
+}
+
+div.dropdown>div.list>div.item {
+  padding: 10.5px 15px 10.5px 15px;
+  cursor: pointer;
+  -webkit-transition: .3s;
+  transition: .3s;
+  font-size: 14px;
+  line-height: 150%;
+  letter-spacing: 0.3px;
+}
+
+div.dropdown>div.list>div.item.selected {
+  background: rgba(36, 60, 187, 0.2);
+  pointer-events: none;
+}
+
+div.dropdown>div.list>div.item.selected p {
+  margin-left: 0 !important;
+}
+
+div.dropdown>div.list>div.item:hover {
+  background: #F8F9FB;
+}
+
+div.dropdown>div.caption img,
+div.dropdown>div.list>div.item img,
+div.dropdown>div.caption svg,
+div.dropdown>div.list>div.item svg {
+  position: absolute;
+  margin-top: 2.5px;
+  left: 15px;
+}
+
+div.dropdown>div.list>div.item span,
+div.dropdown>div.caption span {
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0.3px;
+  color: #243CBB;
+  position: absolute;
+  /* right: 36px; */
+}
+
+div.dropdown>div.list>div.item span {
+  right: 20px;
+}
+
+.navbar-header .navbar-brand {
+  display: none;
+}
 
 .navbar-header .navbar-brand span {
   margin-left: 12px;
@@ -673,9 +833,15 @@ section#home-section .top-block .container .one{
   margin-top: 30px; 
   text-align: left;
 }
-section#home-section .top-block .container .one .waitlist-sm .button-two{
-  display: none;
+
+section#home-section .top-block .container .two{
+  border-top-right-radius: 190px; 
+  border-bottom-left-radius: 590px; 
+  background-image: repeating-linear-gradient(45deg, #eee 10px,#eee 12px,transparent 12px,transparent 30px);
+  background-repeat: repeat-y;
+  background-position: 290px 0;
 }
+
 section#home-section .top-block h1 {
   color: #000;
   font-size: 96px;
@@ -703,10 +869,19 @@ section#home-section .top-block .shadow-lg {
 }
 section#home-section .top-block .rounded {
   border-radius: 20px!important;
+  background: white;
+  margin-right: 30px;
+  margin-top: 10px;
+  margin-bottom: 20px;
 }
 
 section#home-section .top-block .secured{
   margin-top: 20px;
+}
+
+section#home-section .top-block .card .switch-fiat p{
+  display: none;
+  margin-left: 0;
 }
 
 section#home-section .top-block .card button {
@@ -827,6 +1002,38 @@ section#home-section .top-block .card form input[type="email"] {
   border-bottom-left-radius: 3px;
 }
 section#home-section .top-block .card form input[type="submit"] {
+  background: #35D082;
+  /* width:20%; */
+  color: #ffffff;
+  font-size: 12px;
+  font-family: "Plus Jakarta Display";
+  font-weight: 500;
+  font-style: normal;
+  line-height: 15.53px;
+  border: 1px solid #35D082;
+  outline: none;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  -o-border-radius: 0px;
+  border-radius: 0px;
+  -webkit-border-top-right-radius: 3px;
+  -moz-border-top-right-radius: 3px;
+  -o-border-top-right-radius: 3px;
+  border-top-right-radius: 3px;
+  -webkit-border-bottom-right-radius: 3px;
+  -moz-border-bottom-right-radius: 3px;
+  -o-border-bottom-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+  padding: 20px 10px;
+  transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  margin: 0 0 0px;
+  margin-left: -4px;
+}
+
+section#home-section .top-block .card form select {
   background: #35D082;
   /* width:20%; */
   color: #ffffff;
@@ -1142,6 +1349,9 @@ section#features-section2 ul.client-list {
 section#features-section2 ul.client-list li {
   display: inline-block;
   width: 20%;
+}
+section#features-section2 .send-chill{
+  display: none;
 }
 section#features-section2 .about-box {
   padding-bottom: 60px;
@@ -2330,7 +2540,7 @@ section.app-available-section .title-section {
 }
 
 section.app-available-section .title-section h1 {
-  font-family: Plus Jakarta Display;
+  font-family: "Plus Jakarta Display";
   font-style: normal;
   font-weight: bold;
   font-size: 36px;
@@ -3712,63 +3922,118 @@ footer.pattern-style p.copyright {
   }
 }
 @media (max-width: 1199px) {
+  .navbar-nav > li > a {
+    font-size: 16px;
+    padding-left: 9px !important;
+    padding-right: 9px !important;
+  }
+  .navbar-default {
+    padding: 0;
+  }
+  .navbar-default a.button-two {
+    margin-left: 15px;
+    padding: 10px 15px;
+    font-size: 16px;
+  }
   #home-section .tp-caption.small_text {
-    font-size: 20px;
-    line-height: 26px;
-  }
-  section#features-section .about-box .posts-box {
-    margin-top: -30px;
-    margin-bottom: 30px;
-  }
-  section#features-section3 .image-holder {
-    margin-left: -1px;
-    margin-right: -30px;
-  }
-  section#features-section3 .image-rounded {
-    bottom: 100px;
-  }
-  section.blog-page-section .news-box.iso-call .news-post {
-    width: 323px;
+    font-size: 22px;
+    line-height: 28px;
   }
   section#home-section div.top-block2 .image-rounded {
-    width: 90%;
+    top: -50%;
+    width: 100%;
+  }
+  section#home-section div.top-block2 .clients-box {
+    padding-top: 40px;
+  }
+  section#home-section div.top-block2 .top-block-image {
+    margin-top: -40px;
   }
   section#home-section div.top-block2 a.button-one {
-    margin-right: 0;
-    padding-left: 20px;
-    padding-right: 20px;
+    margin-right: 20px;
   }
-  section#home-section div.top-block2 a.btn-txt i {
-    margin-right: 5px;
+  section#features-section .about-box .posts-box {
+    padding: 0 !important;
+    margin: 0;
   }
-  div.about-app-section.third-style .image-holder {
+  section#features-section .about-box .posts-box .about-post {
+    overflow: hidden;
+    max-width: 260px;
+    margin: 0 auto 40px;
+  }
+  section#features-section {
+    padding-bottom: 60px;
+  }
+  section#features-section .about-box .image-holder {
+    margin: 0 0 30px;
+  }
+  section#features-section .about-box .image-holder img {
+    margin: 0;
+  }
+  section#features-section3 .image-holder {
+    margin-left: 0;
+    margin-right: 0px;
+    padding-top: 0;
+  }
+  section#features-section3 .image-rounded,
+  section.testimonial-section.second-style .image-rounded {
+    display: none;
+  }
+  section#features-section3,
+  div.about-app-section.third-style {
+    border-top: 1px solid #f1f1f1;
+  }
+  section#contact-section .contact-info-box span {
+    margin-top: 40px;
+  }
+  section#contact-section #contact-form {
+    margin-bottom: 60px;
+  }
+  section#pricing-section .pricing-box ul.pricing-table.business {
     margin-top: 0;
   }
+  section#home-section .top-block h1 {
+    font-size: 70px;
+  }
+  section#home-section .top-block h1 span {
+    font-size: 70px;
+  }
+
+  div.about-app-section2.second-style .image-holder {
+    margin: 0 0 -80px;
+  }
+  section.blog-page-section .news-box.iso-call .news-post {
+    width: 375px;
+  }
+  div.about-app-section.third-style .image-holder {
+    margin-top: 60px;
+  }
+  div.about-app-section.third-style .image-holder img {
+    max-width: 430px;
+    margin: 0 auto;
+    display: block;
+  }
   div.about-app-section.third-style .image-holder img.snd-img {
-    top: 130px;
-    left: 30px;
+    position: relative;
+    top: initial;
+    left: initial;
   }
-  section#screenshots-section.bottom-negative .border-rounded {
-    width: 1400px;
-    right: -1000px;
+  section#video-section.white-background2 {
+    border-bottom: 1px solid #f1f1f1;
+    padding-bottom: 60px;
   }
-  section#video-section.white-background2 .border-rounded,
-  section#news-section .border-rounded {
-    width: 1200px;
-    left: -800px;
+  section#overview-section .intro-block {
+    display: block;
+  }
+  section#overview-section .intro-block .image-holder {
+    width: 100%;
   }
   section#overview-section .intro-block .content-holder {
-    padding: 0 30px;
+    width: 100%;
+    padding: 50px;
   }
-  section#overview-section .intro-block .content-holder h2 {
-    font-size: 20px;
-    margin-bottom: 10px;
-  }
-  section#overview-section .intro-block .content-holder p {
-    margin-bottom: 10px;
-  }
-  section#features-section4 {
-    margin: 0;
+  section#download-area img{
+    width: 100%;
   }
 }
 @media (max-width: 991px) {
@@ -3842,12 +4107,30 @@ footer.pattern-style p.copyright {
   section#pricing-section .pricing-box ul.pricing-table.business {
     margin-top: 0;
   }
+
+  section#home-section .top-block .card {
+    width: 100% !important;
+    padding: 80px 0 0 0;
+  }
+
+  section#home-section .top-block .card p {
+    margin-left: 10px;
+  }
+
   section#home-section .top-block h1 {
     font-size: 50px;
   }
-  /* section#home-section .top-block h1 span {
+  section#home-section .top-block h1 span {
     font-size: 50px;
-  } */
+  }
+
+  .currency-switcher {
+    width: 30%;
+  }
+
+  section#download-area img{
+    width: 100%;
+  }
 
   div.about-app-section2.second-style .image-holder {
     margin: 0 0 -80px;
@@ -3884,6 +4167,21 @@ footer.pattern-style p.copyright {
   }
 }
 @media (max-width: 767px) {
+  /* .header-box {
+    margin-left: 30px;
+  } */
+  /* .collapse {
+    display: block;
+    visibility: visible;
+  }
+  header a.button-two {
+    display: inline-block;
+} */
+.navbar-default {
+  
+  margin: 0 0 0 0;
+}
+
   section#home-section .top-block .card {
     Width: 100%;
   }
@@ -3902,9 +4200,60 @@ footer.pattern-style p.copyright {
   header a.button-two {
     display: none;
   }
-  section#home-section .top-block .card form .currency {
-    width: 31%;
+  .navbar-fixed-top-sm {
+    position: fixed !important;
+    right: 0;
+    left: 0;
+    z-index: 1030 !important;
+    background: #fff;
+  }     
+  header.active .navbar {
+    background: #fff;
+  } 
+  .navbar-header {
+    text-align: center;
   }
+
+  .navbar-header .header-box{
+    box-shadow:  0px 8px 8px -8px  rgba(0, 0, 0, 0.12);
+    padding-bottom: 10px;
+  }
+  
+  .navbar-toggle {
+    border: none !important;
+  }
+
+  .navbar-header img {
+    width: 50px;
+    height: 35px;
+    float: left;
+    margin: 10px 0 0 15px;
+  }
+
+  /* .navbar-header a  {
+    margin: 5px 0 0 0;
+  } */
+
+  .navbar-header a img {
+    width: 20px;
+    height: 20px;
+    float: left;
+    margin: 0 5px 0 0;
+  }
+
+  .navbar-header .navbar-brand {
+    display: inline-block;
+    font-family: "Plus Jakarta Display";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+
+    color: #000000;
+    float: initial;
+  }
+
+  
   .navbar-toggle {
     margin-top: 12px;
   }
@@ -3986,12 +4335,63 @@ footer.pattern-style p.copyright {
   section#home-section .top-block:after {
     display: none;
   }
+  section#home-section .top-block .container .one{
+    text-align: left;
+    margin-left: 30px;
+  }
   section#home-section .top-block h1 {
-    font-size: 40px;
+    color: #000;
+    font-size: 96px;
+    font-weight: 500;
+    line-height: 124.22px;
+    margin-bottom: 15px;
+    text-align: left;
+    font-family: "Plus Jakarta Display";
+  }
+  section#home-section .top-block h1 span{
+    font-size: 96px;
+    font-weight: 500;
+    line-height: 124.22px;
+    margin-bottom: 15px;
+    text-align: left;
+    font-family: "Plus Jakarta Display";
   }
   section#home-section .top-block h2 {
     line-height: 32px;
   }
+
+  section#home-section .top-block .card {
+    padding: 40px 5px 0 5px;
+  }
+
+  section#home-section .top-block .card p {
+    margin-left: 35px;
+  }
+
+  section#home-section .top-block .container .two {
+    margin-left: 30px;
+  }
+
+  section#home-section .top-block .card .switch-fiat{
+    margin-left: 5px !important;
+  }
+
+  section#home-section .top-block .card .switch-fiat p{
+    display: inline-block;
+    margin-left: 0;
+    margin-right: 10px;
+    vertical-align: middle;
+  }
+  section#home-section .top-block .shadow-lg {
+    box-shadow: 0 0 0 rgba(0,0,0,.175)!important;
+  }
+  section#home-section .top-block .rounded {
+    border-radius: 20px!important;
+  }
+  section#home-section .top-block .card form .currency {
+    width: 31%;
+  }
+
   section#features-section2 ul.client-list li {
     width: 33.3333%;
     margin-bottom: 30px;
@@ -4038,8 +4438,227 @@ footer.pattern-style p.copyright {
   section#overview-section {
     padding: 100px 15px;
   }
+
+  section#features-section2 ul.client-list {
+    display:  none;
+  }
+
+  section#features-section2 .send-chill{
+    display: block;
+    margin-left: 30px;
+  }
+  section#features-section2 .send-chill h1{
+    font-family: "Plus Jakarta Display";
+    font-style: normal;
+    font-weight: 300;
+    font-size: 48px;
+    line-height: 108.9%;
+    /* or 52px */
+    text-transform: capitalize;
+    color: #000000;
+  }
+  section#features-section2 .send-chill p{
+    font-family: "Plus Jakarta Display";
+    font-style: normal;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 108.9%;
+    /* identical to box height, or 20px */
+    color: #000000;
+  }
+  section#features-section2 {
+    padding: 0;
+  }
+
+  section#download-area img{
+    width: 90%;
+  }
+
+  section#download-area h1{
+    margin-top: 100px;
+    font-family: "Plus Jakarta Display";
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 31px;
+    /* identical to box height */
+    color: #000000;
+  }
+
+  section#download-area p{
+    font-family: "Plus Jakarta Display";
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 23px;
+    text-transform: capitalize;
+    color: #000000;
+  }
+
+  div.about-app-section.third-style .image-holder img {
+    max-width: 100%;
+  }
+  section.app-available-section .title-section {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  section.app-available-section .newsletter {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 120px;
+  }
+  section.app-available-section .newsletter form input[type="text"],
+  section.app-available-section .newsletter form input[type="email"] {
+    width:60%;
+    max-width: 100%;
+    padding: 10px 20px;
+    background: #ffffff;
+    border: 1px solid #000;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -o-border-radius: 0;
+    border-radius: 0;
+    color: #888888;
+    font-size: 18px;
+    font-family: "Source Sans Pro", sans-serif;
+    font-weight: 400;
+    outline: none;
+    -webkit-border-top-left-radius: 5px;
+    -moz-border-top-left-radius: 5px;
+    -o-border-top-left-radius: 5px;
+    border-top-left-radius: 5px;
+    -webkit-border-bottom-left-radius: 5px;
+    -moz-border-bottom-left-radius: 5px;
+    -o-border-bottom-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+  }
+  section.app-available-section .newsletter form input[type="submit"] {
+    background: #000;
+    width:25%;
+    padding: 10px 10px 13px 10px;
+    color: #ffffff;
+    font-family: "Plus Jakarta Display";
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 23px;
+    border: 1px solid #000;
+    outline: none;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    -o-border-radius: 0px;
+    border-radius: 0px;
+    -webkit-border-top-right-radius: 5px;
+    -moz-border-top-right-radius: 5px;
+    -o-border-top-right-radius: 5px;
+    border-top-right-radius: 5px;
+    -webkit-border-bottom-right-radius: 5px;
+    -moz-border-bottom-right-radius: 5px;
+    -o-border-bottom-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -webkit-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    margin-left: -5px;
+  }
+
+  footer.white-style {
+    background: #fff;
+    border-top: 1px solid black;
+    padding: 40px 0 0 0 !important;
+  }
+
+  footer.white-style p{
+    text-align: center;
+    font-family: "Plus Jakarta Display";
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 18px;
+    text-transform: capitalize;
+
+    color: #3A3A3A;
+  }
 }
 @media (max-width: 600px) {
+  section#home-section .top-block .container {
+    text-align: center;
+    position: relative;
+    z-index: 2;
+  }
+  /* section#home-section .top-block .card {
+    padding: 80px 30px 0 30px;
+    Width: 486px;
+    Height: 550px;
+    float: left;
+  } */
+  section#home-section .top-block .container .one{
+    margin-top: 100px; 
+    margin-bottom: 100px;
+    text-align: center;
+    margin-left: 30px;
+  }
+  section#home-section .top-block .container .two{
+    border-top-right-radius: 190px; 
+    border-bottom-left-radius: 590px; 
+    background-image: repeating-linear-gradient(45deg, #eee 10px,#eee 12px,transparent 12px,transparent 30px);
+    background-repeat: repeat-y;
+    background-position: 290px 0;
+  }
+  section#home-section .top-block .rounded {
+    border-radius: 0;
+    background: white;
+    margin-right: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  section#home-section .top-block h1 {
+    font-family: "Plus Jakarta Display";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 72px;
+    line-height: 78px;
+    /* overflow-wrap: break-word; */
+    white-space: initial;
+  }
+  section#home-section .top-block h1 span{
+    font-size: 72px;
+    font-weight: 500;
+    line-height: 124.22px;
+    margin-bottom: 15px;
+    text-align: left;
+    font-family: "Plus Jakarta Display";
+  }
+  section#home-section .top-block h2 {
+    font-family: "Plus Jakarta Display";
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 23px;
+    margin-top: 0px;
+  }
+
+  section#home-section .top-block .card {
+    padding: 40px 5px 0 5px;
+  }
+
+  section#home-section .top-block .card .switch-fiat{
+    margin-left: 5px !important;
+  }
+
+  section#home-section .top-block .card .switch-fiat p{
+    display: inline-block;
+    margin-left: 0;
+    margin-right: 10px;
+    vertical-align: middle;
+  }
+  section#home-section .top-block .shadow-lg {
+    box-shadow: 0 0 0 rgba(0,0,0,.175)!important;
+  }
+  section#home-section .top-block .rounded {
+    border-radius: 20px!important;
+  }
   #home-section .tp-caption.small_text {
     font-size: 24px;
     line-height: 32px;
@@ -4114,9 +4733,62 @@ footer.pattern-style p.copyright {
   }
 }
 @media (max-width: 500px) {
+  .navbar-default {
+    margin: 0 0 0 0;
+  }
+  .navbar-fixed-top-sm {
+    position: fixed !important;
+    right: 0;
+    left: 0;
+    z-index: 1030 !important;
+    background: #fff;
+  }     
+  header.active .navbar {
+    background: #fff;
+  } 
   .navbar-header {
     text-align: center;
   }
+
+  .navbar-header .header-box{
+    box-shadow:  0px 8px 8px -8px  rgba(0, 0, 0, 0.12);
+    padding-bottom: 10px;
+  }
+  
+  .navbar-toggle {
+    border: none !important;
+  }
+
+  .navbar-header img {
+    width: 50px;
+    height: 35px;
+    float: left;
+    margin: 10px 0 0 15px;
+  }
+
+  /* .navbar-header a  {
+    margin: 5px 0 0 0;
+  } */
+
+  .navbar-header a img {
+    width: 20px;
+    height: 20px;
+    float: left;
+    margin: 0 5px 0 0;
+  }
+
+  .navbar-header .navbar-brand {
+    display: inline-block;
+    font-family: "Plus Jakarta Display";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+
+    color: #000000;
+    float: initial;
+  }
+
   section#video-section .video-app-box iframe {
     height: 260px;
   }
@@ -4134,29 +4806,163 @@ footer.pattern-style p.copyright {
     z-index: 2;
   }
   section#home-section .top-block .container .one{
-    margin-top: 30px; 
+    margin-top: 100px; 
     margin-bottom: 100px;
     text-align: center;
+    margin-left: 30px;
   }
-  section#home-section .top-block .container .one .waitlist-sm .button-two{
-    display: inline-block;
-    text-align: center;
-    width: 90%;
-    margin-top: 70px;
+  section#home-section .top-block .container .two{
+    border-top-right-radius: 190px; 
+    border-bottom-left-radius: 590px; 
+    background-image: repeating-linear-gradient(45deg, #eee 10px,#eee 12px,transparent 12px,transparent 30px);
+    background-repeat: repeat-y;
+    background-position: 290px 0;
+  }
+  section#home-section .top-block .rounded {
+    border-radius: 0;
+    background: white;
+    margin-right: 0;
+    margin-top: 0;
+    margin-bottom: 0;
   }
   section#home-section .top-block h1 {
-    font-size: 32px;
-    text-align: center;
+    font-family: "Plus Jakarta Display";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 72px;
+    line-height: 78px;
+    /* overflow-wrap: break-word; */
+    white-space: initial;
   }
   section#home-section .top-block h2 {
-    font-size: 25px;
-    text-align: center;
+    font-family: "Plus Jakarta Display";
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 23px;
     margin-top: 0px;
   }
-  
-  section#home-section .top-block span {
-    font-size: 32px;
+
+  section#home-section .top-block .card {
+    padding: 40px 5px 0 5px;
   }
+
+  section#home-section .top-block .card .switch-fiat{
+    margin-left: 5px !important;
+  }
+
+  section#home-section .top-block .card .switch-fiat p{
+    display: inline-block;
+    margin-left: 0;
+    margin-right: 10px;
+    vertical-align: middle;
+  }
+  section#home-section .top-block .shadow-lg {
+    box-shadow: 0 0 0 rgba(0,0,0,.175)!important;
+  }
+  section#home-section .top-block .rounded {
+    border-radius: 20px!important;
+  }
+
+  section#home-section .top-block h1 {
+    font-family: "Plus Jakarta Display";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 70px;
+    line-height: 78px;
+    /* overflow-wrap: break-word; */
+    white-space: initial;
+  }
+  section#home-section .top-block h1 span{
+    font-size: 70px;
+    font-weight: 500;
+    line-height: 124.22px;
+    margin-bottom: 15px;
+    text-align: left;
+    font-family: "Plus Jakarta Display";
+  }
+  
+  section#home-section .top-block .card p {
+    color: #000;
+    margin-left: 25px;
+    margin-bottom: 5px;
+    text-align: start;
+    font-family: "Plus Jakarta Display";
+    font-weight: 400;
+    font-style: normal;
+    font-size: 14px;
+  }
+
+
+  section#home-section .top-block .secured {
+    float: left;
+    margin-top: 20px;
+  }
+  section#home-section .top-block span {
+    display:inline-block;
+    height: 10px;
+    font-family: "Plus Jakarta Display";
+    font-style: normal;
+    font-weight: normal;
+    font-size: 72px;
+    line-height: 78px;
+  }
+
+  section#features-section2 ul.client-list {
+    display:  none;
+  }
+
+  section#features-section2 .send-chill{
+    display: block;
+  }
+  section#features-section2 .send-chill h1{
+    font-family: "Plus Jakarta Display";
+    font-style: normal;
+    font-weight: 300;
+    font-size: 48px;
+    line-height: 108.9%;
+    /* or 52px */
+    text-transform: capitalize;
+    color: #000000;
+  }
+  section#features-section2 .send-chill p{
+    font-family: "Plus Jakarta Display";
+    font-style: normal;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 108.9%;
+    /* identical to box height, or 20px */
+    color: #000000;
+  }
+  section#features-section2 {
+    padding: 0;
+  }
+
+  section#download-area img{
+    width: 90%;
+  }
+
+  section#download-area h1{
+    margin-top: 100px;
+    font-family: "Plus Jakarta Display";
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 31px;
+    /* identical to box height */
+    color: #000000;
+  }
+
+  section#download-area p{
+    font-family: "Plus Jakarta Display";
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 23px;
+    text-transform: capitalize;
+    color: #000000;
+  }
+
   div.about-app-section.third-style .image-holder img {
     max-width: 100%;
   }
@@ -4167,14 +4973,199 @@ footer.pattern-style p.copyright {
   section.app-available-section .newsletter {
     text-align: center;
     width: 100%;
-    margin-bottom: 20px;
+    margin-bottom: 120px;
+  }
+  section.app-available-section .newsletter form input[type="text"],
+  section.app-available-section .newsletter form input[type="email"] {
+    width:60%;
+    max-width: 100%;
+    padding: 10px 20px;
+    background: #ffffff;
+    border: 1px solid #000;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -o-border-radius: 0;
+    border-radius: 0;
+    color: #888888;
+    font-size: 18px;
+    font-family: "Source Sans Pro", sans-serif;
+    font-weight: 400;
+    outline: none;
+    -webkit-border-top-left-radius: 5px;
+    -moz-border-top-left-radius: 5px;
+    -o-border-top-left-radius: 5px;
+    border-top-left-radius: 5px;
+    -webkit-border-bottom-left-radius: 5px;
+    -moz-border-bottom-left-radius: 5px;
+    -o-border-bottom-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+  }
+  section.app-available-section .newsletter form input[type="submit"] {
+    background: #000;
+    width:25%;
+    padding: 10px 10px 13px 10px;
+    color: #ffffff;
+    font-family: "Plus Jakarta Display";
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 23px;
+    border: 1px solid #000;
+    outline: none;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    -o-border-radius: 0px;
+    border-radius: 0px;
+    -webkit-border-top-right-radius: 5px;
+    -moz-border-top-right-radius: 5px;
+    -o-border-top-right-radius: 5px;
+    border-top-right-radius: 5px;
+    -webkit-border-bottom-right-radius: 5px;
+    -moz-border-bottom-right-radius: 5px;
+    -o-border-bottom-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -webkit-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    margin-left: -5px;
+  }
+
+  footer.white-style {
+    background: #fff;
+    border-top: 1px solid black;
+    padding: 40px 0 0 0 !important;
+  }
+
+  footer.white-style p{
+    text-align: center;
+    font-family: "Plus Jakarta Display";
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 18px;
+    text-transform: capitalize;
+
+    color: #3A3A3A;
   }
 }
 @media (max-width: 430px) {
+  section#home-section .top-block h1 {
+    font-family: "Plus Jakarta Display";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 96px;
+    line-height: 78px;
+    /* overflow-wrap: break-word; */
+    white-space: initial;
+  }
+  section#home-section .top-block h1 span{
+    font-size: 96px;
+    font-weight: 500;
+    line-height: 124.22px;
+    margin-bottom: 15px;
+    text-align: left;
+    font-family: "Plus Jakarta Display";
+  }
   section#home-section div.top-block2 a.button-one {
     display: block;
     margin-right: 0;
     margin-bottom: 20px;
     text-align: center;
+  }
+}
+
+@media (max-width: 300px) {
+  section#home-section .top-block h1 {
+    font-family: "Plus Jakarta Display";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 72px;
+    line-height: 78px;
+    /* overflow-wrap: break-word; */
+    white-space: initial;
+  }
+  section#home-section .top-block h1 span{
+    font-size: 72px;
+    font-weight: 400;
+    line-height: 124.22px;
+    margin-bottom: 15px;
+    text-align: left;
+    font-family: "Plus Jakarta Display";
+  }
+  section#home-section .top-block .container .one .waitlist-sm .button-two{
+    display: inline-block;
+    text-align: center;
+    width: 90%;
+    margin-top: 70px;
+  }
+
+  section#home-section .top-block .card form .currency {
+    display: inline-block;
+    background: #35D082;
+    margin-left: -4px;
+    width: 42%;
+    padding-left: 3px;
+    padding-right: 3px;
+  }
+
+  section#home-section .top-block .card form input[type="text"],
+  section#home-section .top-block .card form input[type="email"] {
+    width:58%;
+    max-width: 100%;
+    padding: 20px 20px;
+    background: #ffffff;
+    border: 1px solid #888888;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -o-border-radius: 0;
+    border-radius: 0;
+    margin: 0 0 5px;
+    color: #888888;
+    font-size: 12px;
+    font-family: "Plus Jakarta Display";
+    font-weight: 500;
+    font-style: normal;
+    line-height: 15.53px;
+    outline: none;
+    -webkit-border-top-left-radius: 3px;
+    -moz-border-top-left-radius: 3px;
+    -o-border-top-left-radius: 3px;
+    border-top-left-radius: 3px;
+    -webkit-border-bottom-left-radius: 3px;
+    -moz-border-bottom-left-radius: 3px;
+    -o-border-bottom-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+  }
+  section#home-section .top-block .card form input[type="submit"] {
+    background: #35D082;
+    /* width:20%; */
+    color: #ffffff;
+    font-size: 12px;
+    font-family: "Plus Jakarta Display";
+    font-weight: 500;
+    font-style: normal;
+    line-height: 15.53px;
+    border: 1px solid #35D082;
+    outline: none;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    -o-border-radius: 0px;
+    border-radius: 0px;
+    -webkit-border-top-right-radius: 3px;
+    -moz-border-top-right-radius: 3px;
+    -o-border-top-right-radius: 3px;
+    border-top-right-radius: 3px;
+    -webkit-border-bottom-right-radius: 3px;
+    -moz-border-bottom-right-radius: 3px;
+    -o-border-bottom-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    padding: 20px 10px;
+    transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -webkit-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    margin: 0 0 0px;
+    margin-left: -4px;
   }
 }
