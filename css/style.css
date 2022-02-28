@@ -134,22 +134,9 @@ body * {
   text-align:center;
 }
 
-.currency-switcher {
-  /* position: relative;
-  margin: 50px auto;
-  width: 268px; */
-  display: inline-block;
-  background: #35D082;
-  margin-left: -4px;
-  width: 25%;
-  /* padding-left: 3px;
-  padding-right: 3px; */
-}
 
 div.dropdown {
   position: relative;
-  /* width: 268px; */
-  /* width: 20%; */
 }
 
 div.dropdown:after {
@@ -172,13 +159,14 @@ div.dropdown.open:after {
 
 
 div.dropdown>div.caption {
-  background: #35D082;
+  /* background: #35D082; */
   /* border-radius: 12px; */
   cursor: pointer;
-  padding: 17px 0 19px 0;
+  padding: 17px 15px 19px 0;
   font-size: 14px;
   line-height: 150%;
   letter-spacing: 0.3px;
+  text-align: right;
 }
 
 div.dropdown>div.caption p {
@@ -227,7 +215,7 @@ div.dropdown.open>div.list {
 }
 
 div.dropdown>div.list>div.item {
-  padding: 10.5px 15px 10.5px 15px;
+  padding: 10.5px 5px 10.5px 5px;
   cursor: pointer;
   -webkit-transition: .3s;
   transition: .3s;
@@ -271,6 +259,8 @@ div.dropdown>div.caption span {
 div.dropdown>div.list>div.item span {
   right: 20px;
 }
+
+
 
 .navbar-header .navbar-brand {
   display: none;
@@ -872,7 +862,7 @@ section#home-section .top-block h1 {
   color: #000;
   font-size: 96px;
   font-weight: 500;
-  line-height: 124.22px;
+  /* line-height: 124.22px; */
   margin-bottom: 15px;
   text-align: left;
   font-family: "Plus Jakarta Display";
@@ -885,7 +875,7 @@ section#home-section .top-block span {
   font-family: "Plus Jakarta Display";
 }
 section#home-section .top-block .card {
-  padding: 80px 30px 0 30px;
+  padding: 30px 30px 0 30px;
   Width: 486px;
   Height: 550px;
   float: right;
@@ -900,6 +890,17 @@ section#home-section .top-block .rounded {
   margin-top: 10px;
   margin-bottom: 20px;
 }
+
+section#home-section .top-block .card .title{
+  margin-bottom: 40px;
+  font-family: "Red Hat Display";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 19px;
+  text-transform: capitalize;
+  color: #000000;
+  }
 
 section#home-section .top-block .secured{
   margin-top: 20px;
@@ -944,6 +945,10 @@ section#home-section .top-block .card p {
   font-size: 14px;
 }
 
+section#home-section .top-block .card form p {
+  color: #000 !important;
+}
+
 section#home-section .top-block .card span{
   color: #3076FF !important;
   text-align: start;
@@ -954,16 +959,21 @@ section#home-section .top-block .card span{
   line-height: 15.53px;
 }
 
-section#home-section .top-block .card .rate{
-  margin-top: 5px;
+section#home-section .top-block .card .switch-currencies{
+  margin-top: 25px;
   color: #3D4C69 !important;
   text-align: start;
   font-family: "Plus Jakarta Display";
-  font-weight: 400;
   font-style: normal;
+  font-weight: 500;
   font-size: 12px;
-  line-height: 15.53px;
-  letter-spacing: 6%;
+  line-height: 16px;
+  text-transform: capitalize;
+  color: #000000;
+}
+
+section#home-section .top-block .card .switch-currencies img{
+  margin-right: 5px;
 }
 
 section#home-section .top-block .card .last-updated{
@@ -999,13 +1009,37 @@ section#home-section .top-block .card form .currency-flag {
   height: 12px !important;
 }
 
+
+.currency-switcher {
+  display: inline-block;
+  background: transparent;
+  margin-left: -4px;
+  width: 25%;
+  border-top:    1px solid #888888;
+  border-right:  1px solid #888888;
+  border-bottom: 1px solid #888888;
+  border-left:   0px ;
+  -webkit-border-top-right-radius: 3px;
+  -moz-border-top-right-radius: 3px;
+  -o-border-top-right-radius: 3px;
+  border-top-right-radius: 3px;
+  -webkit-border-bottom-right-radius: 3px;
+  -moz-border-bottom-right-radius: 3px;
+  -o-border-bottom-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
 section#home-section .top-block .card form input[type="text"],
 section#home-section .top-block .card form input[type="email"] {
   width:65%;
   max-width: 100%;
-  padding: 20px 20px;
+  padding: 21px 21px;
   background: #ffffff;
-  border: 1px solid #888888;
+  /* border: 1px solid #888888; */
+  border-top:    1px solid  #888888;
+  border-right:  0;
+  border-bottom: 1px solid #888888;
+  border-left:   1px solid #888888;
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
   -o-border-radius: 0;
@@ -2597,9 +2631,9 @@ section.app-available-section .newsletter {
 
 section.app-available-section .newsletter form input[type="text"],
 section.app-available-section .newsletter form input[type="email"] {
-  width:47%;
+  width:55%;
   max-width: 100%;
-  padding: 10px 20px;
+  padding: 20px 20px;
   background: #ffffff;
   border: 1px solid #000;
   -webkit-border-radius: 0;
@@ -2622,8 +2656,8 @@ section.app-available-section .newsletter form input[type="email"] {
 }
 section.app-available-section .newsletter form input[type="submit"] {
   background: #000;
-  width:13%;
-  padding: 10px 10px 13px 10px;
+  width:20%;
+  padding: 20px 10px 23px 10px;
   color: #ffffff;
   font-family: "Plus Jakarta Display";
   font-style: normal;
@@ -3900,6 +3934,7 @@ footer.pattern-style p.copyright {
 /*-------------------------------------------------*/
 /* =  Responsive Part
 /*-------------------------------------------------*/
+
 @media (max-width: 1600px) {
   section#features-section4 {
     padding: 100px 15px 70px;
@@ -4020,9 +4055,11 @@ footer.pattern-style p.copyright {
   }
   section#home-section .top-block h1 {
     font-size: 70px;
+    /* line-height: -124.22px !important; */
   }
   section#home-section .top-block h1 span {
     font-size: 70px;
+    white-space: initial;
   }
 
   div.about-app-section2.second-style .image-holder {
@@ -4140,7 +4177,7 @@ footer.pattern-style p.copyright {
   }
 
   section#home-section .top-block .card p {
-    margin-left: 10px;
+    margin-left: 24px;
   }
 
   section#home-section .top-block h1 {
@@ -4151,7 +4188,7 @@ footer.pattern-style p.copyright {
   }
 
   .currency-switcher {
-    width: 30%;
+    width: 20%;
   }
 
   section#download-area img{
@@ -4190,6 +4227,62 @@ footer.pattern-style p.copyright {
   section#overview-section .intro-block .content-holder {
     width: 100%;
     padding: 50px;
+  }
+  section.app-available-section .newsletter form input[type="text"],
+  section.app-available-section .newsletter form input[type="email"] {
+    width:75%;
+    max-width: 100%;
+    padding: 10px 20px;
+    background: #ffffff;
+    border: 1px solid #000;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -o-border-radius: 0;
+    border-radius: 0;
+    color: #888888;
+    font-size: 18px;
+    font-family: "Source Sans Pro", sans-serif;
+    font-weight: 400;
+    outline: none;
+    -webkit-border-top-left-radius: 5px;
+    -moz-border-top-left-radius: 5px;
+    -o-border-top-left-radius: 5px;
+    border-top-left-radius: 5px;
+    -webkit-border-bottom-left-radius: 5px;
+    -moz-border-bottom-left-radius: 5px;
+    -o-border-bottom-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+  }
+
+  section.app-available-section .newsletter form input[type="submit"] {
+    background: #000;
+    width:25%;
+    padding: 11px 10px 12px 10px;
+    color: #ffffff;
+    font-family: "Plus Jakarta Display";
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 23px;
+    border: 1px solid #000;
+    outline: none;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    -o-border-radius: 0px;
+    border-radius: 0px;
+    -webkit-border-top-right-radius: 5px;
+    -moz-border-top-right-radius: 5px;
+    -o-border-top-right-radius: 5px;
+    border-top-right-radius: 5px;
+    -webkit-border-bottom-right-radius: 5px;
+    -moz-border-bottom-right-radius: 5px;
+    -o-border-bottom-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -webkit-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    margin-left: -5px;
   }
 }
 @media (max-width: 767px) {
@@ -4391,7 +4484,7 @@ footer.pattern-style p.copyright {
   }
 
   section#home-section .top-block .card p {
-    margin-left: 35px;
+    margin-left: 15px;
   }
 
   section#home-section .top-block .container .two {
@@ -4620,10 +4713,10 @@ footer.pattern-style p.copyright {
     float: left;
   } */
   section#home-section .top-block .container .one{
-    margin-top: 100px; 
+    /* margin-top: 100px;  */
     margin-bottom: 100px;
     text-align: center;
-    margin-left: 30px;
+    /* margin-left: 30px; */
   }
   section#home-section .top-block .container .two{
     border-top-right-radius: 190px; 
@@ -4655,6 +4748,7 @@ footer.pattern-style p.copyright {
     margin-bottom: 15px;
     text-align: left;
     font-family: "Plus Jakarta Display";
+    white-space: initial;
   }
   section#home-section .top-block h2 {
     font-family: "Plus Jakarta Display";
@@ -4835,7 +4929,7 @@ footer.pattern-style p.copyright {
     margin-top: 100px; 
     margin-bottom: 100px;
     text-align: center;
-    margin-left: 30px;
+    /* margin-left: 30px; */
   }
   section#home-section .top-block .container .two{
     border-top-right-radius: 190px; 
@@ -4856,7 +4950,7 @@ footer.pattern-style p.copyright {
     font-style: normal;
     font-weight: 400;
     font-size: 72px;
-    line-height: 78px;
+    line-height: 98px !important;
     /* overflow-wrap: break-word; */
     white-space: initial;
   }
@@ -4910,7 +5004,7 @@ footer.pattern-style p.copyright {
   
   section#home-section .top-block .card p {
     color: #000;
-    margin-left: 25px;
+    margin-left: 12px;
     margin-bottom: 5px;
     text-align: start;
     font-family: "Plus Jakarta Display";
@@ -4965,7 +5059,7 @@ footer.pattern-style p.copyright {
   }
 
   section#download-area img{
-    width: 90%;
+    width: 100%;
   }
 
   section#download-area h1{
@@ -5076,6 +5170,12 @@ footer.pattern-style p.copyright {
   }
 }
 @media (max-width: 430px) {
+  section#home-section .top-block .container .one{
+    margin-top: 100px; 
+    margin-bottom: 100px;
+    text-align: center;
+    /* margin-left: 30px; */
+  }
   section#home-section .top-block h1 {
     font-family: "Plus Jakarta Display";
     font-style: normal;
@@ -5099,8 +5199,76 @@ footer.pattern-style p.copyright {
     margin-bottom: 20px;
     text-align: center;
   }
-}
+  section#home-section .top-block .container .one {
+    text-align: left;
+    margin-left: 15px;
+  }
+  section#home-section .top-block .container .two {
+    margin-left: 3px;
+  }
 
+  div.dropdown>div.caption {
+    /* background: #35D082; */
+    /* border-radius: 12px; */
+    cursor: pointer;
+    padding: 17px 10px 19px 0px;
+    font-size: 14px;
+    line-height: 150%;
+    letter-spacing: 0.3px;
+  }
+
+  .currency-switcher {
+    display: inline-block;
+    background: transparent;
+    margin-left: -4px;
+    width: 25%;
+    border-top:    1px solid #888888;
+    border-right:  1px solid #888888;
+    border-bottom: 1px solid #888888;
+    border-left:   0px ;
+    -webkit-border-top-right-radius: 3px;
+    -moz-border-top-right-radius: 3px;
+    -o-border-top-right-radius: 3px;
+    border-top-right-radius: 3px;
+    -webkit-border-bottom-right-radius: 3px;
+    -moz-border-bottom-right-radius: 3px;
+    -o-border-bottom-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+  }
+  
+  section#home-section .top-block .card form input[type="text"],
+  section#home-section .top-block .card form input[type="email"] {
+    width:70%;
+    max-width: 100%;
+    padding: 21px 21px;
+    background: #ffffff;
+    /* border: 1px solid #888888; */
+    border-top:    1px solid  #888888;
+    border-right:  0;
+    border-bottom: 1px solid #888888;
+    border-left:   1px solid #888888;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -o-border-radius: 0;
+    border-radius: 0;
+    margin: 0 0 5px;
+    color: #888888;
+    font-size: 12px;
+    font-family: "Plus Jakarta Display";
+    font-weight: 500;
+    font-style: normal;
+    line-height: 15.53px;
+    outline: none;
+    -webkit-border-top-left-radius: 3px;
+    -moz-border-top-left-radius: 3px;
+    -o-border-top-left-radius: 3px;
+    border-top-left-radius: 3px;
+    -webkit-border-bottom-left-radius: 3px;
+    -moz-border-bottom-left-radius: 3px;
+    -o-border-bottom-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+  }
+}
 @media (max-width: 300px) {
   section#home-section .top-block h1 {
     font-family: "Plus Jakarta Display";
@@ -5129,7 +5297,6 @@ footer.pattern-style p.copyright {
   section#home-section .top-block .card form .currency {
     display: inline-block;
     background: #35D082;
-    margin-left: -4px;
     width: 42%;
     padding-left: 3px;
     padding-right: 3px;
@@ -5137,11 +5304,15 @@ footer.pattern-style p.copyright {
 
   section#home-section .top-block .card form input[type="text"],
   section#home-section .top-block .card form input[type="email"] {
-    width:58%;
+    width:75%;
     max-width: 100%;
-    padding: 20px 20px;
+    padding: 21px 21px;
     background: #ffffff;
-    border: 1px solid #888888;
+    /* border: 1px solid #888888; */
+    border-top:    1px solid  #888888;
+    border-right:  0;
+    border-bottom: 1px solid #888888;
+    border-left:   1px solid #888888;
     -webkit-border-radius: 0;
     -moz-border-radius: 0;
     -o-border-radius: 0;
@@ -5163,6 +5334,7 @@ footer.pattern-style p.copyright {
     -o-border-bottom-left-radius: 3px;
     border-bottom-left-radius: 3px;
   }
+
   section#home-section .top-block .card form input[type="submit"] {
     background: #35D082;
     /* width:20%; */
