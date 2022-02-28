@@ -104,121 +104,76 @@
 								
 								<form class="subscribe-form" onsubmit="return submitEmail()">
 									<p>Sending</p>
-									<input type="email" name="email2" id="email2" placeholder="₦50,000"/>
+									<input type="number" name="sending" id="sending" placeholder="NGN"/>
 									<div class="currency-switcher" style="padding-bottom: 1px;">
 										<div class="dropdown">
-										  <div class="caption">
-											<div class="currency-flag currency-flag-ngn"></div>
-										  </div>
-										  <div class="list">
-											<div id="triple-container" class="item" data-item="NGN">
-												<div class="box-outer">
-													<div class="box" style="float: left;">
+											<div class="caption">
+												<div class="currency-flag currency-flag-ngn"></div>
+										  	</div>
+										 	<div class="list">
+												<div id="triple-container" class="item" data-item="NGN">
+													<div class="caption">
 														<div class="currency-flag currency-flag-ngn"></div>
-														<p style="display: inline-block; margin-left: 0;">NGN</p>
-													</div>
-													<div class="box">
-														<!-- <div style="margin-top: 10px;border-bottom: 1px solid #000;"></div> -->
-														<p style="display: inline-block; margin-left: 0;"> - </p>
-													</div>
-													<div class="box">
-														<p>EUR €</p>	
 													</div>
 												</div>
-											</div>
 
-											<div id="triple-container" class="item" data-item="EURO">
-												<div class="box-outer">
-													<div class="box" style="float: left;">
-														<div class="currency-flag currency-flag-eur"></div>
-														<p style="display: inline-block;margin-left: 0;">EURO</p>
-													</div>
-													<div class="box" style="padding: 0 2px 0 12px;" >
-														<!-- <div style="margin-top: 10px;border-bottom: 1px solid #000;"></div> -->
-														<p style="display: inline-block; margin-left: 0;"> - </p>
-													</div>
-													<div class="box">
-														<p>EUR €</p>	
+												<div id="triple-container" class="item" data-item="GBP">
+													<div class="caption">
+														<div class="currency-flag currency-flag-gbp"></div>
 													</div>
 												</div>
-											</div>
 
-											<div id="triple-container" class="item" data-item="USD">
-												<div class="box-outer">
-													<div class="box" style="float: left;">
+												<div id="triple-container" class="item" data-item="USD">
+													<div class="caption">
 														<div class="currency-flag currency-flag-usd"></div>
-														<p style="display: inline-block;margin-left: 0;">USD</p>
-													</div>
-													<div class="box" >
-														<!-- <div style="margin-top: 10px;border-bottom: 1px solid #000;"></div> -->
-														<p style="display: inline-block; margin-left: 0;"> - </p>
-													</div>
-													<div class="box">
-														<p>EUR €</p>	
 													</div>
 												</div>
+
+												<div id="triple-container" class="item" data-item="CAD">
+													<div class="caption">
+														<div class="currency-flag currency-flag-cad"></div>
+													</div>
+												</div>
+
 											</div>
-										  </div>
 										</div>
 									</div>
 								
 								<p class="switch-currencies"><img src="images/switch.png" alt=""> Switch Currencies</p> 
 
 								<p style="margin-top: 30px;">Recieving</p>
-									<input type="email" name="email2" id="email2" placeholder="$100"/>
+									<input type="number" name="recieving" id="recieving" placeholder="USD"/>
 									<div class="currency-switcher">
 										<div class="dropdown">
 										  <div class="caption">
 											<div class="currency-flag currency-flag-usd"></div>
 										  </div>
 										  <div class="list">
-											<div id="triple-container" class="item" data-item="NGN">
-												<div class="box-outer">
-													<div class="box" style="float: left;">
-														<div class="currency-flag currency-flag-ngn"></div>
-														<p style="display: inline-block; margin-left: 0;">NGN</p>
-													</div>
-													<div class="box" >
-														<!-- <div style="margin-top: 10px;border-bottom: 1px solid #000;"></div> -->
-														<p style="display: inline-block; margin-left: 0;"> - </p>
-													</div>
-													<div class="box">
-														<p>EUR €</p>	
-													</div>
+											<div id="triple-container" class="item2" data-item2="USD">
+												<div class="caption">
+													<div class="currency-flag currency-flag-usd"></div>
 												</div>
 											</div>
 
-											<div id="triple-container" class="item" data-item="EURO">
-												<div class="box-outer">
-													<div class="box" style="float: left;">
-														<div class="currency-flag currency-flag-eur"></div>
-														<p style="display: inline-block;margin-left: 0;">EURO</p>
-													</div>
-													<div class="box" >
-														<!-- <div style="margin-top: 10px;border-bottom: 1px solid #000;"></div> -->
-														<p style="display: inline-block; margin-left: 0;"> - </p>
-													</div>
-													<div class="box">
-														<p>EUR €</p>	
-													</div>
+											<div id="triple-container" class="item2" data-item2="NGN">
+												<div class="caption">
+													<div class="currency-flag currency-flag-ngn"></div>
 												</div>
 											</div>
 
-											<div id="triple-container" class="item" data-item="USD">
-												<div class="box-outer">
-													<div class="box" style="float: left;">
-														<div class="currency-flag currency-flag-usd"></div>
-														<p style="display: inline-block;margin-left: 0;">USD</p>
-													</div>
-													<div class="box" >
-														<!-- <div style="margin-top: 10px;border-bottom: 1px solid #000;"></div> -->
-														<p style="display: inline-block; margin-left: 0;"> - </p>
-													</div>
-													<div class="box">
-														<p>EUR €</p>	
-													</div>
+											<div id="triple-container" class="item2" data-item2="GBP">
+												<div class="caption">
+													<div class="currency-flag currency-flag-gbp"></div>
 												</div>
 											</div>
+										
+											<div id="triple-container" class="item2" data-item2="CAD">
+												<div class="caption">
+													<div class="currency-flag currency-flag-cad"></div>
+												</div>
+											</div>
+
+											
 										  </div>
 										</div>
 									  </div>
@@ -297,36 +252,64 @@
 	<script src="js/waypoint.min.js"></script>
 	<script src="js/script.js"></script>
 	<script>
-		   $('.dropdown > .caption').on('click', function() {
-				$(this).parent().toggleClass('open');
-			});
+		var baseCurrencyInput = '';
+		var secondCurrencyInput = '';
 
-			// $('.price').attr('data-currency', 'RUB');
+		$(document).ready(function() { 
+			baseCurrencyInput = 'NGN';
+			console.log('Base Currency ' + baseCurrencyInput);
 
-			// $('.dropdown > .list > .item').on('click', function() {
-			// 	$('.dropdown > .list > .item').removeClass('selected');
-			// 	$(this).addClass('selected').parent().parent().removeClass('open').children('.caption').html($(this).html());
+			secondCurrencyInput = 'USD';
+			console.log('Second Currency ' + secondCurrencyInput);
+		});
 
-			// 	if ($(this).data("item") == "RUB") {
-			// 		console.log('RUB');
-			// 	} else if ($(this).data("item") == "UAH") {
-			// 		console.log('UAH');
-			// 	} else {
-			// 		console.log('USD');
-			// 	}	
-			// });
+	   $('.dropdown > .caption').on('click', function() {
+			$(this).parent().toggleClass('open');
+		});
 
-			$(document).on('keyup', function(evt) {
-				if ((evt.keyCode || evt.which) === 27) {
-					$('.dropdown').removeClass('open');
-				}
-			});
+		// $('.price').attr('data-currency', 'RUB');
 
-			$(document).on('click', function(evt) {
-				if ($(evt.target).closest(".dropdown > .caption").length === 0) {
-					$('.dropdown').removeClass('open');
-				}
-			});
+		$('.dropdown > .list > .item').on('click', function() {
+			$('.dropdown > .list > .item').removeClass('selected');
+			$(this).addClass('selected').parent().parent().removeClass('open').children('.caption').html($(this).html());
+			
+			baseCurrencyInput = $(this).data("item");
+			// console.log('Base Currency ' + baseCurrencyInput);
+			$('#sending').attr('placeholder',baseCurrencyInput);
+			if (baseCurrencyInput != 'NGN') {
+				$('.dropdown > .list > .item2').removeClass('selected');
+				$('.dropdown > .list > .item2').parent().parent().removeClass('open').children('.caption').html($('<div class="caption"><div class="currency-flag currency-flag-ngn"></div></div>').html());
+				secondCurrencyInput = 'NGN';
+				$('#recieving').attr('placeholder',secondCurrencyInput);
+				// console.log('Second Currency ' + secondCurrencyInput);
+			}
+		});
+
+		$('.dropdown > .list > .item2').on('click', function() {
+			$('.dropdown > .list > .item2').removeClass('selected');
+			$(this).addClass('selected').parent().parent().removeClass('open').children('.caption').html($(this).html());
+			
+			secondCurrencyInput = $(this).data("item2");
+			// console.log('Second Currency ' + secondCurrencyInput);
+			$('#recieving').attr('placeholder',secondCurrencyInput);
+			if (secondCurrencyInput != 'NGN') {
+				$('.dropdown > .list > .item').removeClass('selected');
+				$('.dropdown > .list > .item').parent().parent().removeClass('open').children('.caption').html($('<div class="caption"><div class="currency-flag currency-flag-ngn"></div></div>').html());
+				baseCurrencyInput = 'NGN';
+				$('#sending').attr('placeholder',baseCurrencyInput);
+				// console.log('Base Currency ' + baseCurrencyInput);
+			}
+		});
+		
+		
+
+		$(document).on('click', function(evt) {
+			if ($(evt.target).closest(".dropdown > .caption").length === 0) {
+				$('.dropdown').removeClass('open');
+			}
+		});
+
+		
 	</script>
 
 </body>

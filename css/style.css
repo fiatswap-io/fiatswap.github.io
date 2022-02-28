@@ -187,7 +187,7 @@ div.dropdown>div.caption p {
 div.dropdown>div.list {
   position: absolute;
   background-color: #fff;
-  width: 250%;
+  width: 100%;
   border-radius: 12px;
   -webkit-box-shadow: 0px 12px 24px rgba(21, 18, 51, 0.13);
   box-shadow: 0px 12px 24px rgba(21, 18, 51, 0.13);
@@ -224,7 +224,21 @@ div.dropdown>div.list>div.item {
   letter-spacing: 0.3px;
 }
 
+div.dropdown>div.list>div.item2 {
+  padding: 10.5px 1px 10.5px 1px;
+  cursor: pointer;
+  -webkit-transition: .3s;
+  transition: .3s;
+  font-size: 14px;
+  line-height: 150%;
+  letter-spacing: 0.3px;
+}
+
 div.dropdown>div.list>div.item.selected {
+  background: rgba(36, 60, 187, 0.2);
+  pointer-events: none;
+}
+div.dropdown>div.list>div.item2.selected {
   background: rgba(36, 60, 187, 0.2);
   pointer-events: none;
 }
@@ -232,8 +246,14 @@ div.dropdown>div.list>div.item.selected {
 div.dropdown>div.list>div.item.selected p {
   margin-left: 0 !important;
 }
+div.dropdown>div.list>div.item2.selected p {
+  margin-left: 0 !important;
+}
 
 div.dropdown>div.list>div.item:hover {
+  background: #F8F9FB;
+}
+div.dropdown>div.list>div.item2:hover {
   background: #F8F9FB;
 }
 
@@ -1030,6 +1050,7 @@ section#home-section .top-block .card form .currency-flag {
 }
 
 section#home-section .top-block .card form input[type="text"],
+section#home-section .top-block .card form input[type="number"],
 section#home-section .top-block .card form input[type="email"] {
   width:65%;
   max-width: 100%;
@@ -5237,6 +5258,7 @@ footer.pattern-style p.copyright {
   }
   
   section#home-section .top-block .card form input[type="text"],
+  section#home-section .top-block .card form input[type="number"],
   section#home-section .top-block .card form input[type="email"] {
     width:70%;
     max-width: 100%;
@@ -5303,6 +5325,7 @@ footer.pattern-style p.copyright {
   }
 
   section#home-section .top-block .card form input[type="text"],
+  section#home-section .top-block .card form input[type="number"],
   section#home-section .top-block .card form input[type="email"] {
     width:75%;
     max-width: 100%;
