@@ -107,31 +107,31 @@
 									<input type="number" name="sending" id="sending" placeholder="NGN"/>
 									<div class="currency-switcher" style="padding-bottom: 1px;">
 										<div class="dropdown">
-											<div class="caption">
-												<div class="currency-flag currency-flag-ngn"></div>
+											<div class="item caption">
+												<div class="currency-flag currency-flag-ngn" data-item="NGN"></div>
 										  	</div>
 										 	<div class="list">
 												<div id="triple-container" class="item" data-item="NGN">
-													<div class="caption">
-														<div class="currency-flag currency-flag-ngn"></div>
+													<div class="caption" data-item="NGN">
+														<div class="currency-flag currency-flag-ngn" data-item="NGN"></div>
 													</div>
 												</div>
 
 												<div id="triple-container" class="item" data-item="GBP">
-													<div class="caption">
-														<div class="currency-flag currency-flag-gbp"></div>
+													<div class="caption" data-item="GBP">
+														<div class="currency-flag currency-flag-gbp" data-item="GBP"></div>
 													</div>
 												</div>
 
 												<div id="triple-container" class="item" data-item="USD">
-													<div class="caption">
-														<div class="currency-flag currency-flag-usd"></div>
+													<div class="caption" data-item="USD">
+														<div class="currency-flag currency-flag-usd" data-item="USD"></div>
 													</div>
 												</div>
 
 												<div id="triple-container" class="item" data-item="CAD">
-													<div class="caption">
-														<div class="currency-flag currency-flag-cad"></div>
+													<div class="caption" data-item="CAD">
+														<div class="currency-flag currency-flag-cad" data-item="CAD"></div>
 													</div>
 												</div>
 
@@ -145,31 +145,31 @@
 									<input type="number" name="recieving" id="recieving" placeholder="USD"/>
 									<div class="currency-switcher">
 										<div class="dropdown">
-										  <div class="caption">
-											<div class="currency-flag currency-flag-usd"></div>
+										  <div class="item2 caption">
+											<div class="currency-flag currency-flag-usd" data-item="USD"></div>
 										  </div>
 										  <div class="list">
-											<div id="triple-container" class="item2" data-item2="USD">
-												<div class="caption">
-													<div class="currency-flag currency-flag-usd"></div>
+											<div id="triple-container" class="item2" data-item="USD">
+												<div class="caption"  data-item2="USD">
+													<div class="currency-flag currency-flag-usd"  data-item="USD"></div>
 												</div>
 											</div>
 
-											<div id="triple-container" class="item2" data-item2="NGN">
-												<div class="caption">
-													<div class="currency-flag currency-flag-ngn"></div>
+											<div id="triple-container" class="item2" data-item="NGN">
+												<div class="caption" data-item2="NGN">
+													<div class="currency-flag currency-flag-ngn" data-item="NGN"></div>
 												</div>
 											</div>
 
-											<div id="triple-container" class="item2" data-item2="GBP">
-												<div class="caption">
-													<div class="currency-flag currency-flag-gbp"></div>
+											<div id="triple-container" class="item2" data-item="GBP">
+												<div class="caption" data-item="GBP">
+													<div class="currency-flag currency-flag-gbp" data-item="GBP"></div>
 												</div>
 											</div>
 										
-											<div id="triple-container" class="item2" data-item2="CAD">
-												<div class="caption">
-													<div class="currency-flag currency-flag-cad"></div>
+											<div id="triple-container" class="item2" data-item="CAD">
+												<div class="caption" data-item="CAD">
+													<div class="currency-flag currency-flag-cad" data-item="CAD"></div>
 												</div>
 											</div>
 
@@ -257,9 +257,11 @@
 
 		$(document).ready(function() { 
 			baseCurrencyInput = 'NGN';
+			$(this).data("data-item", baseCurrencyInput)
 			console.log('Base Currency ' + baseCurrencyInput);
 
 			secondCurrencyInput = 'USD';
+			$(this).data("data-item2", secondCurrencyInput)
 			console.log('Second Currency ' + secondCurrencyInput);
 		});
 
@@ -274,14 +276,17 @@
 			$(this).addClass('selected').parent().parent().removeClass('open').children('.caption').html($(this).html());
 			
 			baseCurrencyInput = $(this).data("item");
-			// console.log('Base Currency ' + baseCurrencyInput);
+			console.log('Base Currency ' + baseCurrencyInput);
+			$('.dropdown > .item > .currency-flag').data("item", baseCurrencyInput);
 			$('#sending').attr('placeholder',baseCurrencyInput);
 			if (baseCurrencyInput != 'NGN') {
 				$('.dropdown > .list > .item2').removeClass('selected');
-				$('.dropdown > .list > .item2').parent().parent().removeClass('open').children('.caption').html($('<div class="caption"><div class="currency-flag currency-flag-ngn"></div></div>').html());
+				$('.dropdown > .list > .item2').parent().parent().removeClass('open').children('.caption').html($('<div class="caption" data-item="NGN"><div class="currency-flag currency-flag-ngn" data-item="NGN"></div></div>').html());
+				$('.dropdown > .item2 .caption').attr("data-item2", "NGN");
 				secondCurrencyInput = 'NGN';
+				$('.dropdown > .item2 > .currency-flag').data("item", secondCurrencyInput);
 				$('#recieving').attr('placeholder',secondCurrencyInput);
-				// console.log('Second Currency ' + secondCurrencyInput);
+				console.log('Second Currency ' + secondCurrencyInput);
 			}
 		});
 
@@ -290,16 +295,48 @@
 			$(this).addClass('selected').parent().parent().removeClass('open').children('.caption').html($(this).html());
 			
 			secondCurrencyInput = $(this).data("item2");
-			// console.log('Second Currency ' + secondCurrencyInput);
+			console.log('Second Currency ' + secondCurrencyInput);
+			// console.log($('.dropdown > .item2 .caption').attr("data-item2"));
 			$('#recieving').attr('placeholder',secondCurrencyInput);
 			if (secondCurrencyInput != 'NGN') {
 				$('.dropdown > .list > .item').removeClass('selected');
-				$('.dropdown > .list > .item').parent().parent().removeClass('open').children('.caption').html($('<div class="caption"><div class="currency-flag currency-flag-ngn"></div></div>').html());
+				$('.dropdown > .list > .item').parent().parent().removeClass('open').children('.caption').html($('<div class="caption" data-item="NGN"><div class="currency-flag currency-flag-ngn" data-item="NGN"></div></div>').html());
 				baseCurrencyInput = 'NGN';
 				$('#sending').attr('placeholder',baseCurrencyInput);
-				// console.log('Base Currency ' + baseCurrencyInput);
+				console.log('Base Currency ' + baseCurrencyInput);
 			}
 		});
+
+
+		$('.switch-currencies').on('click', function() {
+
+			var base = $('.dropdown > .item').html();
+			var second = $('.dropdown > .item2').html();
+
+			
+			$('.dropdown > .list > .item').parent().parent().removeClass('open').children('.caption').html(second);
+			// baseCurrencyInput = $('.dropdown > .item > .currency-flag').data("item");
+			if ($('.dropdown > .item > .currency-flag').data("item") == null) {
+				baseCurrencyInput = $('.dropdown > .item ').children('.caption').data("item");
+			} else {
+				baseCurrencyInput = $('.dropdown > .item > .currency-flag').data("item");
+			}
+			$('#sending').attr('placeholder',baseCurrencyInput);
+			console.log('Base Currency ' + baseCurrencyInput);
+			
+			
+			$('.dropdown > .list > .item2').parent().parent().removeClass('open').children('.caption').html(base);
+			// secondCurrencyInput = $('.dropdown > .item2 > .currency-flag').data("item");
+			if ($('.dropdown > .item2 > .currency-flag').data("item") == null) {
+				secondCurrencyInput = $('.dropdown > .item2 ').children('.caption').data("item");
+			} else {
+				secondCurrencyInput = $('.dropdown > .item2 > .currency-flag').data("item");
+			}
+			$('#recieving').attr('placeholder',secondCurrencyInput);
+			console.log('Second Currency ' + secondCurrencyInput);
+
+		});
+
 		
 		
 
