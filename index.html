@@ -104,7 +104,7 @@
 								
 								<form class="price-ticker-form" onsubmit="return submitEmail()">
 									<p>Sending</p>
-									<input type="number" name="sending" id="sending" placeholder="ngn"/>
+									<input type="number" name="sending" id="sending" placeholder="NGN"/>
 									<div class="currency-switcher" style="padding-bottom: 1px;">
 										<div class="dropdown">
 											<div class="item caption">
@@ -118,7 +118,7 @@
 								<p class="switch-currencies"><img src="images/switch.png" alt=""> Switch Currencies</p> 
 
 								<p style="margin-top: 30px;">Recieving</p>
-									<input type="number" name="recieving" id="recieving" placeholder="usd"/>
+									<input type="number" name="recieving" id="recieving" placeholder="USD"/>
 									<div class="currency-switcher">
 										<div class="dropdown">
 										  <div class="item2 caption">
@@ -225,15 +225,14 @@
 		var secondCurrencyInput = '';
 
 		$(document).ready(function() { 
-			var arr = ['ngn','usd','gbp','eur'];
+			// var arr = ['ngn','usd','gbp','eur'];
+			var arr = ['NGN','USD','GBP','EUR'];
 			$.each(arr, function(index, value){
-				console.log('The value at arr[' + index + '] is: ' + value);
-				$('#list').append('<div id="triple-container" class="item" data-item='+ value +'><div class="caption"  data-item='+ value +'><div class="currency-flag currency-flag-'+ value +'"  data-item='+ value +'></div></div></div>').html();
+				$('#list').append('<div id="triple-container" class="item" data-item='+ value +'><div class="caption"  data-item='+ value +'><div class="currency-flag currency-flag-'+ value.toLowerCase() +'"  data-item='+ value +'></div></div></div>').html();
 			});
 
 			$.each(arr, function(index, value){
-				console.log('The value at arr[' + index + '] is: ' + value);
-				$('#list2').append('<div id="triple-container" class="item2" data-item='+ value +'><div class="caption"  data-item2='+ value +'><div class="currency-flag currency-flag-'+ value +'"  data-item='+ value +'></div></div></div>').html();
+				$('#list2').append('<div id="triple-container" class="item2" data-item='+ value +'><div class="caption"  data-item2='+ value +'><div class="currency-flag currency-flag-'+ value.toLowerCase() +'"  data-item='+ value +'></div></div></div>').html();
 			});
 
 			baseCurrencyInput = 'NGN';
@@ -252,11 +251,11 @@
 				console.log('Base Currency ' + baseCurrencyInput);
 				$('.dropdown > .item > .currency-flag').data("item", baseCurrencyInput);
 				$('#sending').attr('placeholder',baseCurrencyInput);
-				if (baseCurrencyInput != 'ngn') {
+				if (baseCurrencyInput != 'NGN') {
 					$('.dropdown > .list > .item2').removeClass('selected');
-					$('.dropdown > .list > .item2').parent().parent().removeClass('open').children('.caption').html($('<div class="caption" data-item="ngn"><div class="currency-flag currency-flag-ngn" data-item="ngn"></div></div>').html());
-					$('.dropdown > .item2 .caption').attr("data-item2", "ngn");
-					secondCurrencyInput = 'ngn';
+					$('.dropdown > .list > .item2').parent().parent().removeClass('open').children('.caption').html($('<div class="caption" data-item="NGN"><div class="currency-flag currency-flag-ngn" data-item="NGN"></div></div>').html());
+					$('.dropdown > .item2 .caption').attr("data-item2", "NGN");
+					secondCurrencyInput = 'NGN';
 					$('.dropdown > .item2 > .currency-flag').data("item", secondCurrencyInput);
 					$('#recieving').attr('placeholder',secondCurrencyInput);
 					console.log('Second Currency ' + secondCurrencyInput);
