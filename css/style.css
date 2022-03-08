@@ -341,6 +341,7 @@ email:      support@themepunch.com
 website:    http://www.themepunch.com
 -----------------------------------------------------------------------------*/
 .boxedcontainer {
+  /* max-width: 1440px; */
   max-width: 1170px;
   margin: auto;
   padding: 0px 30px;
@@ -683,6 +684,7 @@ a.button-three:hover {
   -moz-transition: all 0.2s ease-in-out;
   -webkit-transition: all 0.2s ease-in-out;
   -o-transition: all 0.2s ease-in-out;
+  max-width: 1440px;
 }
 #container.active {
   opacity: 1;
@@ -1026,7 +1028,8 @@ section#home-section .top-block .card form .currency {
 }
 
 section#home-section .top-block .card form .currency-flag {
-  height: 12px !important;
+  height: 16px !important;
+  /* width: 16px !important; */
 }
 
 
@@ -2627,7 +2630,7 @@ section.app-available-section .title-section h1 {
   font-size: 36px;
   line-height: 47px;
   color: #000000;
-
+  letter-spacing: 1.3px;
 }
 
 
@@ -2652,9 +2655,9 @@ section.app-available-section .newsletter {
 
 section.app-available-section .newsletter form input[type="text"],
 section.app-available-section .newsletter form input[type="email"] {
-  width:55%;
+  width:75%;
   max-width: 100%;
-  padding: 20px 20px;
+  padding: 12px 20px;
   background: #ffffff;
   border: 1px solid #000;
   -webkit-border-radius: 0;
@@ -2678,7 +2681,7 @@ section.app-available-section .newsletter form input[type="email"] {
 section.app-available-section .newsletter form input[type="submit"] {
   background: #000;
   width:20%;
-  padding: 20px 10px 23px 10px;
+  padding: 12px 10px 15px 10px;
   color: #ffffff;
   font-family: "Plus Jakarta Display";
   font-style: normal;

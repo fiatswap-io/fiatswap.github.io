@@ -102,7 +102,7 @@
 								</div> -->
 								
 								
-								<form class="subscribe-form" onsubmit="return submitEmail()">
+								<form class="price-ticker-form" onsubmit="return submitEmail()">
 									<p>Sending</p>
 									<input type="number" name="sending" id="sending" placeholder="ngn"/>
 									<div class="currency-switcher" style="padding-bottom: 1px;">
@@ -176,6 +176,24 @@
 								<input type="email" name="email2" id="email2" placeholder="me@meome.com" required/>
 								<input type="submit" id="submit-subscribe-form" value="Join"/>
 							</form>
+							<div style="text-align: center;">
+								<img src="images/bx_loader.gif" class="form-loading hidden" id="form-loader" />
+								<div class="form-done hidden" id="form-loaded" >
+									<img src="images/icons8-checkmark.svg" />
+									<p>
+										Thank you for registering.<br>
+										You will be notified of our progress and be the first to know once we are live!!!
+									</p>
+								</div>
+								<div class="form-done hidden" id="form-errored" >
+									<img src="images/icons8-cancel.svg" />
+									<p>
+										Thank was an error while registering you.<br>
+										Please refresh the page and try again.
+									</p>
+								</div>
+							</div>
+							
 						</div>
 					</div>
 				</div>
