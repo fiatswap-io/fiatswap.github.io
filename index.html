@@ -245,7 +245,7 @@
 
 			$('.dropdown > .list > .item').on('click', function() {
 				$('.dropdown > .list > .item').removeClass('selected');
-				$('.dropdown > .list > .item').addClass('selected').parent().parent().removeClass('open').children('.caption').html($(this).html());
+				$('.dropdown > .list > .item').parent().parent().removeClass('open').children('.caption').html($(this).html());
 				
 				baseCurrencyInput = $(this).data("item");
 				console.log('Base Currency ' + baseCurrencyInput);

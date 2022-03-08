@@ -139,7 +139,7 @@ div.dropdown {
   position: relative;
 }
 
-div.dropdown:after {
+/* div.dropdown:after {
   content: "";
   position: absolute;
   margin: 0;
@@ -150,7 +150,7 @@ div.dropdown:after {
   right: 0px;
   -webkit-transition: .3s;
   transition: .3s;
-}
+} */
 
 div.dropdown.open:after {
   -webkit-transform: rotate(180deg);
