@@ -341,7 +341,6 @@ email:      support@themepunch.com
 website:    http://www.themepunch.com
 -----------------------------------------------------------------------------*/
 .boxedcontainer {
-  /* max-width: 1440px; */
   max-width: 1170px;
   margin: auto;
   padding: 0px 30px;
@@ -684,7 +683,6 @@ a.button-three:hover {
   -moz-transition: all 0.2s ease-in-out;
   -webkit-transition: all 0.2s ease-in-out;
   -o-transition: all 0.2s ease-in-out;
-  max-width: 1440px;
 }
 #container.active {
   opacity: 1;
