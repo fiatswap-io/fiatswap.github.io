@@ -44,15 +44,20 @@
 								<span class="icon-bar"></span>
 							</button>
 							<!-- <p>Join Fiatswap</p> -->
+							
 							<img src="images/fiatswap-fake-logo.svg" width="100px" height="70px" alt="">
-							<a class="navbar-brand" href="#newsletter-area"><img src="images/sm-jw.png">Join Waitlist</a>
+							<div class="joinWaitlist">
+								<a class="navbar-brand target-link" href="#newsletter-area"><img src="images/sm-jw.png">Join Waitlist</a>
+							</div>
+							
+							
 						</div>
 						
 					</div>
 
 					<!-- Collect the nav links, forms, and other content for toggling -->
-					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-						<a class="button-two target-link " href="#download-area">Join Waitlist</a>
+					<div class="collapse navbar-collapse joinWaitlist">
+						<a class="button-two target-link" href="#newsletter-area">Join Waitlist</a>
 					</div>
 					<!-- /.navbar-collapse -->
 				</div>
@@ -173,7 +178,7 @@
 		
 						<div class="newsletter" id="newsletter-area">
 							<form class="subscribe-form " onsubmit="return submitEmail()">
-								<input type="email" name="email2" id="email2" placeholder="me@meome.com" required/>
+								<input type="email" name="waitlist" id="waitlist" placeholder="me@meome.com" required/>
 								<input type="submit" id="submit-subscribe-form" value="Join"/>
 							</form>
 							<div style="text-align: center;">
@@ -223,9 +228,13 @@
 	<script>
 		var baseCurrencyInput = '';
 		var secondCurrencyInput = '';
+		
 
 		$(document).ready(function() { 
-			// var arr = ['ngn','usd','gbp','eur'];
+			$(".joinWaitlist").click(function () {
+				$('#waitlist').focus();
+			});
+			
 			var arr = ['NGN','USD','GBP','EUR'];
 			$.each(arr, function(index, value){
 				$('#list').append('<div id="triple-container" class="item" data-item='+ value +'><div class="caption"  data-item='+ value +'><div class="currency-flag currency-flag-'+ value.toLowerCase() +'"  data-item='+ value +'></div></div></div>').html();
