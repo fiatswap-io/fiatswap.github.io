@@ -14,6 +14,7 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	<script>"https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"</script>
 	
 	<link rel="stylesheet" href="css/kinetic-assets.min.css">
 	<link rel="stylesheet" href="css/line-awesome.min.css">
@@ -31,17 +32,32 @@
 		<!-- Header
 		    ================================================== -->
 		<header class="clearfix fullwidth">
-			<nav class="navbar navbar-default" role="navigation">
+			<nav class="navbar navbar-default navbar-fixed-top-sm" role="navigation">
 				<div class="container-fluid">
 					<!-- Brand and toggle get grouped for better mobile display -->
 					<div class="navbar-header">
-						<img src="images/fiatswap-fake-logo.svg" width="100px" height="70px" alt="">
-						<!-- <a class="navbar-brand" href="index.html#home-section"> <span>Fiatswap</span> </a> -->
+						<div class="header-box">
+							<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+								<span class="sr-only">Toggle navigation</span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							</button>
+							<!-- <p>Join Fiatswap</p> -->
+							
+							<img src="images/fiatswap-fake-logo.svg" width="100px" height="70px" alt="">
+							<div class="joinWaitlist">
+								<a class="navbar-brand target-link" href="#newsletter-area"><img src="images/sm-jw.png">Join Waitlist</a>
+							</div>
+							
+							
+						</div>
+						
 					</div>
 
 					<!-- Collect the nav links, forms, and other content for toggling -->
-					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-						<a class="button-two target-link " href="#download-area">Join Waitlist</a>
+					<div class="collapse navbar-collapse joinWaitlist">
+						<a class="button-two target-link" href="#newsletter-area">Join Waitlist</a>
 					</div>
 					<!-- /.navbar-collapse -->
 				</div>
@@ -56,56 +72,73 @@
 			<div class="top-block">
 				<div class="container">
 					<div class="row">
-						<div class="col-sm-6 one">
-							<h1>Easy,<span>Swift</span>, Better. </h1>
+						<div class="col-sm-6 col-md-6 col-lg-6 one">
+							<h1>Easy,<span>Swift</span>,<br/>Better. </h1>
 							<h2>Swap USD, GBP and EUR accounts <br> for all your international transactions</h2>
 							<div class="secured">
-								<img style="margin-right: 20px;" src="images/seamless.png" alt="">
-								<img  src="images/secured.png" alt="">
+								<div id="triple-container" class="item" data-item="NGN">
+									<div class="box-one">
+										<img src="images/animation_500_kzwkdp64.gif" alt="" width="100px" height="100px">
+										<p>Seamless</p>
+									</div>
+									<div class="box-one">
+										<img  src="images/icons8-lock.svg"  width="100px" height="100px" alt="" style="padding: 30px;">
+										<p>Secured</p>
+									</div>
+									<!-- <div class="box">
+										<p>EUR €</p>	
+									</div> -->
+								</div>
+								
+								<!-- <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script><lottie-player src="https://assets5.lottiefiles.com/packages/lf20_0abgybfs.json" background="transparent" speed="1" style="width: 100px; height: 100px;" loop autoplay></lottie-player> -->
+								
 							</div>
-							<div class="waitlist-sm">
-								<a class="button-two target-link " href="#download-area">Join Waitlist</a>
-							</div>
-							
 						</div>
 
-						<div class="col-sm-6">
+						<div class="col-sm-6 col-md-6 col-lg-6 two">
 							
 							<div class="card shadow-lg rounded">
-								<div style="text-align: start;margin-left: 21px;">
+								<p class="title">Calculate exchange amount</p>
+								<!-- <div class="switch-fiat" style="text-align: start;margin-left: 21px;">
+									<p>Switch Fiat</p>
 									<button class="js-click">USD $</button>
 									<button class="js-click">EUR €</button>
 									<button class="js-click">CNY ¥</button>
-								</div>
+								</div> -->
 								
-								<p>Paying</p>
-								<form class="subscribe-form" onsubmit="return submitEmail()">
-									<input type="email" name="email2" id="email2" placeholder="₦50,000"/>
-									<div class="currency">
-										<div class="currency-flag currency-flag-ngn"></div>
-										<input class="submit" type="submit" id="submit-subscribe-form" value="NGN"><i class="arrow down"></i></input>
+								
+								<form class="price-ticker-form" onsubmit="return submitEmail()">
+									<p>Sending</p>
+									<input type="number" name="sending" id="sending" placeholder="NGN"/>
+									<div class="currency-switcher" style="padding-bottom: 1px;">
+										<div class="dropdown">
+											<div class="item caption">
+												<div class="currency-flag currency-flag-ngn" data-item="ngn"></div>
+										  	</div>
+										 	<div id="list" class="list">											
+											</div>
+										</div>
 									</div>
-									
-								</form>
-								<!-- Regular shadow -->
-								<p><span>Naira Exchanges NGN 560  USD 1</span></p>
-								<p class="rate">NGN 568 <img src="images/rate.png" alt=""></p>
+								
+								<p class="switch-currencies"><img src="images/switch.png" alt=""> Switch Currencies</p> 
 
 								<p style="margin-top: 30px;">Recieving</p>
-								<form class="subscribe-form" onsubmit="return submitEmail()">
-									<input type="email" name="email2" id="email2" placeholder="$100"/>
-									<div class="currency">
-										<div class="currency-flag currency-flag-usd"></div>
-										<input type="submit" id="submit-subscribe-form" value="USD"><i class="arrow down"></i></input>
-									</div>
+									<input type="number" name="recieving" id="recieving" placeholder="USD"/>
+									<div class="currency-switcher">
+										<div class="dropdown">
+										  <div class="item2 caption">
+											<div class="currency-flag currency-flag-usd" data-item="usd"></div>
+										  </div>
+										  <div id="list2" class="list">		
+										  </div>
+										</div>
+									  </div>
 								</form>
 
 								<a class="button-three target-link ">Calculate</a>
 
-								<p class="last-updated"><span> US Dollar to Nigerian Naira conversion</span> — Last updated Feb 10, 2022, 11:33 UTC</p>
+								<!-- <p class="last-updated"><span> US Dollar to Nigerian Naira conversion</span> — Last updated Feb 10, 2022, 11:33 UTC</p> -->
 							</div>
-							
-							<!-- <img src="images/dev8.png" alt=""> -->
 						</div>
 					</div>
 					
@@ -120,6 +153,10 @@
 			<div class="container">
 				<ul class="client-list">
 				</ul>
+				<div class="send-chill">
+					<h1>send & chill</h1>
+					<p>Send Money across boarder via P2P</p>
+				</div>
 			</div>
 		</section>
 		<!-- End features section -->
@@ -128,21 +165,41 @@
 		<!-- app-available-section 
 			================================================== -->
 		<section class="app-available-section second-style" id="download-area">
-			<div class="row">
-				<div class="col-sm-5">
-					<img src="images/grid.png" alt="">
-				</div>
-				<div class="col-sm-7" style="margin-top: 9%;">
-					<div class="title-section">
-						<h1>Subscribe to Our Newsletter</h1>
-						<p>Get updates, news and launch date</p>
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-6">
+						<img src="images/grid.png" alt="">
 					</div>
-	
-					<div class="newsletter">
-						<form class="subscribe-form " onsubmit="return submitEmail()">
-							<input type="email" name="email2" id="email2" placeholder="me@meome.com" required/>
-							<input type="submit" id="submit-subscribe-form" value="Join"/>
-						</form>
+					<div class="col-sm-6" style="margin-top: 9%;">
+						<div class="title-section">
+							<h1>Subscribe to Our Newsletter</h1>
+							<p>Get updates, news and launch date</p>
+						</div>
+		
+						<div class="newsletter" id="newsletter-area">
+							<form class="subscribe-form " onsubmit="return submitEmail()">
+								<input type="email" name="waitlist" id="waitlist" placeholder="me@meome.com" required/>
+								<input type="submit" id="submit-subscribe-form" value="Join"/>
+							</form>
+							<div style="text-align: center;">
+								<img src="images/bx_loader.gif" class="form-loading hidden" id="form-loader" />
+								<div class="form-done hidden" id="form-loaded" >
+									<img src="images/icons8-checkmark.svg" />
+									<p>
+										Thank you for registering.<br>
+										You will be notified of our progress and be the first to know once we are live!!!
+									</p>
+								</div>
+								<div class="form-done hidden" id="form-errored" >
+									<img src="images/icons8-cancel.svg" />
+									<p>
+										We hit snag while trying to process your request.<br>
+										Please refresh the page and try again.
+									</p>
+								</div>
+							</div>
+							
+						</div>
 					</div>
 				</div>
 			</div>
@@ -168,6 +225,115 @@
 	<script src="js/jquery.countTo.js"></script>
 	<script src="js/waypoint.min.js"></script>
 	<script src="js/script.js"></script>
+	<script>
+		var baseCurrencyInput = '';
+		var secondCurrencyInput = '';
+		
+
+		$(document).ready(function() { 
+			$(".joinWaitlist").click(function () {
+				$('#waitlist').focus();
+			});
+			
+			var arr = ['NGN','USD','GBP','EUR'];
+			$.each(arr, function(index, value){
+				$('#list').append('<div id="triple-container" class="item" data-item='+ value +'><div class="caption"  data-item='+ value +'><div class="currency-flag currency-flag-'+ value.toLowerCase() +'"  data-item='+ value +'></div></div></div>').html();
+			});
+
+			$.each(arr, function(index, value){
+				$('#list2').append('<div id="triple-container" class="item2" data-item='+ value +'><div class="caption"  data-item2='+ value +'><div class="currency-flag currency-flag-'+ value.toLowerCase() +'"  data-item='+ value +'></div></div></div>').html();
+			});
+
+			baseCurrencyInput = 'NGN';
+			$(this).data("data-item", baseCurrencyInput)
+			console.log('Base Currency ' + baseCurrencyInput);
+
+			secondCurrencyInput = 'USD';
+			$(this).data("data-item2", secondCurrencyInput)
+			console.log('Second Currency ' + secondCurrencyInput);
+
+			$('.dropdown > .list > .item').on('click', function() {
+				$('.dropdown > .list > .item').removeClass('selected');
+				$('.dropdown > .list > .item').parent().parent().removeClass('open').children('.caption').html($(this).html());
+				
+				baseCurrencyInput = $(this).data("item");
+				console.log('Base Currency ' + baseCurrencyInput);
+				$('.dropdown > .item > .currency-flag').data("item", baseCurrencyInput);
+				$('#sending').attr('placeholder',baseCurrencyInput);
+				if (baseCurrencyInput != 'NGN') {
+					$('.dropdown > .list > .item2').removeClass('selected');
+					$('.dropdown > .list > .item2').parent().parent().removeClass('open').children('.caption').html($('<div class="caption" data-item="NGN"><div class="currency-flag currency-flag-ngn" data-item="NGN"></div></div>').html());
+					$('.dropdown > .item2 .caption').attr("data-item2", "NGN");
+					secondCurrencyInput = 'NGN';
+					$('.dropdown > .item2 > .currency-flag').data("item", secondCurrencyInput);
+					$('#recieving').attr('placeholder',secondCurrencyInput);
+					console.log('Second Currency ' + secondCurrencyInput);
+				}
+			});
+
+
+			$('.dropdown > .list > .item2 .caption').on('click', function() {
+			$('.dropdown > .list > .item2').removeClass('selected');
+			// $(this).addClass('selected').parent().parent().removeClass('open').children('.caption').html($(this).html());
+			$('.dropdown > .list > .item2').parent().parent().removeClass('open').children('.caption').html($(this).html());
+			secondCurrencyInput = $(this).data("item2");
+			console.log('Second Currency ' + secondCurrencyInput);
+			// console.log($('.dropdown > .item2 .caption').attr("data-item2"));
+			$('#recieving').attr('placeholder',secondCurrencyInput);
+			if (secondCurrencyInput != 'NGN') {
+				$('.dropdown > .list > .item').removeClass('selected');
+				$('.dropdown > .list > .item').parent().parent().removeClass('open').children('.caption').html($('<div class="caption" data-item="NGN"><div class="currency-flag currency-flag-ngn" data-item="NGN"></div></div>').html());
+				baseCurrencyInput = 'NGN';
+				$('#sending').attr('placeholder',baseCurrencyInput);
+				console.log('Base Currency ' + baseCurrencyInput);
+			}
+			});
+
+		});
+
+	   $('.dropdown > .caption').on('click', function() {
+			$(this).parent().toggleClass('open');
+		});
+
+
+		$('.switch-currencies').on('click', function() {
+
+			var base = $('.dropdown > .item').html();
+			var second = $('.dropdown > .item2').html();
+
+			
+			$('.dropdown > .list > .item').parent().parent().removeClass('open').children('.caption').html(second);
+			if ($('.dropdown > .item > .currency-flag').data("item") == null) {
+				baseCurrencyInput = $('.dropdown > .item ').children('.caption').data("item");
+			} else {
+				baseCurrencyInput = $('.dropdown > .item > .currency-flag').data("item");
+			}
+			$('#sending').attr('placeholder',baseCurrencyInput);
+			console.log('Base Currency ' + baseCurrencyInput);
+			
+			
+			$('.dropdown > .list > .item2').parent().parent().removeClass('open').children('.caption').html(base);
+			if ($('.dropdown > .item2 > .currency-flag').data("item") == null) {
+				secondCurrencyInput = $('.dropdown > .item2 ').children('.caption').data("item");
+			} else {
+				secondCurrencyInput = $('.dropdown > .item2 > .currency-flag').data("item");
+			}
+			$('#recieving').attr('placeholder',secondCurrencyInput);
+			console.log('Second Currency ' + secondCurrencyInput);
+
+		});
+
+		
+		
+
+		$(document).on('click', function(evt) {
+			if ($(evt.target).closest(".dropdown > .caption").length === 0) {
+				$('.dropdown').removeClass('open');
+			}
+		});
+
+		
+	</script>
 
 </body>
 </html>
