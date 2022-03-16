@@ -44,20 +44,15 @@
 								<span class="icon-bar"></span>
 							</button>
 							<!-- <p>Join Fiatswap</p> -->
-							
 							<img src="images/fiatswap-fake-logo.svg" width="100px" height="70px" alt="">
-							<div class="joinWaitlist">
-								<a class="navbar-brand target-link" href="#newsletter-area"><img src="images/sm-jw.png">Join Waitlist</a>
-							</div>
-							
-							
+							<a class="navbar-brand target-link joinWaitlist" href="#newsletter-area"><img src="images/sm-jw.png">Join Waitlist</a>
 						</div>
 						
 					</div>
 
 					<!-- Collect the nav links, forms, and other content for toggling -->
-					<div class="collapse navbar-collapse joinWaitlist">
-						<a class="button-two target-link" href="#newsletter-area">Join Waitlist</a>
+					<div class="collapse navbar-collapse joinWaitlist" id="bs-example-navbar-collapse-1">
+						<a class="button-two target-link " href="#newsletter-area">Join Waitlist</a>
 					</div>
 					<!-- /.navbar-collapse -->
 				</div>
@@ -85,13 +80,8 @@
 										<img  src="images/icons8-lock.svg"  width="100px" height="100px" alt="" style="padding: 30px;">
 										<p>Secured</p>
 									</div>
-									<!-- <div class="box">
-										<p>EUR €</p>	
-									</div> -->
 								</div>
-								
-								<!-- <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script><lottie-player src="https://assets5.lottiefiles.com/packages/lf20_0abgybfs.json" background="transparent" speed="1" style="width: 100px; height: 100px;" loop autoplay></lottie-player> -->
-								
+																
 							</div>
 						</div>
 
@@ -99,14 +89,6 @@
 							
 							<div class="card shadow-lg rounded">
 								<p class="title">Calculate exchange amount</p>
-								<!-- <div class="switch-fiat" style="text-align: start;margin-left: 21px;">
-									<p>Switch Fiat</p>
-									<button class="js-click">USD $</button>
-									<button class="js-click">EUR €</button>
-									<button class="js-click">CNY ¥</button>
-								</div> -->
-								
-								
 								<form class="price-ticker-form" onsubmit="return submitEmail()">
 									<p>Sending</p>
 									<input type="number" name="sending" id="sending" placeholder="NGN"/>
@@ -123,7 +105,7 @@
 								<p class="switch-currencies"><img src="images/switch.png" alt=""> Switch Currencies</p> 
 
 								<p style="margin-top: 30px;">Recieving</p>
-									<input type="number" name="recieving" id="recieving" placeholder="USD"/>
+									<input class="final-result" type="number" name="recieving" id="recieving" placeholder="USD"/>
 									<div class="currency-switcher">
 										<div class="dropdown">
 										  <div class="item2 caption">
@@ -135,7 +117,7 @@
 									  </div>
 								</form>
 
-								<a class="button-three target-link ">Calculate</a>
+								<a class="button-three target-link calculate-btn">Calculate</a>
 
 								<!-- <p class="last-updated"><span> US Dollar to Nigerian Naira conversion</span> — Last updated Feb 10, 2022, 11:33 UTC</p> -->
 							</div>
@@ -172,13 +154,13 @@
 					</div>
 					<div class="col-sm-6" style="margin-top: 9%;">
 						<div class="title-section">
-							<h1>Subscribe to Our Newsletter</h1>
+							<h1>Be the first to know</h1>
 							<p>Get updates, news and launch date</p>
 						</div>
 		
 						<div class="newsletter" id="newsletter-area">
 							<form class="subscribe-form " onsubmit="return submitEmail()">
-								<input type="email" name="waitlist" id="waitlist" placeholder="me@meome.com" required/>
+								<input type="email" name="email2" id="email2" placeholder="me@fiatswap.io" required/>
 								<input type="submit" id="submit-subscribe-form" value="Join"/>
 							</form>
 							<div style="text-align: center;">
@@ -210,7 +192,7 @@
 			================================================== -->
 		<footer class="white-style" id="title-section">
 			<div class="title-section">
-				<p>© Copyright 2021. Fiatswap.io. All rights reserved.</p>
+				<p>© Copyright 2022. Fiatswap.io. All rights reserved.</p>
 			</div>
 		</footer>
 		<!-- End footer -->
@@ -228,13 +210,12 @@
 	<script>
 		var baseCurrencyInput = '';
 		var secondCurrencyInput = '';
-		
 
 		$(document).ready(function() { 
-			$(".joinWaitlist").click(function () {
-				$('#waitlist').focus();
-			});
 			
+			$(".joinWaitlist").click(function () {
+				$('#email2').focus();
+			});
 			var arr = ['NGN','USD','GBP','EUR'];
 			$.each(arr, function(index, value){
 				$('#list').append('<div id="triple-container" class="item" data-item='+ value +'><div class="caption"  data-item='+ value +'><div class="currency-flag currency-flag-'+ value.toLowerCase() +'"  data-item='+ value +'></div></div></div>').html();
@@ -274,11 +255,9 @@
 
 			$('.dropdown > .list > .item2 .caption').on('click', function() {
 			$('.dropdown > .list > .item2').removeClass('selected');
-			// $(this).addClass('selected').parent().parent().removeClass('open').children('.caption').html($(this).html());
 			$('.dropdown > .list > .item2').parent().parent().removeClass('open').children('.caption').html($(this).html());
 			secondCurrencyInput = $(this).data("item2");
 			console.log('Second Currency ' + secondCurrencyInput);
-			// console.log($('.dropdown > .item2 .caption').attr("data-item2"));
 			$('#recieving').attr('placeholder',secondCurrencyInput);
 			if (secondCurrencyInput != 'NGN') {
 				$('.dropdown > .list > .item').removeClass('selected');
@@ -297,11 +276,11 @@
 
 
 		$('.switch-currencies').on('click', function() {
+			var sending = $('input[name=sending]').val();
+			var recieving = $('input[name=recieving]').val();
 
 			var base = $('.dropdown > .item').html();
 			var second = $('.dropdown > .item2').html();
-
-			
 			$('.dropdown > .list > .item').parent().parent().removeClass('open').children('.caption').html(second);
 			if ($('.dropdown > .item > .currency-flag').data("item") == null) {
 				baseCurrencyInput = $('.dropdown > .item ').children('.caption').data("item");
@@ -309,6 +288,7 @@
 				baseCurrencyInput = $('.dropdown > .item > .currency-flag').data("item");
 			}
 			$('#sending').attr('placeholder',baseCurrencyInput);
+			$('input[name=sending]').val(recieving);
 			console.log('Base Currency ' + baseCurrencyInput);
 			
 			
@@ -319,8 +299,8 @@
 				secondCurrencyInput = $('.dropdown > .item2 > .currency-flag').data("item");
 			}
 			$('#recieving').attr('placeholder',secondCurrencyInput);
+			$('input[name=recieving]').val(sending)
 			console.log('Second Currency ' + secondCurrencyInput);
-
 		});
 
 		
@@ -331,6 +311,24 @@
 				$('.dropdown').removeClass('open');
 			}
 		});
+
+		var btn = document.querySelector('.calculate-btn');
+		var amountInput = document.getElementById('sending');
+		function convertCurrency(event) {
+			console.log('Base Currency ' + baseCurrencyInput);
+			console.log('Sending ' + $('input[name=sending]').val());
+			console.log('Second Currency ' + secondCurrencyInput);
+			event.preventDefault();
+			var amount = $('input[name=sending]').val();
+			// var from = baseCurrencyInput;
+			// var to = secondCurrencyInput;
+			var result = 0;
+			var dataString = 'inCurrency='+baseCurrencyInput+'&outCurrency='+secondCurrencyInput+'&amount='+amount;
+			$.getJSON("http://localhost:8080/fiatswap?" + dataString).success(function(data){
+				$('input[name=recieving]').val(data.finalPrice);
+			})
+		}
+		btn.addEventListener('click', convertCurrency);
 
 		
 	</script>
