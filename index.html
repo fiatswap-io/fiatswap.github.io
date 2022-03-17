@@ -328,7 +328,7 @@
 			// var to = secondCurrencyInput;
 			var result = 0;
 			var dataString = 'inCurrency='+baseCurrencyInput+'&outCurrency='+secondCurrencyInput+'&amount='+amount;
-			$.getJSON("http://localhost:8080/fiatswap?" + dataString).success(function(data){
+			$.getJSON("../fiatswap?" + dataString).success(function(data){
 				$('input[name=recieving]').val(data.finalPrice);
 			})
 		}
