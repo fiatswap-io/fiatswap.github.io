@@ -675,6 +675,7 @@ a.button-three {
 a.button-three:hover {
   background-color: #000;
   color: #fff;
+  cursor: pointer;
 }
 #container {
   opacity: 0;
@@ -1415,7 +1416,7 @@ section#features-section .about-box .image-holder img {
   height: auto;
 }
 section#features-section2 {
-  padding: 60px 0;
+  padding: 10px 0;
 }
 section#features-section2 ul.client-list {
   margin: 0;
@@ -1432,9 +1433,9 @@ section#features-section2 ul.client-list li {
   display: inline-block;
   width: 20%;
 }
-section#features-section2 .send-chill{
+/* section#features-section2 .send-chill{
   display: none;
-}
+} */
 section#features-section2 .about-box {
   padding-bottom: 60px;
   border-bottom: 1px solid #ebebeb;
@@ -2609,7 +2610,7 @@ ul.nav-tabs li.active a {
 /* =  App available section
 /*-------------------------------------------------*/
 section.app-available-section {
-  padding: 100px 0;
+  padding: 10px 0;
   background: url("../upload/back.jpg") center center;
   background-size: cover;
   -webkit-background-size: cover;
@@ -2649,6 +2650,23 @@ section.app-available-section .title-section h1:after {
 
 section.app-available-section .newsletter {
   margin: 0;
+}
+
+section.app-available-section .newsletter .socials{
+  margin-top: 30px;
+}
+
+section.app-available-section .newsletter .socials img{
+  margin-right: 10px;
+}
+
+section.app-available-section .newsletter .socials span{
+  font-family: 'Plus Jakarta Display';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 108.9%;
+  color: #40B3E0;
 }
 
 section.app-available-section .newsletter form input[type="text"],
@@ -4005,6 +4023,12 @@ footer.pattern-style p.copyright {
   }
 }
 @media (max-width: 1199px) {
+  section.app-available-section .newsletter .socials img{
+    width: 10% !important;
+    margin-right: 10px;
+    height: 50px;
+    width: 50px;
+  }
   .navbar-nav > li > a {
     font-size: 16px;
     padding-left: 9px !important;
@@ -4122,6 +4146,12 @@ footer.pattern-style p.copyright {
   }
 }
 @media (max-width: 991px) {
+  section.app-available-section .newsletter .socials img{
+    width: 10% !important;
+    margin-right: 10px;
+    height: 50px;
+    width: 50px;
+  }
   .navbar-nav > li > a {
     font-size: 16px;
     padding-left: 9px !important;
@@ -4308,6 +4338,12 @@ footer.pattern-style p.copyright {
   }
 }
 @media (max-width: 767px) {
+  section.app-available-section .newsletter .socials img{
+    width: 10% !important;
+    margin-right: 10px;
+    height: 50px;
+    width: 50px;
+  }
   /* .header-box {
     margin-left: 30px;
   } */
@@ -4723,6 +4759,12 @@ footer.pattern-style p.copyright {
   }
 }
 @media (max-width: 600px) {
+  section.app-available-section .newsletter .socials img{
+    width: 10% !important;
+    margin-right: 10px;
+    height: 50px;
+    width: 50px;
+  }
   section#home-section .top-block .container {
     text-align: center;
     position: relative;
@@ -4875,6 +4917,12 @@ footer.pattern-style p.copyright {
   }
 }
 @media (max-width: 500px) {
+  section.app-available-section .newsletter .socials img{
+    width: 10% !important;
+    margin-right: 10px;
+    height: 50px;
+    width: 50px;
+  }
   .navbar-default {
     margin: 0 0 0 0;
   }
@@ -5145,7 +5193,7 @@ footer.pattern-style p.copyright {
   section.app-available-section .newsletter form input[type="submit"] {
     background: #000;
     width:25%;
-    padding: 10px 10px 13px 10px;
+    padding: 11px 10px 13px 10px;
     color: #ffffff;
     font-family: "Plus Jakarta Display";
     font-style: normal;
@@ -5192,6 +5240,26 @@ footer.pattern-style p.copyright {
   }
 }
 @media (max-width: 430px) {
+  section.app-available-section .newsletter .socials{
+    margin-top: 30px;
+  }
+  
+  section.app-available-section .newsletter .socials img{
+    width: 10% !important;
+    margin-right: 10px;
+    height: 50px;
+    width: 50px;
+  }
+  
+  section.app-available-section .newsletter .socials span{
+    font-family: 'Plus Jakarta Display';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 108.9%;
+    color: #40B3E0;
+  }
+
   section#home-section .top-block .container .one{
     margin-top: 100px; 
     margin-bottom: 100px;
