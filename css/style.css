@@ -299,6 +299,11 @@ div.dropdown>div.list>div.item span {
   text-align: left;
 }
 
+.joinWaitlist-feedback{
+  text-align: center;
+  padding: 0 80px 0 0;
+}
+
 .form-loading {
   margin-bottom: 48px;
   max-width: 50px;
@@ -307,7 +312,7 @@ div.dropdown>div.list>div.item span {
 
 .form-done,
 footer .container form.subscribe-form {
-  margin-bottom: 48px;
+  margin-bottom: 20px;
 }
 
 .form-done img {
@@ -315,6 +320,7 @@ footer .container form.subscribe-form {
   max-width: 40px;
   max-height: 40px;
 }
+
 
 #form-loaded {
 }
@@ -675,6 +681,7 @@ a.button-three {
 a.button-three:hover {
   background-color: #000;
   color: #fff;
+  cursor: pointer;
 }
 #container {
   opacity: 0;
@@ -1048,6 +1055,16 @@ section#home-section .top-block .card form .currency-flag {
   -moz-border-bottom-right-radius: 3px;
   -o-border-bottom-right-radius: 3px;
   border-bottom-right-radius: 3px;
+}
+
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none !important;
+  margin: 0 !important;
+}
+input[type=number] {
+  -moz-appearance: textfield !important;
 }
 
 section#home-section .top-block .card form input[type="text"],
@@ -2654,7 +2671,7 @@ section.app-available-section .join-telegram{
 }
 
 section.app-available-section .join-telegram img{
-  margin-right: 20px;
+  margin-right: 8px;
   width: 50px !important;
 }
 
@@ -2674,10 +2691,10 @@ section.app-available-section  .join-telegram .telegram-button{
   -o-border-radius: 5px;
   align-content: center;
   text-align: center;
-  background-color: #145A87;
+  background-color: #1BA0D2;
   border-radius: 8px;
   padding: 16px 64px 16px 16px;
-
+  letter-spacing: 0.6px;
 }
 
 section.app-available-section .title-section p {
@@ -4170,6 +4187,10 @@ footer.pattern-style p.copyright {
   }
 }
 @media (max-width: 991px) {
+  .joinWaitlist-feedback{
+    text-align: center;
+    padding: 0 0 0 0;
+  }
   section#features-section2 .send-chill{
     margin-top: 60px;
   }
@@ -4369,6 +4390,10 @@ footer.pattern-style p.copyright {
   header a.button-two {
     display: inline-block;
 } */
+.joinWaitlist-feedback{
+  text-align: center;
+  padding: 0 0 0 0;
+}
 section#features-section2 .send-chill{
   margin-top: 60px;
 }
@@ -4777,6 +4802,10 @@ section#features-section2 .send-chill{
   }
 }
 @media (max-width: 600px) {
+  .joinWaitlist-feedback{
+    text-align: center;
+    padding: 0 0 0 0;
+  }
   section#home-section .top-block .container {
     text-align: center;
     position: relative;
@@ -5246,6 +5275,10 @@ section#features-section2 .send-chill{
   }
 }
 @media (max-width: 430px) {
+  .joinWaitlist-feedback{
+    text-align: center;
+    padding: 0 0 0 0;
+  }
   section.app-available-section  .join-telegram{
   text-align: center;
   margin-bottom: 32px;
@@ -5336,6 +5369,14 @@ section#features-section2 .send-chill{
     border-bottom-right-radius: 3px;
   }
   
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none !important;
+    margin: 0 !important;
+  }
+  input[type=number] {
+    -moz-appearance: textfield !important;
+  }
   section#home-section .top-block .card form input[type="text"],
   section#home-section .top-block .card form input[type="number"],
   section#home-section .top-block .card form input[type="email"] {
@@ -5403,6 +5444,14 @@ section#features-section2 .send-chill{
     padding-right: 3px;
   }
 
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none !important;
+    margin: 0 !important;
+  }
+  input[type=number] {
+    -moz-appearance: textfield !important;
+  }
   section#home-section .top-block .card form input[type="text"],
   section#home-section .top-block .card form input[type="number"],
   section#home-section .top-block .card form input[type="email"] {
