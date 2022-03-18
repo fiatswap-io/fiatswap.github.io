@@ -135,7 +135,7 @@
 									  </div>
 								</form>
 
-								<a class="button-three target-link ">Calculate</a>
+								<a class="button-three target-link calculate-btn">Calculate</a>
 
 								<!-- <p class="last-updated"><span> US Dollar to Nigerian Naira conversion</span> — Last updated Feb 10, 2022, 11:33 UTC</p> -->
 							</div>
@@ -178,10 +178,10 @@
 		
 						<div class="newsletter" id="newsletter-area">
 							<form class="subscribe-form " onsubmit="return submitEmail()">
-								<input type="email" name="waitlist" id="waitlist" placeholder="me@fiatswap.io" required/>
+								<input type="email" name="email2" id="email2" placeholder="me@fiatswap.io" required/>
 								<input type="submit" id="submit-subscribe-form" value="Join"/>
 							</form>
-							<div style="text-align: center;">
+							<div class="joinWaitlist-feedback">
 								<img src="images/bx_loader.gif" class="form-loading hidden" id="form-loader" />
 								<div class="form-done hidden" id="form-loaded" >
 									<img src="images/icons8-checkmark.svg" />
@@ -234,7 +234,7 @@
 
 		$(document).ready(function() { 
 			$(".joinWaitlist").click(function () {
-				$('#waitlist').focus();
+				$('#email2').focus();
 			});
 			
 			var arr = ['NGN','USD','GBP','EUR'];
@@ -334,6 +334,23 @@
 			}
 		});
 
+		var btn = document.querySelector('.calculate-btn');
+		var amountInput = document.getElementById('sending');
+		function convertCurrency(event) {
+			console.log('Base Currency ' + baseCurrencyInput);
+			console.log('Sending ' + $('input[name=sending]').val());
+			console.log('Second Currency ' + secondCurrencyInput);
+			event.preventDefault();
+			var amount = $('input[name=sending]').val();
+			// var from = baseCurrencyInput;
+			// var to = secondCurrencyInput;
+			var result = 0;
+			var dataString = 'inCurrency='+baseCurrencyInput+'&outCurrency='+secondCurrencyInput+'&amount='+amount;
+			$.getJSON("http://localhost:8080/fiatswap?" + dataString).success(function(data){
+				$('input[name=recieving]').val(data.finalPrice);
+			})
+		}
+		btn.addEventListener('click', convertCurrency);
 		
 	</script>
 
