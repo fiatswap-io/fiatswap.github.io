@@ -2671,7 +2671,7 @@ section.app-available-section .join-telegram{
 }
 
 section.app-available-section .join-telegram img{
-  margin-right: 20px;
+  margin-right: 8px;
   width: 50px !important;
 }
 
@@ -2691,10 +2691,10 @@ section.app-available-section  .join-telegram .telegram-button{
   -o-border-radius: 5px;
   align-content: center;
   text-align: center;
-  background-color: #145A87;
+  background-color: #1BA0D2;
   border-radius: 8px;
   padding: 16px 64px 16px 16px;
-
+  letter-spacing: 0.6px;
 }
 
 section.app-available-section .title-section p {
