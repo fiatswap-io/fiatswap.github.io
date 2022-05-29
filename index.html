@@ -495,7 +495,13 @@
           secondCurrencyInput +
           "&amount=" +
           amount;
-        $.getJSON("../fiatswap?" + dataString).success(function (data) {
+        // $.getJSON("../fiatswap?" + dataString).success(function (data) {
+        //   $("input[name=recieving]").val(data.finalPrice);
+        // });
+        $.getJSON(
+          "https://fn1igg1ngk.execute-api.eu-west-3.amazonaws.com/gtPrices?" +
+            dataString
+        ).success(function (data) {
           $("input[name=recieving]").val(data.finalPrice);
         });
       }
