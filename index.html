@@ -140,12 +140,15 @@
               <div class="col-sm-6 col-md-6 col-lg-6 two">
                 <div class="card shadow-lg rounded">
                   <p class="title">Calculate exchange amount</p>
-                  <!-- <div class="switch-fiat" style="text-align: start;margin-left: 21px;">
-									<p>Switch Fiat</p>
-									<button class="js-click">USD $</button>
-									<button class="js-click">EUR €</button>
-									<button class="js-click">CNY ¥</button>
-								</div> -->
+                  <div
+                    class="switch-fiat"
+                    style="text-align: start; margin-left: 21px"
+                  >
+                    <p>Switch Fiat</p>
+                    <button class="js-click">USD $</button>
+                    <button class="js-click">EUR €</button>
+                    <button class="js-click">CNY ¥</button>
+                  </div>
 
                   <form
                     class="price-ticker-form"
@@ -489,20 +492,25 @@
         // var to = secondCurrencyInput;
         var result = 0;
         var dataString =
-          "inCurrency=" +
+          "quote=" +
           baseCurrencyInput +
-          "&outCurrency=" +
+          "&base=" +
           secondCurrencyInput +
           "&amount=" +
           amount;
         // $.getJSON("../fiatswap?" + dataString).success(function (data) {
         //   $("input[name=recieving]").val(data.finalPrice);
         // });
+
         $.getJSON(
-          "https://fn1igg1ngk.execute-api.eu-west-3.amazonaws.com/gtPrices?" +
+          "https://fn1igg1ngk.execute-api.eu-west-3.amazonaws.com/getPrices?" +
             dataString
         ).success(function (data) {
-          $("input[name=recieving]").val(data.finalPrice);
+          // result = data * amount;
+          console.log("price ticker data");
+          console.log(data);
+
+          $("input[name=recieving]").val(data);
         });
       }
       btn.addEventListener("click", convertCurrency);
