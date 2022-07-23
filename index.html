@@ -100,7 +100,7 @@
           <div class="container">
             <div class="row">
               <div class="col-sm-6 col-md-6 col-lg-6 one">
-                <h1>Easy,<span>Swift</span>,<br />Better.</h1>
+                <h1>Instant,<br /><span>Borderless,</span><br />Secure.</h1>
                 <h2>
                   Swap USD, GBP and EUR accounts <br />
                   for all your international transactions
@@ -144,10 +144,10 @@
                     class="switch-fiat"
                     style="text-align: start; margin-left: 21px"
                   >
-                    <p>Switch Fiat</p>
+                    <!-- <p>Switch Fiat</p>
                     <button class="js-click">USD $</button>
                     <button class="js-click">EUR €</button>
-                    <button class="js-click">CNY ¥</button>
+                    <button class="js-click">CNY ¥</button> -->
                   </div>
 
                   <form
@@ -161,16 +161,22 @@
                       id="sending"
                       placeholder="NGN"
                     />
-                    <div class="currency-switcher" style="padding-bottom: 1px">
+                    <div
+                      class="currency-switcher"
+                      style="padding-bottom: 1px; background-color: #ffb703"
+                    >
                       <div class="dropdown">
                         <div class="item caption">
                           <div
                             class="currency-flag currency-flag-ngn"
                             data-item="ngn"
                           ></div>
+                          <p>NGN</p>
                         </div>
+
                         <div id="list" class="list"></div>
                       </div>
+                      <!-- <p style="display: inline">></p> -->
                     </div>
 
                     <p class="switch-currencies">
@@ -184,13 +190,17 @@
                       id="recieving"
                       placeholder="USD"
                     />
-                    <div class="currency-switcher">
+                    <div
+                      class="currency-switcher"
+                      style="background-color: #ffb703"
+                    >
                       <div class="dropdown">
                         <div class="item2 caption">
                           <div
                             class="currency-flag currency-flag-usd"
                             data-item="usd"
                           ></div>
+                          <p>USA</p>
                         </div>
                         <div id="list2" class="list"></div>
                       </div>
@@ -214,7 +224,7 @@
 			================================================== -->
       <section id="features-section2">
         <div class="container">
-          <ul class="client-list"></ul>
+          <!-- <ul class="client-list"></ul> -->
           <div class="send-chill">
             <h1>Send & chill</h1>
             <p>Send Money across boarder send to friends & family</p>
@@ -226,15 +236,15 @@
       <!-- app-available-section 
 			================================================== -->
       <section class="app-available-section second-style" id="download-area">
-        <div class="container">
-          <div class="row">
-            <div class="col-sm-6">
-              <img src="images/grid.png" alt="" />
-            </div>
+        <div class="row">
+          <div class="col-sm-6">
+            <img src="images/grid.png" alt="" />
+          </div>
+          <div class="container">
             <div class="col-sm-6" style="margin-top: 9%">
               <div class="title-section">
                 <h1>Be the first to know</h1>
-                <p>Get updates, news and launch date</p>
+                <p>Get updates news and launch date</p>
               </div>
 
               <div class="newsletter" id="newsletter-area">
@@ -280,8 +290,8 @@
                   class="telegram-button target-link"
                   href="https://t.me/joinchat/v-N8hXdHx-dlYjdk"
                   target="_blank"
-                  ><img src="images/telegram-icon.svg" />Join our Community on
-                  Telegram
+                  ><img src="images/icons8-telegram-app-96.png" />Join our
+                  Community on Telegram
                 </a>
               </div>
             </div>
@@ -293,8 +303,45 @@
       <!-- footer 
 			================================================== -->
       <footer class="white-style" id="title-section">
-        <div class="title-section">
-          <p>© Copyright 2022. Fiatswap.io. All rights reserved.</p>
+        <div class="row">
+          <div class="col-sm-6 col-md-6 col-lg-6 text-left">
+            <div class="row">
+              <p class="text-black" style="float: left; display: inline-block">
+                Follow Us
+              </p>
+              <div class="col-sm-1 col-md-1 col-lg-1" style="width: 5.333333%">
+                <img
+                  src="images/yellow-facebook.png"
+                  width="28px"
+                  height="25px"
+                />
+              </div>
+
+              <div class="col-sm-1 col-md-1 col-lg-1" style="width: 5.333333%">
+                <img src="images/icons8-twitter-24.png" />
+              </div>
+              <div class="col-sm-1 col-md-1 col-lg-1" style="width: 5.333333%">
+                <img src="images/icons8-instagram-24.png" />
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-6 col-lg-6">
+            <div class="row">
+              <div class="col-sm-6 col-md-6 col-lg-6 text-right">
+                <p class="text-black">Help & Support</p>
+              </div>
+              <div class="col-sm-6 col-md-6 col-lg-6 text-left">
+                <p class="text-black">Contact Us</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <div class="title-section">
+              <p>© Copyright 2022. Fiatswap.io. All rights reserved.</p>
+            </div>
+          </div>
         </div>
       </footer>
       <!-- End footer -->
@@ -329,7 +376,9 @@
                 value.toLowerCase() +
                 '"  data-item=' +
                 value +
-                "></div></div></div>"
+                "></div><P style='display:inline'>" +
+                value +
+                "</P></div></div>"
             )
             .html();
         });
@@ -345,7 +394,9 @@
                 value.toLowerCase() +
                 '"  data-item=' +
                 value +
-                "></div></div></div>"
+                "></div><P style='display:inline'>" +
+                value +
+                "</P></div></div>"
             )
             .html();
         });
@@ -383,7 +434,7 @@
               .children(".caption")
               .html(
                 $(
-                  '<div class="caption" data-item="NGN"><div class="currency-flag currency-flag-ngn" data-item="NGN"></div></div>'
+                  '<div class="caption" data-item="NGN"><div class="currency-flag currency-flag-ngn" data-item="NGN"></div><p>NGN</p></div>'
                 ).html()
               );
             $(".dropdown > .item2 .caption").attr("data-item2", "NGN");
@@ -419,7 +470,7 @@
               .children(".caption")
               .html(
                 $(
-                  '<div class="caption" data-item="NGN"><div class="currency-flag currency-flag-ngn" data-item="NGN"></div></div>'
+                  '<div class="caption" data-item="NGN"><div class="currency-flag currency-flag-ngn" data-item="NGN"></div><p>NGN</p></div>'
                 ).html()
               );
             baseCurrencyInput = "NGN";
