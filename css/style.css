@@ -4095,11 +4095,23 @@ footer.pattern-style p.copyright {
   padding: 0 0 45px;
   border-top: 1px solid transparent;
 }
+.onlydesktop {
+  display: block;
+}
+.onlymobile {
+  display: none;
+}
 /*-------------------------------------------------*/
 /* =  Responsive Part
 /*-------------------------------------------------*/
 
 @media (max-width: 1600px) {
+  .onlydesktop {
+    display: block;
+  }
+  .onlymobile {
+    display: none;
+  }
   section#features-section4 {
     padding: 100px 15px 70px;
   }
@@ -4124,6 +4136,12 @@ footer.pattern-style p.copyright {
   }
 }
 @media (max-width: 1400px) {
+  .onlydesktop {
+    display: block;
+  }
+  .onlymobile {
+    display: none;
+  }
   section#home-section div.top-block2 .image-rounded {
     width: 80%;
   }
@@ -4147,6 +4165,12 @@ footer.pattern-style p.copyright {
   }
 }
 @media (max-width: 1199px) {
+  .onlydesktop {
+    display: block;
+  }
+  .onlymobile {
+    display: none;
+  }
   .navbar-nav > li > a {
     font-size: 16px;
     padding-left: 9px !important;
@@ -4264,6 +4288,12 @@ footer.pattern-style p.copyright {
   }
 }
 @media (max-width: 991px) {
+  .onlydesktop {
+    display: block;
+  }
+  .onlymobile {
+    display: none;
+  }
   .joinWaitlist-feedback {
     text-align: center;
     padding: 0 0 0 0;
@@ -4457,6 +4487,12 @@ footer.pattern-style p.copyright {
   }
 }
 @media (max-width: 767px) {
+  .onlydesktop {
+    display: block;
+  }
+  .onlymobile {
+    display: none;
+  }
   /* .header-box {
     margin-left: 30px;
   } */
@@ -4897,6 +4933,12 @@ footer.pattern-style p.copyright {
   }
 }
 @media (max-width: 600px) {
+  .onlydesktop {
+    display: none;
+  }
+  .onlymobile {
+    display: block;
+  }
   .page-title-container {
     margin: 55px 0 25px 0px;
     padding: 0 40px;
@@ -4931,6 +4973,21 @@ footer.pattern-style p.copyright {
     margin-bottom: 100px;
     text-align: center;
     /* margin-left: 30px; */
+  }
+
+  section#home-section .top-block .container .one h1 {
+    font-size: 60px;
+    margin-bottom: -20px;
+  }
+
+  section#home-section .top-block .container .one h1 span {
+    font-size: 60px;
+    margin-top: -50px;
+    margin-bottom: -50px;
+  }
+
+  section#home-section .top-block .container .one h2 {
+    margin-top: 10px;
   }
   section#home-section .top-block .container .two {
     border-top-right-radius: 190px;
@@ -5073,6 +5130,12 @@ footer.pattern-style p.copyright {
   }
 }
 @media (max-width: 500px) {
+  .onlydesktop {
+    display: none;
+  }
+  .onlymobile {
+    display: block;
+  }
   .navbar-default {
     margin: 0 0 0 0;
   }
@@ -5348,7 +5411,7 @@ footer.pattern-style p.copyright {
   section.app-available-section .newsletter form input[type="submit"] {
     background: #000;
     width: 25%;
-    padding: 10px 10px 13px 10px;
+    padding: 12px 10px 16px 10px;
     color: #ffffff;
     font-family: "Plus Jakarta Display";
     font-style: normal;
@@ -5395,6 +5458,12 @@ footer.pattern-style p.copyright {
   }
 }
 @media (max-width: 430px) {
+  .onlydesktop {
+    display: none;
+  }
+  .onlymobile {
+    display: block;
+  }
   .joinWaitlist-feedback {
     text-align: center;
     padding: 0 0 0 0;
@@ -5474,7 +5543,7 @@ footer.pattern-style p.copyright {
     display: inline-block;
     background: transparent;
     margin-left: -4px;
-    width: 25%;
+    width: 26%;
     border-top: 1px solid #888888;
     border-right: 1px solid #888888;
     border-bottom: 1px solid #888888;
@@ -5532,6 +5601,12 @@ footer.pattern-style p.copyright {
   }
 }
 @media (max-width: 300px) {
+  .onlydesktop {
+    display: none;
+  }
+  .onlymobile {
+    display: block;
+  }
   section#home-section .top-block h1 {
     font-family: "Plus Jakarta Display";
     font-style: normal;
