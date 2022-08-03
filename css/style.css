@@ -440,7 +440,7 @@ header.fullwidth.light-style .navbar-default {
 .navbar-nav > li > a {
   color: #ebebeb !important;
   font-size: 18px;
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: "Plus Jakarta Display";
   font-weight: 400;
   transition: all 0.2s ease-in-out;
   -moz-transition: all 0.2s ease-in-out;
@@ -569,7 +569,7 @@ ul.dropdown li a {
   padding: 12px 20px;
   color: #888888;
   font-size: 16px;
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: "Plus Jakarta Display";
   font-weight: 400;
 }
 ul.dropdown li a i {
@@ -593,7 +593,7 @@ li.drop:hover ul.dropdown {
 p {
   font-size: 18px;
   color: #888888;
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: "Plus Jakarta Display";
   font-weight: 400;
   line-height: 24px;
   margin: 0 0 10px;
@@ -601,14 +601,14 @@ p {
 h1 {
   color: #333333;
   font-size: 50px;
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: "Plus Jakarta Display";
   font-weight: 400;
   margin: 0 0 20px;
 }
 h2 {
   color: #333333;
   font-size: 24px;
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: "Plus Jakarta Display";
   font-weight: 400;
   margin: 0 0 10px;
   line-height: 20px;
@@ -623,7 +623,7 @@ a.button-one {
   background: #00b9ff;
   color: #fff;
   font-size: 18px;
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: "Plus Jakarta Display";
   font-style: normal;
   font-weight: 600;
   border: 1px solid #00b9ff;
@@ -723,14 +723,14 @@ a.button-three:hover {
   display: inline-block;
   color: #999999;
   font-size: 20px;
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: "Plus Jakarta Display";
   font-weight: 400;
   margin: 0 0 10px;
 }
 .title-section h1 {
   color: #333333;
   font-size: 50px;
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: "Plus Jakarta Display";
   font-weight: 400;
   margin: 0 0 20px;
 }
@@ -756,7 +756,7 @@ a.button-three:hover {
   font-weight: 400;
   font-size: 24px;
   line-height: 20px;
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: "Plus Jakarta Display";
   margin: 0px;
   border-width: 0px;
   border-style: none;
@@ -776,7 +776,7 @@ a.button-three:hover {
   font-size: 60px;
   line-height: 70px;
   font-weight: 400;
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: "Plus Jakarta Display";
   background-color: none;
   text-decoration: none;
   text-transform: initial;
@@ -796,7 +796,7 @@ a.button-three:hover {
   font-size: 36px;
   line-height: 46px;
   font-weight: 400;
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: "Plus Jakarta Display";
 }
 #home-section .tp-bannertimer {
   display: none !important;
@@ -824,7 +824,7 @@ a.button-three:hover {
 #home-section a.txt-btn {
   color: #ffffff;
   font-size: 18px;
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: "Plus Jakarta Display";
   font-weight: 600;
   margin-left: 20px;
 }
@@ -869,13 +869,11 @@ section#home-section .top-block .container .one {
   text-align: left;
 }
 
+section#home-section .top-block .container .one h1 {
+  margin-bottom: -10px !important;
+}
+
 section#home-section .top-block .container .one .box-one {
-  /* background-color: coral; */
-  /* width: 20% !important;
-  height: 10%;
-  display:inline-block;
-  margin:10px 0;
-  border-radius:5px; */
   float: left;
 }
 section#home-section .top-block .container .one p {
@@ -944,7 +942,8 @@ section#home-section .top-block .rounded {
 
 section#home-section .top-block .card .title {
   margin-bottom: 40px;
-  font-family: "Red Hat Display";
+  /* font-family: "Red Hat Display"; */
+  font-family: "Plus Jakarta Display";
   font-style: normal;
   font-weight: bold;
   font-size: 14px;
@@ -1008,6 +1007,19 @@ section#home-section .top-block .card span {
   font-style: normal;
   font-size: 12px;
   line-height: 15.53px;
+}
+
+section#home-section .top-block .card .ex-rate {
+  font-family: "Plus Jakarta Display";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 16px;
+  /* identical to box height */
+
+  text-transform: uppercase;
+
+  color: #3076ff !important;
 }
 
 section#home-section .top-block .card .switch-currencies {
@@ -1252,7 +1264,7 @@ section#home-section div.top-block2 a.button-one {
 section#home-section div.top-block2 a.btn-txt {
   color: #6633cc;
   font-size: 18px;
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: "Plus Jakarta Display";
   font-weight: 600;
 }
 section#home-section div.top-block2 a.btn-txt i {
@@ -1276,7 +1288,7 @@ section#home-section div.top-block2 .clients-box span {
   display: inline-block;
   font-size: 18px;
   color: #888888;
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: "Plus Jakarta Display";
   font-weight: 400;
   line-height: 24px;
   margin: 0 0 10px;
@@ -1431,7 +1443,7 @@ section#features-section .about-box .posts-box .about-post h2 {
   line-height: 60px;
 }
 section#features-section .about-box .posts-box .about-post span {
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: "Plus Jakarta Display";
   color: #888888;
   font-size: 15px;
   font-weight: 400;
@@ -1584,7 +1596,7 @@ section#features-section2 .about-box .center-area a {
   -o-transition: all 0.2s ease-in-out;
   color: #6633cc;
   font-size: 18px;
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: "Plus Jakarta Display";
   font-weight: 600;
 }
 section#features-section2 .about-box .center-area a i {
@@ -1652,7 +1664,7 @@ section#features-section3 .about-box > a {
   -o-transition: all 0.2s ease-in-out;
   color: #6633cc;
   font-size: 18px;
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: "Plus Jakarta Display";
   font-weight: 600;
 }
 section#features-section3 .about-box > a i {
@@ -1765,7 +1777,7 @@ section.statistic-section .statistic-post i {
 section.statistic-section .statistic-post h2 {
   color: #333333;
   font-size: 24px;
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: "Plus Jakarta Display";
   font-weight: 400;
   margin: 0 0 10px;
   line-height: 20px;
@@ -1779,7 +1791,7 @@ section.statistic-section .statistic-post p {
   margin: 0 0 10px !important;
   color: #fff;
   font-size: 50px;
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: "Plus Jakarta Display";
   line-height: initial;
   font-weight: 400;
 }
@@ -1918,7 +1930,7 @@ div.about-app-section.third-style .content-holder > a {
   -o-transition: all 0.2s ease-in-out;
   color: #6633cc;
   font-size: 18px;
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: "Plus Jakarta Display";
   font-weight: 600;
 }
 div.about-app-section.third-style .content-holder > a i {
@@ -1986,7 +1998,7 @@ div.about-app-section2 .content-holder .posts-box .about-post {
 div.about-app-section2 .content-holder .posts-box .about-post h2 {
   color: #333333;
   font-size: 24px;
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: "Plus Jakarta Display";
   font-weight: 400;
   margin: 0 0 10px;
   line-height: 20px;
@@ -2007,7 +2019,7 @@ div.about-app-section2 .content-holder .posts-box a {
   -o-transition: all 0.2s ease-in-out;
   color: #fff;
   font-size: 18px;
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: "Plus Jakarta Display";
   font-weight: 600;
 }
 div.about-app-section2 .content-holder .posts-box a i {
@@ -2310,7 +2322,7 @@ section#pricing-section .pricing-box ul.pricing-table li p {
 section#pricing-section .pricing-box ul.pricing-table li h2 {
   color: #333333;
   font-size: 24px;
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: "Plus Jakarta Display";
   font-weight: 400;
   margin: 0 0 10px;
   line-height: 20px;
@@ -2335,7 +2347,7 @@ section#pricing-section .pricing-box ul.pricing-table li.title p span {
   display: block;
   line-height: 60px;
   font-weight: 400;
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: "Plus Jakarta Display";
   font-style: normal;
   transition: all 0.2s ease-in-out;
   -moz-transition: all 0.2s ease-in-out;
@@ -2381,7 +2393,7 @@ section#pricing-section .pricing-box ul.pricing-table.business li.best-offer p {
   background: #f7f7f7;
   color: #797979 !important;
   font-size: 16px;
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: "Plus Jakarta Display";
   font-weight: 600;
   text-transform: uppercase;
   -webkit-border-radius: 8px;
@@ -2602,7 +2614,7 @@ section#pricing-section.image-background2
   background: #00b9ff;
   color: #fff !important;
   font-size: 11px;
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: "Plus Jakarta Display";
   font-weight: 600;
   line-height: 20px;
   text-transform: uppercase;
@@ -2649,7 +2661,7 @@ ul.nav-tabs li a {
   color: #fff;
   padding: 10px 30px;
   font-size: 15px;
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: "Plus Jakarta Display";
   text-transform: uppercase;
   border: 1px solid rgba(255, 255, 255, 0.5);
   -webkit-border-radius: 0;
@@ -2666,7 +2678,7 @@ ul.nav-tabs li span {
   top: -4px;
   color: #fff;
   font-size: 14px;
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: "Plus Jakarta Display";
   font-weight: 400;
   font-style: italic;
 }
@@ -2793,7 +2805,7 @@ section.app-available-section .newsletter form input[type="email"] {
   border-radius: 0;
   color: #888888;
   font-size: 18px;
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: "Plus Jakarta Display";
   font-weight: 400;
   outline: none;
   -webkit-border-top-left-radius: 5px;
@@ -2808,7 +2820,7 @@ section.app-available-section .newsletter form input[type="email"] {
 section.app-available-section .newsletter form input[type="submit"] {
   background: #ffb703;
   width: 20%;
-  padding: 12px 10px 15px 10px;
+  padding: 13px 10px 14px 10px;
   color: #000;
   font-family: "Plus Jakarta Display";
   font-style: normal;
@@ -2944,7 +2956,7 @@ section#contact-section #contact-form textarea {
   background: #f7f7f7;
   color: #999999;
   font-size: 18px;
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: "Plus Jakarta Display";
   font-weight: 400;
   outline: none;
   border: 1px solid #d7d7d7;
@@ -2970,7 +2982,7 @@ section#contact-section #contact-form textarea {
 section#contact-section #contact-form input[type="submit"] {
   color: #fff;
   font-size: 18px;
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: "Plus Jakarta Display";
   font-weight: 600;
   background: transparent;
   background: #00b9ff;
@@ -3027,7 +3039,7 @@ section#contact-section .contact-info-box p {
 .alert-danger {
   padding: 10px 20px;
   margin-top: 20px;
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: "Plus Jakarta Display";
   font-size: 14px;
   font-weight: 400;
 }
@@ -3084,7 +3096,7 @@ section.testimonial-section .testimonial-box .testimonial-post h2 {
 section.testimonial-section .testimonial-box .testimonial-post span.name-quote {
   color: #6633cc;
   font-size: 18px;
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: "Plus Jakarta Display";
 }
 section.testimonial-section .item {
   padding: 35px 15px 15px;
@@ -3223,7 +3235,7 @@ section#overview-section .intro-block .content-holder ul.intro-list {
 }
 section#overview-section .intro-block .content-holder ul.intro-list li {
   font-size: 16px;
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: "Plus Jakarta Display";
   font-weight: 400;
   color: #333333;
   line-height: 30px;
@@ -3291,7 +3303,7 @@ section.blog-page-section .news-box .news-post ul.post-tags li {
   display: inline-block;
   color: #666666;
   font-size: 16px;
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: "Plus Jakarta Display";
   font-weight: 400;
   margin-right: 8px;
   padding-left: 14px;
@@ -3347,7 +3359,7 @@ section.blog-page-section .center-area a {
   -o-transition: all 0.2s ease-in-out;
   color: #6633cc;
   font-size: 18px;
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: "Plus Jakarta Display";
   font-weight: 600;
 }
 section#news-section .center-area a i,
@@ -3440,7 +3452,7 @@ section.blog-page-section .news-box.single-post .news-post blockquote {
   color: #333333;
   font-size: 20px;
   font-weight: 400;
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: "Plus Jakarta Display";
   font-style: italic;
   padding-left: 100px;
   position: relative;
@@ -3605,7 +3617,7 @@ section.blog-page-section
   h3 {
   font-size: 18px;
   color: #888888;
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: "Plus Jakarta Display";
   font-weight: 400;
   line-height: 24px;
   margin: 0 0 10px;
@@ -3624,7 +3636,7 @@ section.blog-page-section
   display: inline-block;
   font-size: 18px;
   color: #888888;
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: "Plus Jakarta Display";
   font-weight: 400;
   line-height: 24px;
   margin: 0 0 10px;
@@ -3665,7 +3677,7 @@ section.blog-page-section
   display: inline-block;
   color: #666666;
   font-size: 16px;
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: "Plus Jakarta Display";
   font-weight: 400;
   margin-right: 8px;
   padding-left: 14px;
@@ -3749,7 +3761,7 @@ section.blog-page-section .news-box.single-post ul.share-post li {
   display: inline-block;
   color: #666666;
   font-size: 16px;
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: "Plus Jakarta Display";
   font-weight: 400;
   margin-left: 4px;
 }
@@ -3794,7 +3806,7 @@ section.blog-page-section .news-box.single-post ul.share-post li a:hover {
   background: #ffffff;
   color: #999999;
   font-size: 16px;
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: "Plus Jakarta Display";
   font-weight: 400;
   outline: none;
   border: 1px solid #dddddd;
@@ -3820,7 +3832,7 @@ section.blog-page-section .news-box.single-post ul.share-post li a:hover {
 #comment-form input[type="submit"] {
   color: #fff;
   font-size: 18px;
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: "Plus Jakarta Display";
   font-weight: 600;
   background: transparent;
   background: #00b9ff;
@@ -3886,7 +3898,7 @@ footer form input[type="email"] {
   margin: 0 0 30px;
   color: #888888;
   font-size: 18px;
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: "Plus Jakarta Display";
   font-weight: 400;
   outline: none;
   -webkit-border-top-left-radius: 28px;
@@ -3903,7 +3915,7 @@ footer form input[type="submit"] {
   width: 230px;
   color: #ffffff;
   font-size: 18px;
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: "Plus Jakarta Display";
   font-weight: 600;
   border: 1px solid #00b9ff;
   outline: none;
@@ -4047,7 +4059,7 @@ footer.pattern-style ul.download-list li a {
   -o-transition: all 0.2s ease-in-out;
   color: #333333;
   font-size: 18px;
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: "Plus Jakarta Display";
   font-weight: 400;
 }
 footer.pattern-style ul.download-list li a span {
@@ -4442,7 +4454,7 @@ footer.pattern-style p.copyright {
     border-radius: 0;
     color: #888888;
     font-size: 18px;
-    font-family: "Source Sans Pro", sans-serif;
+    font-family: "Plus Jakarta Display";
     font-weight: 400;
     outline: none;
     -webkit-border-top-left-radius: 5px;
@@ -4871,7 +4883,7 @@ footer.pattern-style p.copyright {
     border-radius: 0;
     color: #888888;
     font-size: 18px;
-    font-family: "Source Sans Pro", sans-serif;
+    font-family: "Plus Jakarta Display";
     font-weight: 400;
     outline: none;
     -webkit-border-top-left-radius: 5px;
@@ -5396,7 +5408,7 @@ footer.pattern-style p.copyright {
     border-radius: 0;
     color: #888888;
     font-size: 18px;
-    font-family: "Source Sans Pro", sans-serif;
+    font-family: "Plus Jakarta Display";
     font-weight: 400;
     outline: none;
     -webkit-border-top-left-radius: 5px;
@@ -5411,7 +5423,7 @@ footer.pattern-style p.copyright {
   section.app-available-section .newsletter form input[type="submit"] {
     background: #000;
     width: 25%;
-    padding: 12px 10px 16px 10px;
+    padding: 13px 10px 15px 10px;
     color: #ffffff;
     font-family: "Plus Jakarta Display";
     font-style: normal;
