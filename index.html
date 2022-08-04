@@ -99,10 +99,12 @@
         <div class="top-block">
           <div class="container">
             <div class="row">
-              <div class="col-sm-6 col-md-6 col-lg-6 one">
-                <h1>Instant,<br /><span>Borderless,</span><br />Secure.</h1>
+              <div class="col-sm-12 col-md-6 col-lg-6 one">
+                <h1>Instant,</h1>
+                <h1><span>Borderless,</span></h1>
+                <h1>Secure.</h1>
                 <h2>
-                  Swap USD, GBP and EUR accounts <br />
+                  Swap your USD, GBP, CAD and EUR <br />
                   for all your international transactions
                 </h2>
                 <div class="secured">
@@ -166,18 +168,41 @@
                       style="padding-bottom: 1px; background-color: #ffb703"
                     >
                       <div class="dropdown">
-                        <div class="item caption">
+                        <!-- <div class="item caption">
+                          <div
+                            class="currency-flag currency-flag-ngn"
+                            data-item="ngn"
+                          ></div>
+                          <p>
+                            NGN
+                            <img
+                              style="margin-left: -10px; margin-top: -1px"
+                              src="images/icons8-expand-arrow-24.png"
+                              width="12px"
+                            />
+                          </p>
+                        </div> -->
+
+                        <div class="item caption" style="display: inline-block">
                           <div
                             class="currency-flag currency-flag-ngn"
                             data-item="ngn"
                           ></div>
                           <p>NGN</p>
                         </div>
+                        <div style="display: inline">
+                          <img
+                            style="margin-left: -20px; margin-top: -1px"
+                            src="images/icons8-expand-arrow-24.png"
+                            width="12px"
+                          />
+                        </div>
 
-                        <div id="list" class="list"></div>
+                        <div id="list" class="list" style="z-index: 99"></div>
                       </div>
                       <!-- <p style="display: inline">></p> -->
                     </div>
+                    <p class="ex-rate">USD 1/NGN 560</p>
 
                     <p class="switch-currencies">
                       <img src="images/switch.png" alt="" /> Switch Currencies
@@ -195,14 +220,26 @@
                       style="background-color: #ffb703"
                     >
                       <div class="dropdown">
-                        <div class="item2 caption">
+                        <!-- <div class="item2 caption"> -->
+                        <div
+                          class="item2 caption"
+                          style="display: inline-block"
+                        >
                           <div
                             class="currency-flag currency-flag-usd"
                             data-item="usd"
                           ></div>
-                          <p>USA</p>
+                          <p>USD</p>
                         </div>
-                        <div id="list2" class="list"></div>
+                        <div style="display: inline">
+                          <img
+                            style="margin-left: -20px; margin-top: -1px"
+                            src="images/icons8-expand-arrow-24.png"
+                            width="12px"
+                          />
+                        </div>
+                        <!-- </div> -->
+                        <div id="list2" class="list" style="z-index: 99"></div>
                       </div>
                     </div>
                   </form>
@@ -211,7 +248,10 @@
                     >Calculate</a
                   >
 
-                  <!-- <p class="last-updated"><span> US Dollar to Nigerian Naira conversion</span> — Last updated Feb 10, 2022, 11:33 UTC</p> -->
+                  <p class="last-updated">
+                    <span> US Dollar to Nigerian Naira conversion</span> — Last
+                    updated Feb 10, 2022, 11:33 UTC
+                  </p>
                 </div>
               </div>
             </div>
@@ -227,7 +267,7 @@
           <!-- <ul class="client-list"></ul> -->
           <div class="send-chill">
             <h1>Send & chill</h1>
-            <p>Send Money across boarder send to friends & family</p>
+            <p>Send money across borders to friends & family</p>
           </div>
         </div>
       </section>
@@ -244,7 +284,7 @@
             <div class="col-sm-6" style="margin-top: 9%">
               <div class="title-section">
                 <h1>Be the first to know</h1>
-                <p>Get updates news and launch date</p>
+                <p>Get updates, news and the launch date.</p>
               </div>
 
               <div class="newsletter" id="newsletter-area">
@@ -304,28 +344,62 @@
 			================================================== -->
       <footer class="white-style" id="title-section">
         <div class="row">
-          <div class="col-sm-6 col-md-6 col-lg-6 text-left">
+          <div class="col-sm-12 col-md-6 col-lg-6 text-left">
             <div class="row">
-              <p class="text-black" style="float: left; display: inline-block">
-                Follow Us
-              </p>
-              <div class="col-sm-1 col-md-1 col-lg-1" style="width: 5.333333%">
-                <img
-                  src="images/yellow-facebook.png"
-                  width="28px"
-                  height="25px"
+              <section id="lab_social_icon_footer" class="onlymobile">
+                <!-- Include Font Awesome Stylesheet in Header -->
+                <link
+                  href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css"
+                  rel="stylesheet"
                 />
-              </div>
+                <div class="container">
+                  <div class="text-center center-block">
+                    <img
+                      src="images/ph_facebook-logo-thin.png"
+                      width="28px"
+                      height="28px"
+                    />
+                    <img src="images/twitter.png" width="25px" height="25px" />
+                    <a href="#"
+                      ><img src="images/Vector.png" width="25px" height="25px"
+                    /></a>
+                  </div>
+                </div>
+              </section>
+              <div class="onlydesktop">
+                <p
+                  class="text-black"
+                  style="float: left; display: inline-block"
+                >
+                  Follow Us
+                </p>
+                <div
+                  class="col-sm-1 col-md-1 col-lg-1"
+                  style="width: 5.333333%"
+                >
+                  <img
+                    src="images/ph_facebook-logo-thin.png"
+                    width="28px"
+                    height="28px"
+                  />
+                </div>
 
-              <div class="col-sm-1 col-md-1 col-lg-1" style="width: 5.333333%">
-                <img src="images/icons8-twitter-24.png" />
-              </div>
-              <div class="col-sm-1 col-md-1 col-lg-1" style="width: 5.333333%">
-                <img src="images/icons8-instagram-24.png" />
+                <div
+                  class="col-sm-1 col-md-1 col-lg-1"
+                  style="width: 5.333333%"
+                >
+                  <img src="images/twitter.png" width="25px" height="25px" />
+                </div>
+                <div
+                  class="col-sm-1 col-md-1 col-lg-1"
+                  style="width: 5.333333%"
+                >
+                  <img src="images/Vector.png" width="25px" height="25px" />
+                </div>
               </div>
             </div>
           </div>
-          <div class="col-sm-6 col-md-6 col-lg-6">
+          <div class="col-sm-12 col-md-6 col-lg-6">
             <div class="row">
               <div class="col-sm-6 col-md-6 col-lg-6 text-right">
                 <p class="text-black">Help & Support</p>
@@ -426,7 +500,7 @@
           );
           $("#sending").attr("placeholder", baseCurrencyInput);
           if (baseCurrencyInput != "NGN") {
-            $(".dropdown > .list > .item2").removeClass("selected");
+            $(".dropdown > .list > .item").removeClass("selected");
             $(".dropdown > .list > .item2")
               .parent()
               .parent()
@@ -434,7 +508,7 @@
               .children(".caption")
               .html(
                 $(
-                  '<div class="caption" data-item="NGN"><div class="currency-flag currency-flag-ngn" data-item="NGN"></div><p>NGN</p></div>'
+                  '<div class="caption" data-item="NGN"><div class="currency-flag currency-flag-ngn" data-item="NGN"></div><p>NGN </p></div>'
                 ).html()
               );
             $(".dropdown > .item2 .caption").attr("data-item2", "NGN");
@@ -449,7 +523,8 @@
         });
 
         $(".dropdown > .list > .item2 .caption").on("click", function () {
-          $(".dropdown > .list > .item2").removeClass("selected");
+          // $(".dropdown > .list > .item").parent().parent().parent().removeClass("open");
+
           // $(this).addClass('selected').parent().parent().removeClass('open').children('.caption').html($(this).html());
           $(".dropdown > .list > .item2")
             .parent()
@@ -470,7 +545,7 @@
               .children(".caption")
               .html(
                 $(
-                  '<div class="caption" data-item="NGN"><div class="currency-flag currency-flag-ngn" data-item="NGN"></div><p>NGN</p></div>'
+                  '<div class="caption" data-item="NGN"><div class="currency-flag currency-flag-ngn" data-item="NGN"></div><p>NGN </p></div>'
                 ).html()
               );
             baseCurrencyInput = "NGN";
@@ -480,8 +555,14 @@
         });
       });
 
-      $(".dropdown > .caption").on("click", function () {
+      $(".dropdown > .item").on("click", function () {
         $(this).parent().toggleClass("open");
+        $(".dropdown > .item2").parent().removeClass("open");
+      });
+
+      $(".dropdown > .item2").on("click", function () {
+        $(this).parent().toggleClass("open");
+        $(".dropdown > .item").parent().removeClass("open");
       });
 
       $(".switch-currencies").on("click", function () {
