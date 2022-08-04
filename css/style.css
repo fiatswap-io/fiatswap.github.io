@@ -1069,7 +1069,8 @@ section#home-section .top-block .card form .currency {
 }
 
 section#home-section .top-block .card form .currency-flag {
-  height: 16px !important;
+  height: 12px !important;
+  border-radius: 3px !important;
   /* width: 16px !important; */
 }
 
@@ -4468,7 +4469,7 @@ footer.pattern-style p.copyright {
   }
 
   section.app-available-section .newsletter form input[type="submit"] {
-    background: #000;
+    background: #ffb703;
     width: 25%;
     padding: 11px 10px 12px 10px;
     color: #ffffff;
@@ -4896,7 +4897,7 @@ footer.pattern-style p.copyright {
     border-bottom-left-radius: 5px;
   }
   section.app-available-section .newsletter form input[type="submit"] {
-    background: #000;
+    background: #ffb703;
     width: 25%;
     padding: 10px 10px 13px 10px;
     color: #ffffff;
@@ -5421,7 +5422,7 @@ footer.pattern-style p.copyright {
     border-bottom-left-radius: 5px;
   }
   section.app-available-section .newsletter form input[type="submit"] {
-    background: #000;
+    background: #ffb703;
     width: 25%;
     padding: 13px 10px 15px 10px;
     color: #ffffff;

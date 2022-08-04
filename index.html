@@ -168,15 +168,37 @@
                       style="padding-bottom: 1px; background-color: #ffb703"
                     >
                       <div class="dropdown">
-                        <div class="item caption">
+                        <!-- <div class="item caption">
+                          <div
+                            class="currency-flag currency-flag-ngn"
+                            data-item="ngn"
+                          ></div>
+                          <p>
+                            NGN
+                            <img
+                              style="margin-left: -10px; margin-top: -1px"
+                              src="images/icons8-expand-arrow-24.png"
+                              width="12px"
+                            />
+                          </p>
+                        </div> -->
+
+                        <div class="item caption" style="display: inline-block">
                           <div
                             class="currency-flag currency-flag-ngn"
                             data-item="ngn"
                           ></div>
                           <p>NGN</p>
                         </div>
+                        <div style="display: inline">
+                          <img
+                            style="margin-left: -20px; margin-top: -1px"
+                            src="images/icons8-expand-arrow-24.png"
+                            width="12px"
+                          />
+                        </div>
 
-                        <div id="list" class="list"></div>
+                        <div id="list" class="list" style="z-index: 99"></div>
                       </div>
                       <!-- <p style="display: inline">></p> -->
                     </div>
@@ -198,14 +220,26 @@
                       style="background-color: #ffb703"
                     >
                       <div class="dropdown">
-                        <div class="item2 caption">
+                        <!-- <div class="item2 caption"> -->
+                        <div
+                          class="item2 caption"
+                          style="display: inline-block"
+                        >
                           <div
                             class="currency-flag currency-flag-usd"
                             data-item="usd"
                           ></div>
                           <p>USD</p>
                         </div>
-                        <div id="list2" class="list"></div>
+                        <div style="display: inline">
+                          <img
+                            style="margin-left: -20px; margin-top: -1px"
+                            src="images/icons8-expand-arrow-24.png"
+                            width="12px"
+                          />
+                        </div>
+                        <!-- </div> -->
+                        <div id="list2" class="list" style="z-index: 99"></div>
                       </div>
                     </div>
                   </form>
@@ -466,7 +500,7 @@
           );
           $("#sending").attr("placeholder", baseCurrencyInput);
           if (baseCurrencyInput != "NGN") {
-            $(".dropdown > .list > .item2").removeClass("selected");
+            $(".dropdown > .list > .item").removeClass("selected");
             $(".dropdown > .list > .item2")
               .parent()
               .parent()
@@ -474,7 +508,7 @@
               .children(".caption")
               .html(
                 $(
-                  '<div class="caption" data-item="NGN"><div class="currency-flag currency-flag-ngn" data-item="NGN"></div><p>NGN</p></div>'
+                  '<div class="caption" data-item="NGN"><div class="currency-flag currency-flag-ngn" data-item="NGN"></div><p>NGN </p></div>'
                 ).html()
               );
             $(".dropdown > .item2 .caption").attr("data-item2", "NGN");
@@ -489,7 +523,8 @@
         });
 
         $(".dropdown > .list > .item2 .caption").on("click", function () {
-          $(".dropdown > .list > .item2").removeClass("selected");
+          // $(".dropdown > .list > .item").parent().parent().parent().removeClass("open");
+
           // $(this).addClass('selected').parent().parent().removeClass('open').children('.caption').html($(this).html());
           $(".dropdown > .list > .item2")
             .parent()
@@ -510,7 +545,7 @@
               .children(".caption")
               .html(
                 $(
-                  '<div class="caption" data-item="NGN"><div class="currency-flag currency-flag-ngn" data-item="NGN"></div><p>NGN</p></div>'
+                  '<div class="caption" data-item="NGN"><div class="currency-flag currency-flag-ngn" data-item="NGN"></div><p>NGN </p></div>'
                 ).html()
               );
             baseCurrencyInput = "NGN";
@@ -520,8 +555,14 @@
         });
       });
 
-      $(".dropdown > .caption").on("click", function () {
+      $(".dropdown > .item").on("click", function () {
         $(this).parent().toggleClass("open");
+        $(".dropdown > .item2").parent().removeClass("open");
+      });
+
+      $(".dropdown > .item2").on("click", function () {
+        $(this).parent().toggleClass("open");
+        $(".dropdown > .item").parent().removeClass("open");
       });
 
       $(".switch-currencies").on("click", function () {
