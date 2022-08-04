@@ -214,6 +214,7 @@
                       name="recieving"
                       id="recieving"
                       placeholder="USD"
+                      readonly
                     />
                     <div
                       class="currency-switcher"
@@ -266,7 +267,7 @@
         <div class="container">
           <!-- <ul class="client-list"></ul> -->
           <div class="send-chill">
-            <h1>Send & Chill</h1>
+            <h1>Send & chill</h1>
             <p>Send money across borders to friends & family</p>
           </div>
         </div>
@@ -379,8 +380,8 @@
                 >
                   <img
                     src="images/ph_facebook-logo-thin.png"
-                    width="30px"
-                    height="30px"
+                    width="28px"
+                    height="28px"
                   />
                 </div>
 
@@ -388,13 +389,13 @@
                   class="col-sm-1 col-md-1 col-lg-1"
                   style="width: 5.333333%"
                 >
-                  <img src="images/twitter.png" width="30px" height="30px" />
+                  <img src="images/twitter.png" width="25px" height="25px" />
                 </div>
                 <div
                   class="col-sm-1 col-md-1 col-lg-1"
                   style="width: 5.333333%"
                 >
-                  <img src="images/Vector.png" width="30px" height="30px" />
+                  <img src="images/Vector.png" width="25px" height="25px" />
                 </div>
               </div>
             </div>
@@ -402,12 +403,10 @@
           <div class="col-sm-12 col-md-6 col-lg-6">
             <div class="row">
               <div class="col-sm-6 col-md-6 col-lg-6 text-right">
-                <p class="text-black" style="font-weight: 500">
-                  Help & Support
-                </p>
+                <p class="text-black">Help & Support</p>
               </div>
               <div class="col-sm-6 col-md-6 col-lg-6 text-left">
-                <p class="text-black" style="font-weight: 500">Contact Us</p>
+                <p class="text-black">Contact Us</p>
               </div>
             </div>
           </div>
@@ -626,10 +625,10 @@
         // var to = secondCurrencyInput;
         var result = 0;
         var dataString =
-          "from=" +
-          secondCurrencyInput +
-          "&to=" +
+          "quote=" +
           baseCurrencyInput +
+          "&base=" +
+          secondCurrencyInput +
           "&amount=" +
           amount;
         // $.getJSON("../fiatswap?" + dataString).success(function (data) {
