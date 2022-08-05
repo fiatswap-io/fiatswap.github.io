@@ -699,8 +699,8 @@
               dataString
           ).success(function (data) {
             // result = data * amount;
-            console.log("price ticker data");
-            console.log(data);
+            //console.log("price ticker data");
+            //console.log(data);
             var formattedFinalAmount = formatMoney(data.finalAmount);
             $("input[name=recieving]").val(formattedFinalAmount);
             $("#loader").hide();
