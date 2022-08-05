@@ -245,9 +245,19 @@
                     </div>
                   </form>
 
-                  <a class="button-three target-link calculate-btn"
+                  <a
+                    class="button-three target-link calculate-btn"
+                    id="calculate-btn"
                     >Calculate</a
                   >
+
+                  <a
+                    class="button-three target-link calculate-btn2"
+                    id="loader"
+                    style="display: none"
+                  >
+                    <div><img src="images/bx_loader.gif" /></div>
+                  </a>
 
                   <p class="last-updated">
                     <span> US Dollar to Nigerian Naira conversion</span> — Last
@@ -267,7 +277,7 @@
         <div class="container">
           <!-- <ul class="client-list"></ul> -->
           <div class="send-chill">
-            <h1>Send & chill</h1>
+            <h1>Send & Chill</h1>
             <p>Send money across borders to friends & family</p>
           </div>
         </div>
@@ -356,13 +366,16 @@
                 <div class="container">
                   <div class="text-center center-block">
                     <img
-                      src="images/ph_facebook-logo-thin.png"
+                      src="images/ph_facebook-logo-thin.svg"
                       width="28px"
                       height="28px"
                     />
-                    <img src="images/twitter.png" width="25px" height="25px" />
+                    <img src="images/twitter.svg" width="25px" height="25px" />
                     <a href="#"
-                      ><img src="images/Vector.png" width="25px" height="25px"
+                      ><img
+                        src="images/Instagram.svg"
+                        width="25px"
+                        height="25px"
                     /></a>
                   </div>
                 </div>
@@ -379,9 +392,9 @@
                   style="width: 5.333333%"
                 >
                   <img
-                    src="images/ph_facebook-logo-thin.png"
-                    width="28px"
-                    height="28px"
+                    src="images/ph_facebook-logo-thin.svg"
+                    width="30px"
+                    height="30px"
                   />
                 </div>
 
@@ -389,13 +402,13 @@
                   class="col-sm-1 col-md-1 col-lg-1"
                   style="width: 5.333333%"
                 >
-                  <img src="images/twitter.png" width="25px" height="25px" />
+                  <img src="images/twitter.svg" width="30px" height="30px" />
                 </div>
                 <div
                   class="col-sm-1 col-md-1 col-lg-1"
                   style="width: 5.333333%"
                 >
-                  <img src="images/Vector.png" width="25px" height="25px" />
+                  <img src="images/Instagram.svg" width="30px" height="30px" />
                 </div>
               </div>
             </div>
@@ -623,6 +636,7 @@
         var amount = $("input[name=sending]").val();
         // var from = baseCurrencyInput;
         // var to = secondCurrencyInput;
+
         var result = 0;
         var dataString =
           "from=" +
@@ -634,17 +648,24 @@
         // $.getJSON("../fiatswap?" + dataString).success(function (data) {
         //   $("input[name=recieving]").val(data.finalPrice);
         // });
+        if (baseCurrencyInput === secondCurrencyInput) {
+          $("input[name=recieving]").val(amount);
+        } else {
+          $("#loader").show();
+          $("#calculate-btn").hide();
+          $.getJSON(
+            "https://fn1igg1ngk.execute-api.eu-west-3.amazonaws.com/getPrices?" +
+              dataString
+          ).success(function (data) {
+            // result = data * amount;
+            console.log("price ticker data");
+            console.log(data.finalAmount);
 
-        $.getJSON(
-          "https://fn1igg1ngk.execute-api.eu-west-3.amazonaws.com/getPrices?" +
-            dataString
-        ).success(function (data) {
-          // result = data * amount;
-          console.log("price ticker data");
-          console.log(data);
-
-          $("input[name=recieving]").val(data);
-        });
+            $("input[name=recieving]").val(data.finalAmount);
+            $("#loader").hide();
+            $("#calculate-btn").show();
+          });
+        }
       }
       btn.addEventListener("click", convertCurrency);
 
