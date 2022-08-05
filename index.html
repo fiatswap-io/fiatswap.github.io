@@ -202,7 +202,7 @@
                       </div>
                       <!-- <p style="display: inline">></p> -->
                     </div>
-                    <p class="ex-rate">USD 1/NGN 560</p>
+                    <p class="ex-rate" id="ex-rate" style="display: none"></p>
 
                     <p class="switch-currencies">
                       <img src="images/switch.png" alt="" /> Switch Currencies
@@ -259,9 +259,13 @@
                     <div><img src="images/bx_loader.gif" /></div>
                   </a>
 
-                  <p class="last-updated">
-                    <span> US Dollar to Nigerian Naira conversion</span> — Last
-                    updated Feb 10, 2022, 11:33 UTC
+                  <p
+                    class="last-updated"
+                    id="last-updated"
+                    style="display: none"
+                  >
+                    <!-- <span> US Dollar to Nigerian Naira conversion</span> — Last
+                    updated Feb 10, 2022, 11:33 UTC -->
                   </p>
                 </div>
               </div>
@@ -357,29 +361,6 @@
         <div class="row">
           <div class="col-sm-12 col-md-6 col-lg-6 text-left">
             <div class="row">
-              <section id="lab_social_icon_footer" class="onlymobile">
-                <!-- Include Font Awesome Stylesheet in Header -->
-                <link
-                  href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css"
-                  rel="stylesheet"
-                />
-                <div class="container">
-                  <div class="text-center center-block">
-                    <img
-                      src="images/ph_facebook-logo-thin.svg"
-                      width="28px"
-                      height="28px"
-                    />
-                    <img src="images/twitter.svg" width="25px" height="25px" />
-                    <a href="#"
-                      ><img
-                        src="images/Instagram.svg"
-                        width="25px"
-                        height="25px"
-                    /></a>
-                  </div>
-                </div>
-              </section>
               <div class="onlydesktop">
                 <p
                   class="text-black"
@@ -413,16 +394,67 @@
               </div>
             </div>
           </div>
-          <div class="col-sm-12 col-md-6 col-lg-6">
+          <div class="col-sm-12 col-md-6 col-lg-6 onlydesktop">
             <div class="row">
               <div class="col-sm-6 col-md-6 col-lg-6 text-right">
-                <p class="text-black">Help & Support</p>
+                <p class="text-black" style="font-weight: 500">
+                  Help & Support
+                </p>
               </div>
               <div class="col-sm-6 col-md-6 col-lg-6 text-left">
-                <p class="text-black">Contact Us</p>
+                <p class="text-black" style="font-weight: 500">Contact Us</p>
               </div>
             </div>
           </div>
+          <section
+            id="lab_social_icon_footer"
+            class="onlymobile"
+            style="margin-bottom: 10px"
+          >
+            <!-- Include Font Awesome Stylesheet in Header -->
+            <link
+              href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css"
+              rel="stylesheet"
+            />
+
+            <div class="container" style="margin-bottom: 40px">
+              <div class="text-center center-block">
+                <a
+                  href="#"
+                  class="text-black"
+                  style="display: inline; margin-right: 15px; font-weight: 500"
+                  >Help & Support</a
+                >
+
+                <a
+                  href="#"
+                  class="text-black"
+                  style="display: inline; font-weight: 500"
+                  >Contact Us</a
+                >
+              </div>
+            </div>
+
+            <div class="container">
+              <div class="text-center center-block">
+                <p
+                  class="text-black"
+                  style="display: inline-block; margin-right: 2px"
+                >
+                  Follow Us
+                </p>
+                <img
+                  src="images/ph_facebook-logo-thin.svg"
+                  width="28px"
+                  height="28px"
+                />
+                <img src="images/twitter.svg" width="25px" height="25px" />
+                <a href="#"
+                  ><img src="images/Instagram.svg" width="25px" height="25px"
+                /></a>
+              </div>
+            </div>
+          </section>
         </div>
         <div class="row">
           <div class="col-12">
@@ -656,6 +688,9 @@
         // });
         if (baseCurrencyInput === secondCurrencyInput) {
           $("input[name=recieving]").val(amount);
+          $("#ex-rate").html(
+            baseCurrencyInput + " 1/" + secondCurrencyInput + " 1"
+          );
         } else {
           $("#loader").show();
           $("#calculate-btn").hide();
@@ -665,11 +700,20 @@
           ).success(function (data) {
             // result = data * amount;
             console.log("price ticker data");
-            console.log(formatMoney(data.finalAmount));
+            console.log(data);
             var formattedFinalAmount = formatMoney(data.finalAmount);
             $("input[name=recieving]").val(formattedFinalAmount);
             $("#loader").hide();
             $("#calculate-btn").show();
+            $("#ex-rate").html(
+              baseCurrencyInput + " 1/" + secondCurrencyInput + " " + data.rate
+            );
+            $("#ex-rate").show();
+            $("#last-updated").html(
+              "<span> US Dollar to Nigerian Naira conversion</span> — Last updated " +
+                new Date($.now()).toUTCString()
+            );
+            $("#last-updated").show();
           });
         }
       }
