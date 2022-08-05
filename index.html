@@ -210,7 +210,7 @@
 
                     <p style="margin-top: 30px">Recieving</p>
                     <input
-                      type="number"
+                      type="text"
                       name="recieving"
                       id="recieving"
                       placeholder="USD"
@@ -626,6 +626,12 @@
         }
       });
 
+      function formatMoney(num) {
+        var num_parts = num.toString().split(".");
+        num_parts[0] = num_parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        return num_parts.join(".");
+      }
+
       var btn = document.querySelector(".calculate-btn");
       var amountInput = document.getElementById("sending");
       function convertCurrency(event) {
@@ -659,9 +665,9 @@
           ).success(function (data) {
             // result = data * amount;
             console.log("price ticker data");
-            console.log(data.finalAmount);
-
-            $("input[name=recieving]").val(data.finalAmount);
+            console.log(formatMoney(data.finalAmount));
+            var formattedFinalAmount = formatMoney(data.finalAmount);
+            $("input[name=recieving]").val(formattedFinalAmount);
             $("#loader").hide();
             $("#calculate-btn").show();
           });
