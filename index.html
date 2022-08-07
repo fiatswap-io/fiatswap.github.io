@@ -167,25 +167,10 @@
                       class="currency-switcher"
                       style="padding-bottom: 1px; background-color: #ffb703"
                     >
-                      <div class="dropdown" style="z-index: 9">
-                        <!-- <div class="item caption">
-                          <div
-                            class="currency-flag currency-flag-ngn"
-                            data-item="ngn"
-                          ></div>
-                          <p>
-                            NGN
-                            <img
-                              style="margin-left: -10px; margin-top: -1px"
-                              src="images/icons8-expand-arrow-24.png"
-                              width="12px"
-                            />
-                          </p>
-                        </div> -->
-
+                      <div class="dropdown" style="z-index: 6">
                         <div
                           class="item caption dropdown"
-                          style="display: inline-block; z-index: 8"
+                          style="display: inline-block; z-index: 5"
                         >
                           <div
                             class="currency-flag currency-flag-ngn"
@@ -195,7 +180,11 @@
                         </div>
                         <div style="display: inline">
                           <img
-                            style="margin-left: -20px; margin-top: -1px"
+                            style="
+                              margin-left: -20px;
+                              margin-top: -1px;
+                              z-index: 0;
+                            "
                             src="images/icons8-expand-arrow-24.png"
                             width="12px"
                           />
@@ -205,6 +194,7 @@
                       </div>
                       <!-- <p style="display: inline">></p> -->
                     </div>
+
                     <p class="ex-rate" id="ex-rate" style="display: none"></p>
 
                     <p class="switch-currencies">
@@ -489,7 +479,7 @@
             .append(
               '<div id="triple-container" class="item" data-item=' +
                 value +
-                '><div class="caption"  data-item=' +
+                '><div class=""  data-item=' +
                 value +
                 '><div class="currency-flag currency-flag-' +
                 value.toLowerCase() +
