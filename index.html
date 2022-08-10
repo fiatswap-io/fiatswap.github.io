@@ -647,12 +647,6 @@
         }
       });
 
-      // function formatMoney(num) {
-      //   var num_parts = num.toString().split(".");
-      //   num_parts[0] = num_parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-      //   return num_parts.join(".");
-      // }
-
       function formatAmount(number) {
         return new Intl.NumberFormat("en", {
           style: "decimal",
@@ -715,49 +709,12 @@
                   new Date($.now()).toUTCString()
               );
               $("#last-updated").show();
-              //   var dataString =
-              //     "to=" +
-              //     secondCurrencyInput +
-              //     "&from=" +
-              //     baseCurrencyInput +
-              //     "&amount=" +
-              //     amount;
-
-              //   $.getJSON(
-              //     "https://fn1igg1ngk.execute-api.eu-west-3.amazonaws.com/getPrices?" +
-              //       dataString
-              //   ).success(function (data) {
-              //     var rates = 1 / data.rate;
-              //     newFinalAmount = rates * amount;
-              //     var formattedFinalAmount = formatMoney(newFinalAmount);
-              //     $("input[name=recieving]").val(formattedFinalAmount);
-              //     $("#loader").hide();
-              //     $("#calculate-btn").show();
-              //     $("#ex-rate").html(
-              //       baseCurrencyInput +
-              //         " 1/" +
-              //         secondCurrencyInput +
-              //         " " +
-              //         data.rate
-              //     );
-              //     $("#ex-rate").show();
-              //     $("#last-updated").html(
-              //       "<span> US Dollar to Nigerian Naira conversion</span> — Last updated " +
-              //         new Date($.now()).toUTCString()
-              //     );
-              //     $("#last-updated").show();
-              //   });
             } else {
               var formattedFinalAmount = formatAmount(data.finalAmount);
               $("input[name=recieving]").val(formattedFinalAmount);
               $("#loader").hide();
               $("#calculate-btn").show();
               $("#ex-rate").html(
-                // baseCurrencyInput +
-                //   " 1/" +
-                //   secondCurrencyInput +
-                //   " " +
-                //   data.rate
                 baseCurrencyInput +
                   "/" +
                   secondCurrencyInput +
