@@ -667,9 +667,9 @@
         var result = 0;
         var dataString =
           "from=" +
-          secondCurrencyInput +
-          "&to=" +
           baseCurrencyInput +
+          "&to=" +
+          secondCurrencyInput +
           "&amount=" +
           amount;
         // $.getJSON("../fiatswap?" + dataString).success(function (data) {
@@ -687,61 +687,54 @@
             "https://fn1igg1ngk.execute-api.eu-west-3.amazonaws.com/getPrices?" +
               dataString
           ).success(function (data) {
-            // result = data * amount;
-            //console.log("price ticker data");
-            //console.log(data);
-            if (data.rate < 1) {
-              var dataString =
-                "to=" +
-                secondCurrencyInput +
-                "&from=" +
-                baseCurrencyInput +
-                "&amount=" +
-                amount;
+            // if (data.rate < 1) {
+            //   var dataString =
+            //     "to=" +
+            //     secondCurrencyInput +
+            //     "&from=" +
+            //     baseCurrencyInput +
+            //     "&amount=" +
+            //     amount;
 
-              $.getJSON(
-                "https://fn1igg1ngk.execute-api.eu-west-3.amazonaws.com/getPrices?" +
-                  dataString
-              ).success(function (data) {
-                var rates = 1 / data.rate;
-                newFinalAmount = rates * amount;
-                var formattedFinalAmount = formatMoney(newFinalAmount);
-                $("input[name=recieving]").val(formattedFinalAmount);
-                $("#loader").hide();
-                $("#calculate-btn").show();
-                $("#ex-rate").html(
-                  baseCurrencyInput +
-                    " 1/" +
-                    secondCurrencyInput +
-                    " " +
-                    data.rate
-                );
-                $("#ex-rate").show();
-                $("#last-updated").html(
-                  "<span> US Dollar to Nigerian Naira conversion</span> — Last updated " +
-                    new Date($.now()).toUTCString()
-                );
-                $("#last-updated").show();
-              });
-            } else {
-              var formattedFinalAmount = formatMoney(data.finalAmount);
-              $("input[name=recieving]").val(formattedFinalAmount);
-              $("#loader").hide();
-              $("#calculate-btn").show();
-              $("#ex-rate").html(
-                baseCurrencyInput +
-                  " 1/" +
-                  secondCurrencyInput +
-                  " " +
-                  data.rate
-              );
-              $("#ex-rate").show();
-              $("#last-updated").html(
-                "<span> US Dollar to Nigerian Naira conversion</span> — Last updated " +
-                  new Date($.now()).toUTCString()
-              );
-              $("#last-updated").show();
-            }
+            //   $.getJSON(
+            //     "https://fn1igg1ngk.execute-api.eu-west-3.amazonaws.com/getPrices?" +
+            //       dataString
+            //   ).success(function (data) {
+            //     var rates = 1 / data.rate;
+            //     newFinalAmount = rates * amount;
+            //     var formattedFinalAmount = formatMoney(newFinalAmount);
+            //     $("input[name=recieving]").val(formattedFinalAmount);
+            //     $("#loader").hide();
+            //     $("#calculate-btn").show();
+            //     $("#ex-rate").html(
+            //       baseCurrencyInput +
+            //         " 1/" +
+            //         secondCurrencyInput +
+            //         " " +
+            //         data.rate
+            //     );
+            //     $("#ex-rate").show();
+            //     $("#last-updated").html(
+            //       "<span> US Dollar to Nigerian Naira conversion</span> — Last updated " +
+            //         new Date($.now()).toUTCString()
+            //     );
+            //     $("#last-updated").show();
+            //   });
+            // } else {
+            var formattedFinalAmount = formatMoney(data.finalAmount);
+            $("input[name=recieving]").val(formattedFinalAmount);
+            $("#loader").hide();
+            $("#calculate-btn").show();
+            $("#ex-rate").html(
+              baseCurrencyInput + " 1/" + secondCurrencyInput + " " + data.rate
+            );
+            $("#ex-rate").show();
+            $("#last-updated").html(
+              "<span> US Dollar to Nigerian Naira conversion</span> — Last updated " +
+                new Date($.now()).toUTCString()
+            );
+            $("#last-updated").show();
+            // }
           });
         }
       }
