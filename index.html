@@ -558,9 +558,6 @@
         });
 
         $(".dropdown > .list > .item2 .caption").on("click", function () {
-          // $(".dropdown > .list > .item").parent().parent().parent().removeClass("open");
-
-          // $(this).addClass('selected').parent().parent().removeClass('open').children('.caption').html($(this).html());
           $(".dropdown > .list > .item2")
             .parent()
             .parent()
@@ -569,7 +566,6 @@
             .html($(this).html());
           secondCurrencyInput = $(this).data("item2");
           console.log("Second Currency " + secondCurrencyInput);
-          // console.log($('.dropdown > .item2 .caption').attr("data-item2"));
           $("#recieving").attr("placeholder", secondCurrencyInput);
           if (secondCurrencyInput != "NGN") {
             $(".dropdown > .list > .item").removeClass("selected");
@@ -663,8 +659,6 @@
         console.log("Second Currency " + secondCurrencyInput);
         event.preventDefault();
         var amount = $("input[name=sending]").val();
-        // var from = baseCurrencyInput;
-        // var to = secondCurrencyInput;
 
         var result = 0;
         var dataString =
@@ -674,9 +668,7 @@
           secondCurrencyInput +
           "&amount=" +
           amount;
-        // $.getJSON("../fiatswap?" + dataString).success(function (data) {
-        //   $("input[name=recieving]").val(data.finalPrice);
-        // });
+
         if (baseCurrencyInput === secondCurrencyInput) {
           $("input[name=recieving]").val(amount);
           $("#ex-rate").html(
@@ -691,7 +683,6 @@
           ).success(function (data) {
             if (+data.rate < 1) {
               var rates = formatAmount(1 / +data.rate);
-              // newFinalAmount = rates * amount;
               var formattedFinalAmount = formatAmount(data.finalAmount);
               $("input[name=recieving]").val(formattedFinalAmount);
               $("#loader").hide();
