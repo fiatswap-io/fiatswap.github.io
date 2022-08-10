@@ -53,7 +53,7 @@
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
               <div class="header-box">
-                <button
+                <!-- <button
                   type="button"
                   class="navbar-toggle collapsed"
                   data-toggle="collapse"
@@ -63,7 +63,7 @@
                   <span class="icon-bar"></span>
                   <span class="icon-bar"></span>
                   <span class="icon-bar"></span>
-                </button>
+                </button> -->
                 <!-- <p>Join Fiatswap</p> -->
 
                 <img
@@ -167,23 +167,11 @@
                       class="currency-switcher"
                       style="padding-bottom: 1px; background-color: #ffb703"
                     >
-                      <div class="dropdown">
-                        <!-- <div class="item caption">
-                          <div
-                            class="currency-flag currency-flag-ngn"
-                            data-item="ngn"
-                          ></div>
-                          <p>
-                            NGN
-                            <img
-                              style="margin-left: -10px; margin-top: -1px"
-                              src="images/icons8-expand-arrow-24.png"
-                              width="12px"
-                            />
-                          </p>
-                        </div> -->
-
-                        <div class="item caption" style="display: inline-block">
+                      <div class="dropdown" style="z-index: 6">
+                        <div
+                          class="item caption dropdown"
+                          style="display: inline-block; z-index: 5"
+                        >
                           <div
                             class="currency-flag currency-flag-ngn"
                             data-item="ngn"
@@ -192,7 +180,11 @@
                         </div>
                         <div style="display: inline">
                           <img
-                            style="margin-left: -20px; margin-top: -1px"
+                            style="
+                              margin-left: -20px;
+                              margin-top: -1px;
+                              z-index: 0;
+                            "
                             src="images/icons8-expand-arrow-24.png"
                             width="12px"
                           />
@@ -202,7 +194,8 @@
                       </div>
                       <!-- <p style="display: inline">></p> -->
                     </div>
-                    <p class="ex-rate">USD 1/NGN 560</p>
+
+                    <p class="ex-rate" id="ex-rate" style="display: none"></p>
 
                     <p class="switch-currencies">
                       <img src="images/switch.png" alt="" /> Switch Currencies
@@ -220,11 +213,11 @@
                       class="currency-switcher"
                       style="background-color: #ffb703"
                     >
-                      <div class="dropdown">
+                      <div class="dropdown" style="z-index: 4">
                         <!-- <div class="item2 caption"> -->
                         <div
-                          class="item2 caption"
-                          style="display: inline-block"
+                          class="item2 caption dropdown"
+                          style="display: inline-block; z-index: 3"
                         >
                           <div
                             class="currency-flag currency-flag-usd"
@@ -234,7 +227,11 @@
                         </div>
                         <div style="display: inline">
                           <img
-                            style="margin-left: -20px; margin-top: -1px"
+                            style="
+                              margin-left: -20px;
+                              margin-top: -1px;
+                              z-index: 0;
+                            "
                             src="images/icons8-expand-arrow-24.png"
                             width="12px"
                           />
@@ -259,9 +256,13 @@
                     <div><img src="images/bx_loader.gif" /></div>
                   </a>
 
-                  <p class="last-updated">
-                    <span> US Dollar to Nigerian Naira conversion</span> — Last
-                    updated Feb 10, 2022, 11:33 UTC
+                  <p
+                    class="last-updated"
+                    id="last-updated"
+                    style="display: none"
+                  >
+                    <!-- <span> US Dollar to Nigerian Naira conversion</span> — Last
+                    updated Feb 10, 2022, 11:33 UTC -->
                   </p>
                 </div>
               </div>
@@ -355,31 +356,8 @@
 			================================================== -->
       <footer class="white-style" id="title-section">
         <div class="row">
-          <div class="col-sm-12 col-md-6 col-lg-6 text-left">
-            <div class="row">
-              <section id="lab_social_icon_footer" class="onlymobile">
-                <!-- Include Font Awesome Stylesheet in Header -->
-                <link
-                  href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css"
-                  rel="stylesheet"
-                />
-                <div class="container">
-                  <div class="text-center center-block">
-                    <img
-                      src="images/ph_facebook-logo-thin.svg"
-                      width="28px"
-                      height="28px"
-                    />
-                    <img src="images/twitter.svg" width="25px" height="25px" />
-                    <a href="#"
-                      ><img
-                        src="images/Instagram.svg"
-                        width="25px"
-                        height="25px"
-                    /></a>
-                  </div>
-                </div>
-              </section>
+          <div class="col-sm-12 col-md-8 col-lg-8 text-left">
+            <div class="row" style="margin-bottom: 20px">
               <div class="onlydesktop">
                 <p
                   class="text-black"
@@ -391,18 +369,14 @@
                   class="col-sm-1 col-md-1 col-lg-1"
                   style="width: 5.333333%"
                 >
-                  <img
-                    src="images/ph_facebook-logo-thin.svg"
-                    width="30px"
-                    height="30px"
-                  />
+                  <img src="images/Facebook.svg" width="30px" height="30px" />
                 </div>
 
                 <div
                   class="col-sm-1 col-md-1 col-lg-1"
                   style="width: 5.333333%"
                 >
-                  <img src="images/twitter.svg" width="30px" height="30px" />
+                  <img src="images/Twitter2.svg" width="30px" height="30px" />
                 </div>
                 <div
                   class="col-sm-1 col-md-1 col-lg-1"
@@ -413,16 +387,63 @@
               </div>
             </div>
           </div>
-          <div class="col-sm-12 col-md-6 col-lg-6">
+          <div class="col-sm-12 col-md-4 col-lg-4 onlydesktop">
             <div class="row">
               <div class="col-sm-6 col-md-6 col-lg-6 text-right">
-                <p class="text-black">Help & Support</p>
+                <p class="text-black" style="font-weight: 500">
+                  Help & Support
+                </p>
               </div>
               <div class="col-sm-6 col-md-6 col-lg-6 text-left">
-                <p class="text-black">Contact Us</p>
+                <p class="text-black" style="font-weight: 500">Contact Us</p>
               </div>
             </div>
           </div>
+          <section
+            id="lab_social_icon_footer"
+            class="onlymobile"
+            style="margin-bottom: 10px"
+          >
+            <!-- Include Font Awesome Stylesheet in Header -->
+            <link
+              href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css"
+              rel="stylesheet"
+            />
+
+            <div class="container" style="margin-bottom: 40px">
+              <div class="text-center center-block">
+                <a
+                  href="#"
+                  class="text-black"
+                  style="display: inline; margin-right: 15px; font-weight: 500"
+                  >Help & Support</a
+                >
+
+                <a
+                  href="#"
+                  class="text-black"
+                  style="display: inline; font-weight: 500"
+                  >Contact Us</a
+                >
+              </div>
+            </div>
+
+            <div class="container">
+              <div class="text-center center-block">
+                <p
+                  class="text-black"
+                  style="display: inline-block; margin-right: 2px"
+                >
+                  Follow Us
+                </p>
+                <img src="images/Facebook.svg" width="25px" height="25px" />
+                <img src="images/Twitter2.svg" width="25px" height="25px" />
+                <a href="#"
+                  ><img src="images/Instagram.svg" width="25px" height="25px"
+                /></a>
+              </div>
+            </div>
+          </section>
         </div>
         <div class="row">
           <div class="col-12">
@@ -458,7 +479,7 @@
             .append(
               '<div id="triple-container" class="item" data-item=' +
                 value +
-                '><div class="caption"  data-item=' +
+                '><div class=""  data-item=' +
                 value +
                 '><div class="currency-flag currency-flag-' +
                 value.toLowerCase() +
@@ -537,9 +558,6 @@
         });
 
         $(".dropdown > .list > .item2 .caption").on("click", function () {
-          // $(".dropdown > .list > .item").parent().parent().parent().removeClass("open");
-
-          // $(this).addClass('selected').parent().parent().removeClass('open').children('.caption').html($(this).html());
           $(".dropdown > .list > .item2")
             .parent()
             .parent()
@@ -548,7 +566,6 @@
             .html($(this).html());
           secondCurrencyInput = $(this).data("item2");
           console.log("Second Currency " + secondCurrencyInput);
-          // console.log($('.dropdown > .item2 .caption').attr("data-item2"));
           $("#recieving").attr("placeholder", secondCurrencyInput);
           if (secondCurrencyInput != "NGN") {
             $(".dropdown > .list > .item").removeClass("selected");
@@ -626,10 +643,12 @@
         }
       });
 
-      function formatMoney(num) {
-        var num_parts = num.toString().split(".");
-        num_parts[0] = num_parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-        return num_parts.join(".");
+      function formatAmount(number) {
+        return new Intl.NumberFormat("en", {
+          style: "decimal",
+          minimumFractionDigits: 2,
+          maximumFractionDigits: 2,
+        }).format(number);
       }
 
       var btn = document.querySelector(".calculate-btn");
@@ -640,22 +659,21 @@
         console.log("Second Currency " + secondCurrencyInput);
         event.preventDefault();
         var amount = $("input[name=sending]").val();
-        // var from = baseCurrencyInput;
-        // var to = secondCurrencyInput;
 
         var result = 0;
         var dataString =
           "from=" +
-          secondCurrencyInput +
-          "&to=" +
           baseCurrencyInput +
+          "&to=" +
+          secondCurrencyInput +
           "&amount=" +
           amount;
-        // $.getJSON("../fiatswap?" + dataString).success(function (data) {
-        //   $("input[name=recieving]").val(data.finalPrice);
-        // });
+
         if (baseCurrencyInput === secondCurrencyInput) {
           $("input[name=recieving]").val(amount);
+          $("#ex-rate").html(
+            baseCurrencyInput + "/" + secondCurrencyInput + "=" + amount
+          );
         } else {
           $("#loader").show();
           $("#calculate-btn").hide();
@@ -663,13 +681,44 @@
             "https://fn1igg1ngk.execute-api.eu-west-3.amazonaws.com/getPrices?" +
               dataString
           ).success(function (data) {
-            // result = data * amount;
-            console.log("price ticker data");
-            console.log(formatMoney(data.finalAmount));
-            var formattedFinalAmount = formatMoney(data.finalAmount);
-            $("input[name=recieving]").val(formattedFinalAmount);
-            $("#loader").hide();
-            $("#calculate-btn").show();
+            if (+data.rate < 1) {
+              var rates = formatAmount(1 / +data.rate);
+              var formattedFinalAmount = formatAmount(data.finalAmount);
+              $("input[name=recieving]").val(formattedFinalAmount);
+              $("#loader").hide();
+              $("#calculate-btn").show();
+              $("#ex-rate").html(
+                secondCurrencyInput +
+                  "/" +
+                  baseCurrencyInput +
+                  "=" +
+                  formatAmount(rates)
+              );
+              $("#ex-rate").show();
+              $("#last-updated").html(
+                "<span> US Dollar to Nigerian Naira conversion</span> — Last updated " +
+                  new Date($.now()).toUTCString()
+              );
+              $("#last-updated").show();
+            } else {
+              var formattedFinalAmount = formatAmount(data.finalAmount);
+              $("input[name=recieving]").val(formattedFinalAmount);
+              $("#loader").hide();
+              $("#calculate-btn").show();
+              $("#ex-rate").html(
+                baseCurrencyInput +
+                  "/" +
+                  secondCurrencyInput +
+                  "=" +
+                  formatAmount(data.rate)
+              );
+              $("#ex-rate").show();
+              $("#last-updated").html(
+                "<span> US Dollar to Nigerian Naira conversion</span> — Last updated " +
+                  new Date($.now()).toUTCString()
+              );
+              $("#last-updated").show();
+            }
           });
         }
       }
