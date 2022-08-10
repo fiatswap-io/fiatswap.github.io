@@ -647,10 +647,18 @@
         }
       });
 
-      function formatMoney(num) {
-        var num_parts = num.toString().split(".");
-        num_parts[0] = num_parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-        return num_parts.join(".");
+      // function formatMoney(num) {
+      //   var num_parts = num.toString().split(".");
+      //   num_parts[0] = num_parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+      //   return num_parts.join(".");
+      // }
+
+      function formatAmount(number) {
+        return new Intl.NumberFormat("en", {
+          style: "decimal",
+          minimumFractionDigits: 2,
+          maximumFractionDigits: 2,
+        }).format(number);
       }
 
       var btn = document.querySelector(".calculate-btn");
@@ -678,7 +686,7 @@
         if (baseCurrencyInput === secondCurrencyInput) {
           $("input[name=recieving]").val(amount);
           $("#ex-rate").html(
-            baseCurrencyInput + " 1/" + secondCurrencyInput + " 1"
+            baseCurrencyInput + "/" + secondCurrencyInput + "=" + amount
           );
         } else {
           $("#loader").show();
@@ -687,54 +695,82 @@
             "https://fn1igg1ngk.execute-api.eu-west-3.amazonaws.com/getPrices?" +
               dataString
           ).success(function (data) {
-            // if (data.rate < 1) {
-            //   var dataString =
-            //     "to=" +
-            //     secondCurrencyInput +
-            //     "&from=" +
-            //     baseCurrencyInput +
-            //     "&amount=" +
-            //     amount;
+            if (+data.rate < 1) {
+              var rates = formatAmount(1 / +data.rate);
+              // newFinalAmount = rates * amount;
+              var formattedFinalAmount = formatAmount(data.finalAmount);
+              $("input[name=recieving]").val(formattedFinalAmount);
+              $("#loader").hide();
+              $("#calculate-btn").show();
+              $("#ex-rate").html(
+                secondCurrencyInput +
+                  "/" +
+                  baseCurrencyInput +
+                  "=" +
+                  formatAmount(rates)
+              );
+              $("#ex-rate").show();
+              $("#last-updated").html(
+                "<span> US Dollar to Nigerian Naira conversion</span> — Last updated " +
+                  new Date($.now()).toUTCString()
+              );
+              $("#last-updated").show();
+              //   var dataString =
+              //     "to=" +
+              //     secondCurrencyInput +
+              //     "&from=" +
+              //     baseCurrencyInput +
+              //     "&amount=" +
+              //     amount;
 
-            //   $.getJSON(
-            //     "https://fn1igg1ngk.execute-api.eu-west-3.amazonaws.com/getPrices?" +
-            //       dataString
-            //   ).success(function (data) {
-            //     var rates = 1 / data.rate;
-            //     newFinalAmount = rates * amount;
-            //     var formattedFinalAmount = formatMoney(newFinalAmount);
-            //     $("input[name=recieving]").val(formattedFinalAmount);
-            //     $("#loader").hide();
-            //     $("#calculate-btn").show();
-            //     $("#ex-rate").html(
-            //       baseCurrencyInput +
-            //         " 1/" +
-            //         secondCurrencyInput +
-            //         " " +
-            //         data.rate
-            //     );
-            //     $("#ex-rate").show();
-            //     $("#last-updated").html(
-            //       "<span> US Dollar to Nigerian Naira conversion</span> — Last updated " +
-            //         new Date($.now()).toUTCString()
-            //     );
-            //     $("#last-updated").show();
-            //   });
-            // } else {
-            var formattedFinalAmount = formatMoney(data.finalAmount);
-            $("input[name=recieving]").val(formattedFinalAmount);
-            $("#loader").hide();
-            $("#calculate-btn").show();
-            $("#ex-rate").html(
-              baseCurrencyInput + " 1/" + secondCurrencyInput + " " + data.rate
-            );
-            $("#ex-rate").show();
-            $("#last-updated").html(
-              "<span> US Dollar to Nigerian Naira conversion</span> — Last updated " +
-                new Date($.now()).toUTCString()
-            );
-            $("#last-updated").show();
-            // }
+              //   $.getJSON(
+              //     "https://fn1igg1ngk.execute-api.eu-west-3.amazonaws.com/getPrices?" +
+              //       dataString
+              //   ).success(function (data) {
+              //     var rates = 1 / data.rate;
+              //     newFinalAmount = rates * amount;
+              //     var formattedFinalAmount = formatMoney(newFinalAmount);
+              //     $("input[name=recieving]").val(formattedFinalAmount);
+              //     $("#loader").hide();
+              //     $("#calculate-btn").show();
+              //     $("#ex-rate").html(
+              //       baseCurrencyInput +
+              //         " 1/" +
+              //         secondCurrencyInput +
+              //         " " +
+              //         data.rate
+              //     );
+              //     $("#ex-rate").show();
+              //     $("#last-updated").html(
+              //       "<span> US Dollar to Nigerian Naira conversion</span> — Last updated " +
+              //         new Date($.now()).toUTCString()
+              //     );
+              //     $("#last-updated").show();
+              //   });
+            } else {
+              var formattedFinalAmount = formatAmount(data.finalAmount);
+              $("input[name=recieving]").val(formattedFinalAmount);
+              $("#loader").hide();
+              $("#calculate-btn").show();
+              $("#ex-rate").html(
+                // baseCurrencyInput +
+                //   " 1/" +
+                //   secondCurrencyInput +
+                //   " " +
+                //   data.rate
+                baseCurrencyInput +
+                  "/" +
+                  secondCurrencyInput +
+                  "=" +
+                  formatAmount(data.rate)
+              );
+              $("#ex-rate").show();
+              $("#last-updated").html(
+                "<span> US Dollar to Nigerian Naira conversion</span> — Last updated " +
+                  new Date($.now()).toUTCString()
+              );
+              $("#last-updated").show();
+            }
           });
         }
       }
