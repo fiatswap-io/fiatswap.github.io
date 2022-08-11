@@ -472,7 +472,7 @@
           $("#email2").focus();
         });
 
-        var arr = ["NGN", "USD", "GBP", "EUR"];
+        var arr = ["NGN", "USD", "GBP", "EUR", "CAD"];
         $.each(arr, function (index, value) {
           $("#list")
             .append(
@@ -698,7 +698,7 @@
               $("#ex-rate").show();
               $("#last-updated").html(
                 "<span> US Dollar to Nigerian Naira conversion</span> — Last updated " +
-                  new Date($.now()).toUTCString()
+                  new Date($.now()).toLocaleString()
               );
               $("#last-updated").show();
             } else {
@@ -716,7 +716,7 @@
               $("#ex-rate").show();
               $("#last-updated").html(
                 "<span> US Dollar to Nigerian Naira conversion</span> — Last updated " +
-                  new Date($.now()).toUTCString()
+                  new Date($.now()).toLocaleString()
               );
               $("#last-updated").show();
             }
