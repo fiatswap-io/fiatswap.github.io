@@ -169,7 +169,7 @@
                     >
                       <div class="dropdown" style="z-index: 6">
                         <div
-                          class="item caption dropdown"
+                          class="item1 caption dropdown"
                           style="display: inline-block; z-index: 5"
                         >
                           <div
@@ -214,7 +214,6 @@
                       style="background-color: #ffb703"
                     >
                       <div class="dropdown" style="z-index: 4">
-                        <!-- <div class="item2 caption"> -->
                         <div
                           class="item2 caption dropdown"
                           style="display: inline-block; z-index: 3"
@@ -477,9 +476,9 @@
         $.each(arr, function (index, value) {
           $("#list")
             .append(
-              '<div id="triple-container" class="item" data-item=' +
+              '<div id="triple-container" class="item1" data-item=' +
                 value +
-                '><div class=""  data-item=' +
+                '><div class="caption"  data-item=' +
                 value +
                 '><div class="currency-flag currency-flag-' +
                 value.toLowerCase() +
@@ -495,13 +494,13 @@
         $.each(arr, function (index, value) {
           $("#list2")
             .append(
-              '<div id="triple-container" class="item2" data-item=' +
+              '<div id="triple-container" class="item2" data-item2=' +
                 value +
                 '><div class="caption"  data-item2=' +
                 value +
                 '><div class="currency-flag currency-flag-' +
                 value.toLowerCase() +
-                '"  data-item=' +
+                '"  data-item2=' +
                 value +
                 "></div><P style='display:inline'>" +
                 value +
@@ -518,9 +517,9 @@
         $(this).data("data-item2", secondCurrencyInput);
         console.log("Second Currency " + secondCurrencyInput);
 
-        $(".dropdown > .list > .item").on("click", function () {
-          $(".dropdown > .list > .item").removeClass("selected");
-          $(".dropdown > .list > .item")
+        $(".dropdown > .list > .item1 .caption").on("click", function () {
+          $(".dropdown > .list > .item1").removeClass("selected");
+          $(".dropdown > .list > .item1")
             .parent()
             .parent()
             .removeClass("open")
@@ -529,13 +528,13 @@
 
           baseCurrencyInput = $(this).data("item");
           console.log("Base Currency " + baseCurrencyInput);
-          $(".dropdown > .item > .currency-flag").data(
+          $(".dropdown > .item1 > .currency-flag").data(
             "item",
             baseCurrencyInput
           );
           $("#sending").attr("placeholder", baseCurrencyInput);
           if (baseCurrencyInput != "NGN") {
-            $(".dropdown > .list > .item").removeClass("selected");
+            $(".dropdown > .list > .item1").removeClass("selected");
             $(".dropdown > .list > .item2")
               .parent()
               .parent()
@@ -568,8 +567,8 @@
           console.log("Second Currency " + secondCurrencyInput);
           $("#recieving").attr("placeholder", secondCurrencyInput);
           if (secondCurrencyInput != "NGN") {
-            $(".dropdown > .list > .item").removeClass("selected");
-            $(".dropdown > .list > .item")
+            $(".dropdown > .list > .item1").removeClass("selected");
+            $(".dropdown > .list > .item1")
               .parent()
               .parent()
               .removeClass("open")
@@ -586,32 +585,33 @@
         });
       });
 
-      $(".dropdown > .item").on("click", function () {
+      $(".dropdown > .item1").on("click", function () {
         $(this).parent().toggleClass("open");
         $(".dropdown > .item2").parent().removeClass("open");
       });
 
       $(".dropdown > .item2").on("click", function () {
         $(this).parent().toggleClass("open");
-        $(".dropdown > .item").parent().removeClass("open");
+        $(".dropdown > .item1").parent().removeClass("open");
       });
 
       $(".switch-currencies").on("click", function () {
-        var base = $(".dropdown > .item").html();
+        var base = $(".dropdown > .item1").html();
         var second = $(".dropdown > .item2").html();
 
-        $(".dropdown > .list > .item")
+        $(".dropdown > .list > .item1")
           .parent()
           .parent()
           .removeClass("open")
           .children(".caption")
           .html(second);
-        if ($(".dropdown > .item > .currency-flag").data("item") == null) {
-          baseCurrencyInput = $(".dropdown > .item ")
+
+        if ($(".dropdown > .item1 > .currency-flag").data("item") == null) {
+          baseCurrencyInput = $(".dropdown > .item1 ")
             .children(".caption")
             .data("item");
         } else {
-          baseCurrencyInput = $(".dropdown > .item > .currency-flag").data(
+          baseCurrencyInput = $(".dropdown > .item1 > .currency-flag").data(
             "item"
           );
         }
@@ -624,6 +624,7 @@
           .removeClass("open")
           .children(".caption")
           .html(base);
+
         if ($(".dropdown > .item2 > .currency-flag").data("item") == null) {
           secondCurrencyInput = $(".dropdown > .item2 ")
             .children(".caption")

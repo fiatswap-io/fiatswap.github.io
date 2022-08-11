@@ -230,6 +230,16 @@ div.dropdown > div.list > div.item {
   letter-spacing: 0.3px;
 }
 
+div.dropdown > div.list > div.item1 {
+  padding: 10.5px 1px 10.5px 1px;
+  cursor: pointer;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  font-size: 14px;
+  line-height: 150%;
+  letter-spacing: 0.3px;
+}
+
 div.dropdown > div.list > div.item2 {
   padding: 10.5px 1px 10.5px 1px;
   cursor: pointer;
@@ -244,6 +254,10 @@ div.dropdown > div.list > div.item.selected {
   background: rgba(36, 60, 187, 0.2);
   pointer-events: none;
 }
+div.dropdown > div.list > div.item1.selected {
+  background: rgba(36, 60, 187, 0.2);
+  pointer-events: none;
+}
 div.dropdown > div.list > div.item2.selected {
   background: rgba(36, 60, 187, 0.2);
   pointer-events: none;
@@ -252,11 +266,17 @@ div.dropdown > div.list > div.item2.selected {
 div.dropdown > div.list > div.item.selected p {
   margin-left: 0 !important;
 }
+div.dropdown > div.list > div.item1.selected p {
+  margin-left: 0 !important;
+}
 div.dropdown > div.list > div.item2.selected p {
   margin-left: 0 !important;
 }
 
 div.dropdown > div.list > div.item:hover {
+  background: #f8f9fb;
+}
+div.dropdown > div.list > div.item1:hover {
   background: #f8f9fb;
 }
 div.dropdown > div.list > div.item2:hover {
@@ -5542,10 +5562,14 @@ footer.pattern-style p.copyright {
     margin-left: 3px;
   }
 
+  div.dropdown {
+    cursor: pointer;
+  }
+
   div.dropdown > div.caption {
     /* background: #35D082; */
     /* border-radius: 12px; */
-    cursor: pointer;
+    /* cursor: pointer; */
     padding: 17px 10px 19px 0px;
     font-size: 14px;
     line-height: 150%;
