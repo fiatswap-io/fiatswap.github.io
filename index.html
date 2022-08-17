@@ -516,7 +516,7 @@
                 value +
                 '><div class="currency-flag currency-flag-' +
                 value.toLowerCase() +
-                '"  data-item2=' +
+                '"  data-item=' +
                 value +
                 "></div><P style='display:inline'>" +
                 value +
@@ -614,6 +614,8 @@
       $(".switch-currencies").on("click", function () {
         var base = $(".dropdown > .item1").html();
         var second = $(".dropdown > .item2").html();
+        console.log("base Currency " + base);
+        console.log("Second Currency " + second);
 
         $(".dropdown > .list > .item1")
           .parent()
