@@ -87,6 +87,10 @@ body * {
   padding: 30px 20px;
 }
 
+#how-breadcrum:hover {
+  text-decoration: underline;
+}
+
 .faq__content p {
   font-family: "Plus Jakarta Display";
   font-style: normal;

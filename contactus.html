@@ -38,6 +38,7 @@
     <link rel="icon" href="/images/favicon.svg" />
 
     <script src="./js/actions.js"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
   </head>
   <body>
     <!-- Container -->
@@ -115,7 +116,7 @@
                 class="col-lg-7"
                 style="padding-right: 100px; border-right: 1px solid #5e5d5d"
               >
-                <form onsubmit="return submitEmail()">
+                <form class="contactus-form">
                   <div class="row">
                     <div class="col-lg-6">
                       <label
@@ -130,8 +131,8 @@
                       <input
                         class="form-control"
                         type="text"
-                        name="email2"
-                        id="email2"
+                        name="name"
+                        id="name"
                         placeholder="e.g. Kanu Chukwu Obina"
                         required
                       />
@@ -149,8 +150,8 @@
                       <input
                         class="form-control"
                         type="email"
-                        name="email2"
-                        id="email2"
+                        name="email"
+                        id="email"
                         placeholder="me@fiatswap.io"
                         required
                       />
@@ -169,6 +170,8 @@
                       >
                       <textarea
                         class="form-control"
+                        id="message"
+                        name="message"
                         rows="10"
                         placeholder="Your Message"
                       ></textarea>
@@ -177,6 +180,8 @@
 
                   <button
                     class="form-control"
+                    id="submitContact"
+                    type="submit"
                     style="
                       margin-top: 20px;
                       background-color: #ffb703;
@@ -188,6 +193,28 @@
                     Send Message
                   </button>
                 </form>
+                <div class="joinWaitlist-feedback">
+                  <img
+                    src="images/bx_loader.gif"
+                    class="form-loading hidden"
+                    id="form-loader"
+                  />
+                  <div class="form-done hidden" id="form-loaded">
+                    <img src="images/icons8-checkmark.svg" />
+                    <p>
+                      Thank you for registering.<br />
+                      You will be notified of our progress and be the first to
+                      know once we are live!!!
+                    </p>
+                  </div>
+                  <div class="form-done hidden" id="form-errored">
+                    <img src="images/icons8-cancel.svg" />
+                    <p>
+                      We hit snag while trying to process your request.<br />
+                      Please refresh the page and try again.
+                    </p>
+                  </div>
+                </div>
               </div>
 
               <div class="col-lg-4" style="padding-left: 80px">
@@ -469,7 +496,30 @@
           $("#how-info").hide();
           $("#how-to").show();
         });
+
+        $("#submitContact").click(function () {
+          event.preventDefault();
+          sendEmail();
+        });
       });
+
+      function sendEmail() {
+        console.log("GOT HERE");
+        let name = document.getElementById("name").value;
+        let email = document.getElementById("email").value;
+        let message = document.getElementById("message").value;
+        let finalmessage = `Name : ${name} <br>  Email : ${email} <br>  Message : ${message} <br>`;
+        Email.send({
+          Host: "smtp.sendgrid.net",
+          Username: "apikey",
+          Password:
+            "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",
+          To: email,
+          From: "you@isp.com",
+          Subject: "Mail from website",
+          Body: finalmessage,
+        }).then((message) => alert(message));
+      }
     </script>
   </body>
 </html>
