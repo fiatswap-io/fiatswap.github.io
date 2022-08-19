@@ -38,6 +38,7 @@
     <link rel="icon" href="/images/favicon.svg" />
 
     <script src="./js/actions.js"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
   </head>
   <body>
     <!-- Container -->
@@ -115,7 +116,7 @@
                 class="col-lg-7"
                 style="padding-right: 100px; border-right: 1px solid #5e5d5d"
               >
-                <form onsubmit="return submitEmail()">
+                <form class="contactus-form">
                   <div class="row">
                     <div class="col-lg-6">
                       <label
@@ -130,8 +131,8 @@
                       <input
                         class="form-control"
                         type="text"
-                        name="email2"
-                        id="email2"
+                        name="name"
+                        id="name"
                         placeholder="e.g. Kanu Chukwu Obina"
                         required
                       />
@@ -149,8 +150,8 @@
                       <input
                         class="form-control"
                         type="email"
-                        name="email2"
-                        id="email2"
+                        name="email"
+                        id="email"
                         placeholder="me@fiatswap.io"
                         required
                       />
@@ -169,6 +170,8 @@
                       >
                       <textarea
                         class="form-control"
+                        id="message"
+                        name="message"
                         rows="10"
                         placeholder="Your Message"
                       ></textarea>
@@ -177,6 +180,8 @@
 
                   <button
                     class="form-control"
+                    id="submitContact"
+                    type="submit"
                     style="
                       margin-top: 20px;
                       background-color: #ffb703;
@@ -188,10 +193,32 @@
                     Send Message
                   </button>
                 </form>
+                <div class="joinWaitlist-feedback">
+                  <img
+                    src="images/bx_loader.gif"
+                    class="form-loading hidden"
+                    id="form-loader"
+                  />
+                  <div class="form-done hidden" id="form-loaded">
+                    <img src="images/icons8-checkmark.svg" />
+                    <p>
+                      Thank you for registering.<br />
+                      You will be notified of our progress and be the first to
+                      know once we are live!!!
+                    </p>
+                  </div>
+                  <div class="form-done hidden" id="form-errored">
+                    <img src="images/icons8-cancel.svg" />
+                    <p>
+                      We hit snag while trying to process your request.<br />
+                      Please refresh the page and try again.
+                    </p>
+                  </div>
+                </div>
               </div>
 
               <div class="col-lg-4" style="padding-left: 80px">
-                <div class="row">
+                <div class="row" style="display: none">
                   <div class="col-lg-2" style="padding-left: 0px">
                     <img src="images/helpandsupporttel.png" width="80" />
                   </div>
@@ -228,11 +255,11 @@
                 </div>
 
                 <div
-                  class="col-sm-12 col-md-8 col-lg-8 text-left"
+                  class="col-sm-12 col-md-12 col-lg-12 text-left"
                   style="margin-top: 50px"
                 >
                   <div class="row" style="margin-bottom: 20px">
-                    <div class="onlydesktop">
+                    <div>
                       <p
                         class="text-black"
                         style="float: left; display: inline-block"
@@ -244,7 +271,7 @@
                         style="
                           width: 5.333333%;
                           margin-top: 15px;
-                          margin-right: 10px;
+                          margin-right: 20px;
                         "
                       >
                         <a
@@ -262,7 +289,7 @@
                         style="
                           width: 5.333333%;
                           margin-top: 15px;
-                          margin-right: 10px;
+                          margin-right: 20px;
                         "
                       >
                         <a
@@ -303,7 +330,7 @@
 
       <!-- footer 
 			================================================== -->
-      <footer style="background-color: #fff">
+      <!-- <footer style="background-color: #fff">
         <div class="row text-center">
           <div class="col-12">
             <div>
@@ -313,8 +340,136 @@
             </div>
           </div>
         </div>
-      </footer>
+      </footer> -->
       <!-- End footer -->
+
+      <footer class="white-style" id="title-section" style="margin-top: 180px">
+        <div class="row">
+          <div class="col-sm-12 col-md-6 col-lg-6 text-left">
+            <div class="row" style="margin-bottom: 20px">
+              <div class="onlydesktop">
+                <p
+                  class="text-black"
+                  style="float: left; display: inline-block"
+                >
+                  Follow Us
+                </p>
+                <div
+                  class="col-sm-1 col-md-1 col-lg-1"
+                  style="width: 5.333333%"
+                >
+                  <a href="https://www.facebook.com/fiatswap/" target="_blank"
+                    ><img src="images/Facebook.svg" width="30px" height="30px"
+                  /></a>
+                </div>
+
+                <div
+                  class="col-sm-1 col-md-1 col-lg-1"
+                  style="width: 5.333333%"
+                >
+                  <a href="https://www.twitter.com/fiatswap/" target="_blank"
+                    ><img src="images/Twitter2.svg" width="30px" height="30px"
+                  /></a>
+                </div>
+                <div
+                  class="col-sm-1 col-md-1 col-lg-1"
+                  style="width: 5.333333%"
+                >
+                  <a href="https://www.instagram.com/fiatswap/" target="_blank"
+                    ><img src="images/Instagram.svg" width="30px" height="30px"
+                  /></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-12 col-md-5 col-lg-5 onlydesktop">
+            <div class="row">
+              <div class="col-sm-4 col-md-4 col-lg-4 text-right">
+                <a href="/">
+                  <p class="text-black" style="font-weight: 500">Home</p>
+                </a>
+              </div>
+              <div class="col-sm-4 col-md-4 col-lg-4 text-center">
+                <a href="help-and-support.html">
+                  <p class="text-black" style="font-weight: 500">
+                    Help & Support
+                  </p>
+                </a>
+              </div>
+              <div class="col-sm-4 col-md-4 col-lg-4 text-left">
+                <a href="contactus.html"
+                  ><p class="text-black" style="font-weight: 500">
+                    Contact Us
+                  </p></a
+                >
+              </div>
+            </div>
+          </div>
+          <section
+            id="lab_social_icon_footer"
+            class="onlymobile"
+            style="margin-bottom: 10px"
+          >
+            <!-- Include Font Awesome Stylesheet in Header -->
+            <link
+              href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css"
+              rel="stylesheet"
+            />
+
+            <div class="container" style="margin-bottom: 40px">
+              <div class="text-center center-block">
+                <a
+                  href="#"
+                  class="text-black"
+                  style="display: inline; margin-right: 15px; font-weight: 500"
+                  >Back to Home</a
+                >
+
+                <a
+                  href="#"
+                  class="text-black"
+                  style="display: inline; margin-right: 15px; font-weight: 500"
+                  >Help & Support</a
+                >
+
+                <a
+                  href="/contactus.html"
+                  class="text-black"
+                  style="display: inline; font-weight: 500"
+                  >Contact Us</a
+                >
+              </div>
+            </div>
+
+            <div class="container">
+              <div class="text-center center-block">
+                <p
+                  class="text-black"
+                  style="display: inline-block; margin-right: 2px"
+                >
+                  Follow Us
+                </p>
+                <a href="https://www.facebook.com/fiatswap/" target="”_blank”"
+                  ><img src="images/Facebook.svg" width="25px" height="25px"
+                /></a>
+                <a href="https://www.twitter.com/fiatswap/" target="”_blank”"
+                  ><img src="images/Twitter2.svg" width="25px" height="25px"
+                /></a>
+                <a href="https://www.instagram.com/fiatswap/" target="”_blank”"
+                  ><img src="images/Instagram.svg" width="25px" height="25px"
+                /></a>
+              </div>
+            </div>
+          </section>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <div class="title-section">
+              <p>© Copyright 2022. Fiatswap.io. All rights reserved.</p>
+            </div>
+          </div>
+        </div>
+      </footer>
     </div>
     <!-- End Container -->
 
@@ -339,7 +494,30 @@
           $("#how-info").hide();
           $("#how-to").show();
         });
+
+        $("#submitContact").click(function () {
+          event.preventDefault();
+          sendEmail();
+        });
       });
+
+      function sendEmail() {
+        console.log("GOT HERE");
+        let name = document.getElementById("name").value;
+        let email = document.getElementById("email").value;
+        let message = document.getElementById("message").value;
+        let finalmessage = `Name : ${name} <br>  Email : ${email} <br>  Message : ${message} <br>`;
+        Email.send({
+          Host: "smtp.sendgrid.net",
+          Username: "apikey",
+          Password:
+            "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",
+          To: email,
+          From: "you@isp.com",
+          Subject: "Mail from website",
+          Body: finalmessage,
+        }).then((message) => alert(message));
+      }
     </script>
   </body>
 </html>
