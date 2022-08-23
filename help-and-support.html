@@ -44,46 +44,56 @@
     <div id="container">
       <!-- Header
 		    ================================================== -->
-      <header class="clearfix fullwidth">
-        <nav
-          class="navbar navbar-default navbar-fixed-top-sm"
-          role="navigation"
-        >
-          <div class="container-fluid">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-              <div class="header-box">
-                <button
-                  type="button"
-                  class="navbar-toggle collapsed"
-                  data-toggle="collapse"
-                  data-target="#bs-example-navbar-collapse-1"
-                >
-                  <span class="sr-only">Toggle navigation</span>
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-                </button>
-                <!-- <p>Join Fiatswap</p> -->
-
-                <a href="/">
+        <header class="clearfix fullwidth">
+          <nav
+            class="navbar navbar-default navbar-fixed-top-sm"
+            role="navigation"
+          >
+            <div class="container-fluid">
+              <!-- Brand and toggle get grouped for better mobile display -->
+              <div class="navbar-header">
+                <div class="header-box">
+                  <!-- <button
+                    type="button"
+                    class="navbar-toggle collapsed"
+                    data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1"
+                  >
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </button> -->
+                  <!-- <p>Join Fiatswap</p> -->
+  
                   <img
                     src="images/fiatswap-fake-logo.svg"
                     width="100px"
                     height="70px"
                     alt=""
                   />
-                </a>
+                  <div class="joinWaitlist">
+                    <a class="navbar-brand target-link" href="#newsletter-area"
+                      ><img src="images/sm-jw.png" />Join Waitlist</a
+                    >
+                  </div>
+                </div>
               </div>
+  
+              <!-- Collect the nav links, forms, and other content for toggling -->
+              <div class="collapse navbar-collapse joinWaitlist">
+                <a class="button-two target-link" href="#newsletter-area"
+                  >Join Waitlist</a
+                >
+              </div>
+              <!-- /.navbar-collapse -->
             </div>
-          </div>
-
-          <!-- /.container-fluid -->
-        </nav>
-      </header>
+            <!-- /.container-fluid -->
+          </nav>
+        </header>
       <!-- End Header -->
 
-      <div class="row" style="background-color: #000">
+      <div class="row mt-5" style="background-color: #000">
         <div class="page-title-container">
           <p class="page-title">Help & Support</p>
         </div>
@@ -96,7 +106,7 @@
           <!-- <ul class="client-list"></ul> -->
           <div class="page-info" style="margin-top: 40px">
             <div class="row" id="how-to">
-              <div class="col-lg-4 text-center" id="how-to1" style="cursor: pointer;">
+              <div class="col-lg-4 text-lg-center" id="how-to1" style="cursor: pointer;">
                 <h4 class="telegram-button target-link">
                   <img src="images/send1.png" width="60" />Sending Money
                 </h4>
@@ -108,7 +118,7 @@
                 </h4>
               </div>
 
-              <div class="col-lg-4 text-center" id="how-to3" >
+              <div class="col-lg-4 text-lg-center" id="how-to3" >
                 <h4 class="telegram-button target-link" style="cursor: pointer;">
                   <img src="images/send3.png" width="60" />Exchange Rates
                 </h4>
@@ -269,10 +279,10 @@
         "
       >
         <div class="container">
-          <div class="col-lg-6" style="margin-top: 10px;">
+          <div class="col-lg-6 col-sm-12" style="margin-top: 10px;">
             <h3 class="text-black">Did not find what you are looking for?</h3>
           </div>
-          <div class="col-lg-6 text-center">
+          <div class="col-lg-6 col-sm-12 text-lg-center">
             <a href="contactus.html"><h3 class="text-black"><img src="images/contactus.png" width="50">Contact Us</img></h3></a>
           </div>
         </div>
@@ -380,14 +390,14 @@
                 >
 
                 <a
-                  href="#"
+                  href="help-and-support.html"
                   class="text-black"
                   style="display: inline; margin-right: 15px; font-weight: 500"
                   >Help & Support</a
                 >
 
                 <a
-                  href="/contactus.html"
+                  href="contactus.html"
                   class="text-black"
                   style="display: inline; font-weight: 500"
                   >Contact Us</a

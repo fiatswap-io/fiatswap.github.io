@@ -1894,6 +1894,15 @@ section.statistic-section.pattern-background .statistic-post h2 {
 section.statistic-section.pattern-background .statistic-post p {
   color: #333333;
 }
+
+.contactus-form-container {
+  padding-right: 100px;
+  border-right: 1px solid #5e5d5d;
+}
+
+.contactus-info-container {
+  padding-left: 80px;
+}
 /*-------------------------------------------------*/
 /* =  About section
 /*-------------------------------------------------*/
@@ -5017,8 +5026,15 @@ footer.pattern-style p.copyright {
   .onlymobile {
     display: block;
   }
+  .contactus-form-container {
+    padding-right: 0;
+    border-right: 0px solid #5e5d5d;
+  }
+  .contactus-info-container {
+    padding-left: 0px;
+  }
   .page-title-container {
-    margin: 55px 0 25px 0px;
+    margin: 77px 0 25px 0px;
     padding: 0 40px;
   }
   .page-title {

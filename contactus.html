@@ -54,31 +54,41 @@
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
               <div class="header-box">
-                <button
-                  type="button"
-                  class="navbar-toggle collapsed"
-                  data-toggle="collapse"
-                  data-target="#bs-example-navbar-collapse-1"
-                >
-                  <span class="sr-only">Toggle navigation</span>
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-                </button>
+                <!-- <button
+                    type="button"
+                    class="navbar-toggle collapsed"
+                    data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1"
+                  >
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </button> -->
                 <!-- <p>Join Fiatswap</p> -->
 
-                <a href="/">
-                  <img
-                    src="images/fiatswap-fake-logo.svg"
-                    width="100px"
-                    height="70px"
-                    alt=""
-                  />
-                </a>
+                <img
+                  src="images/fiatswap-fake-logo.svg"
+                  width="100px"
+                  height="70px"
+                  alt=""
+                />
+                <div class="joinWaitlist">
+                  <a class="navbar-brand target-link" href="#newsletter-area"
+                    ><img src="images/sm-jw.png" />Join Waitlist</a
+                  >
+                </div>
               </div>
             </div>
-          </div>
 
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse joinWaitlist">
+              <a class="button-two target-link" href="#newsletter-area"
+                >Join Waitlist</a
+              >
+            </div>
+            <!-- /.navbar-collapse -->
+          </div>
           <!-- /.container-fluid -->
         </nav>
       </header>
@@ -113,12 +123,12 @@
               </div>
 
               <div
-                class="col-lg-7"
-                style="padding-right: 100px; border-right: 1px solid #5e5d5d"
+                class="col-lg-7 col-sm-12 contactus-form-container"
+                style="margin-bottom: 50px"
               >
                 <form class="contactus-form">
                   <div class="row">
-                    <div class="col-lg-6">
+                    <div class="col-lg-6 col-sm-12">
                       <label
                         style="
                           margin-bottom: 10px;
@@ -137,7 +147,7 @@
                         required
                       />
                     </div>
-                    <div class="col-lg-6">
+                    <div class="col-lg-6 col-sm-12">
                       <label
                         style="
                           margin-bottom: 10px;
@@ -216,9 +226,28 @@
                 </div>
               </div>
 
-              <div class="col-lg-4" style="padding-left: 80px">
+              <div class="col-lg-4 col-sm-12 mt-sm-4 contactus-info-container">
+                <table cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td class="first">
+                      <img src="images/helpandsupportemail.png" width="80" />
+                    </td>
+                    <td class="second">
+                      <p style="margin-top: 10px">
+                        <span style="font-size: 14px !important">EMAIL US</span>
+                        <br />
+                        <a
+                          href="mailto:support@fiatswap.io"
+                          target="_blank"
+                          style="text-decoration: none; color: black"
+                          >SUPPORT@FIATSWAP.IO</a
+                        >
+                      </p>
+                    </td>
+                  </tr>
+                </table>
                 <div class="row" style="display: none">
-                  <div class="col-lg-2" style="padding-left: 0px">
+                  <div class="col-lg-2 col-sm-2" style="padding-left: 0px">
                     <img src="images/helpandsupporttel.png" width="80" />
                   </div>
                   <div class="col-lg-8">
@@ -235,7 +264,7 @@
                   </div>
                 </div>
 
-                <div class="row" style="margin-top: 25px">
+                <!-- <div class="row" style="margin-top: 25px">
                   <div class="col-lg-2" style="padding-left: 0px">
                     <img src="images/helpandsupportemail.png" width="80" />
                   </div>
@@ -251,13 +280,62 @@
                       >
                     </p>
                   </div>
-                </div>
+                </div> -->
 
                 <div
                   class="col-sm-12 col-md-12 col-lg-12 text-left"
                   style="margin-top: 50px"
                 >
-                  <div class="row" style="margin-bottom: 20px">
+                  <table cellspacing="0" cellpadding="0">
+                    <tr>
+                      <td class="first">
+                        <p
+                          class="text-black"
+                          style="
+                            float: left;
+                            display: inline-block;
+                            margin-right: 10px;
+                          "
+                        >
+                          Follow Us
+                        </p>
+                      </td>
+                      <td class="second">
+                        <a
+                          href="https://www.facebook.com/fiatswap/"
+                          target="_blank"
+                          style="margin-right: 20px"
+                          ><img
+                            src="images/Facebook.svg"
+                            width="30px"
+                            height="30px"
+                        /></a>
+                      </td>
+                      <td class="second">
+                        <a
+                          href="https://www.twitter.com/fiatswap/"
+                          target="_blank"
+                          style="margin-right: 20px"
+                          ><img
+                            src="images/Twitter2.svg"
+                            width="30px"
+                            height="30px"
+                        /></a>
+                      </td>
+                      <td class="second" style="margin-right: 20px">
+                        <a
+                          href="https://www.instagram.com/fiatswap/"
+                          target="_blank"
+                          ><img
+                            src="images/Instagram.svg"
+                            width="30px"
+                            height="30px"
+                        /></a>
+                      </td>
+                    </tr>
+                  </table>
+
+                  <!-- <div class="row" style="margin-bottom: 20px">
                     <div>
                       <p
                         class="text-black"
@@ -318,7 +396,7 @@
                         /></a>
                       </div>
                     </div>
-                  </div>
+                  </div> -->
                 </div>
               </div>
             </div>
@@ -425,14 +503,14 @@
                 >
 
                 <a
-                  href="#"
+                  href="help-and-support.html"
                   class="text-black"
                   style="display: inline; margin-right: 15px; font-weight: 500"
                   >Help & Support</a
                 >
 
                 <a
-                  href="/contactus.html"
+                  href="contactus.html"
                   class="text-black"
                   style="display: inline; font-weight: 500"
                   >Contact Us</a
