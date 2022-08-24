@@ -2804,9 +2804,9 @@ section.app-available-section .title-section {
 section.app-available-section .title-section h1 {
   font-family: "Plus Jakarta Display";
   font-style: normal;
-  font-weight: bold;
+  font-weight: 500;
   font-size: 36px;
-  line-height: 47px;
+  /* line-height: 47px; */
   color: #000000;
   letter-spacing: 1.3px;
 }
@@ -2846,7 +2846,7 @@ section.app-available-section .title-section p {
   font-family: "Plus Jakarta Display";
   font-style: normal;
   font-weight: normal;
-  font-size: 24px;
+  font-size: 18px;
   line-height: 31px;
   /* text-transform: capitalize; */
 
@@ -2889,7 +2889,7 @@ section.app-available-section .newsletter form input[type="email"] {
 section.app-available-section .newsletter form input[type="submit"] {
   background: #ffb703;
   width: 20%;
-  padding: 13px 10px 14px 10px;
+  padding: 13px 10px 15px 10px;
   color: #000;
   font-family: "Plus Jakarta Display";
   font-style: normal;

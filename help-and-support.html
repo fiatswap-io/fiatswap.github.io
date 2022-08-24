@@ -81,11 +81,11 @@
               </div>
   
               <!-- Collect the nav links, forms, and other content for toggling -->
-              <div class="collapse navbar-collapse joinWaitlist">
+              <!-- <div class="collapse navbar-collapse joinWaitlist">
                 <a class="button-two target-link" href="#newsletter-area"
                   >Join Waitlist</a
                 >
-              </div>
+              </div> -->
               <!-- /.navbar-collapse -->
             </div>
             <!-- /.container-fluid -->
@@ -118,12 +118,12 @@
                 </h4>
               </div>
 
-              <div class="col-lg-4 text-lg-center" id="how-to3" >
+              <div class="col-lg-4 text-lg-center" id="how-to3" style="cursor: pointer;">
                 <h4 class="telegram-button target-link" style="cursor: pointer;">
                   <img src="images/send3.png" width="60" />Exchange Rates
                 </h4>
               </div>
-              <div class="col-lg-6" id="how-to4" >
+              <div class="col-lg-6" id="how-to4" style="cursor: pointer;">
                 <h4 class="telegram-button target-link" style="cursor: pointer;">
                   <img src="images/send4.png" width="60" />Account Suspension
                 </h4>
@@ -131,7 +131,7 @@
             </div>
 
             <div class="row" id="how-info" style="display: none;">
-              <div class="col-lg-12" id="how-breadcrum" style="cursor: pointer;">
+              <div class="col-lg-12 how-breadcrum" id="how-breadcrum" style="cursor: pointer;">
                 <p>Help & Support > Send Money</p>
               </div>
               <div class="col-lg-8">
@@ -153,13 +153,57 @@ Account details would be shared with you to transfer the funds to, and your wall
               </div>
             </div>
 
+            <div class="row" id="how-info2" style="display: none;">
+              <div class="col-lg-12 how-breadcrum" id="how-breadcrum" style="cursor: pointer;">
+                <p>Help & Support > Do we accept Paypal Payment</p>
+              </div>
+              <div class="col-lg-8">
+                <h4 class="telegram-button target-link">
+                  <img src="images/send1.png" width="60" />Do we accept Paypal Payment
+                </h4>
+                <p>Yes, we do. We accept paypal business transactions and also paypal family and friends. Business accounts too.</p>
+                    <ol>
+                      <li>Visit a bank</li>
+                      <li>Retrieve a teller and fill in the appropriate details</li>
+                      <li>Then go with your cash to the counter and make payment.</li>
+                    </ol>
+                
+              </div>
+            </div>
+
+            <div class="row" id="how-info3" style="display: none;">
+              <div class="col-lg-12 how-breadcrum" id="how-breadcrum" style="cursor: pointer;">
+                <p>Help & Support > Exchange Rates</p>
+              </div>
+              <div class="col-lg-8">
+                <h4 class="telegram-button target-link">
+                  <img src="images/send3.png" width="60" />Exchange Rates
+                </h4>
+                <p>These are rates at which currencies are exchanged for another currency. We update our exchange rates per currency as the market demands, we have competitive rates.</p>
+                
+              </div>
+            </div>
+
+            <div class="row" id="how-info4" style="display: none;">
+              <div class="col-lg-12 how-breadcrum" id="how-breadcrum" style="cursor: pointer;">
+                <p>Help & Support > Account Suspension</p>
+              </div>
+              <div class="col-lg-8">
+                <h4 class="telegram-button target-link">
+                  <img src="images/send4.png" width="60" />Account Suspension
+                </h4>
+                <p>These are rates at which currencies are exchanged for another currency. We update our exchange rates per currency as the market demands, we have competitive rates.</p>
+                
+              </div>
+            </div>
+
             <div class="row" style="margin-top: 50px">
               <div class="col-lg-12">
                 <h3 class="telegram-button target-link" style="margin-bottom: 30px;">FAQs</h3>
               </div>
               <div class="col-lg-6">
                 <details>
-                  <summary>What is Fiatswap ?</summary>
+                  <summary>What is Fiatswap?</summary>
                   <div class="faq__content">
                     <p>We are an international money transfer platform that caters to family and friends home and abroad trying to send funds to loved ones.</p>
                   </div>
@@ -442,8 +486,26 @@ Account details would be shared with you to transfer the funds to, and your wall
           $("#how-info").show();
         });
 
-        $("#how-breadcrum").click(function () {
+        $("#how-to2").click(function () {
+          $("#how-to").hide();
+          $("#how-info2").show();
+        });
+
+        $("#how-to3").click(function () {
+          $("#how-to").hide();
+          $("#how-info3").show();
+        });
+
+        $("#how-to4").click(function () {
+          $("#how-to").hide();
+          $("#how-info4").show();
+        });
+
+        $(".how-breadcrum").click(function () {
           $("#how-info").hide();
+          $("#how-info2").hide();
+          $("#how-info3").hide();
+          $("#how-info4").hide();
           $("#how-to").show();
         });
       });
