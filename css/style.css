@@ -1894,6 +1894,15 @@ section.statistic-section.pattern-background .statistic-post h2 {
 section.statistic-section.pattern-background .statistic-post p {
   color: #333333;
 }
+
+.contactus-form-container {
+  padding-right: 100px;
+  border-right: 1px solid #5e5d5d;
+}
+
+.contactus-info-container {
+  padding-left: 80px;
+}
 /*-------------------------------------------------*/
 /* =  About section
 /*-------------------------------------------------*/
@@ -2795,9 +2804,9 @@ section.app-available-section .title-section {
 section.app-available-section .title-section h1 {
   font-family: "Plus Jakarta Display";
   font-style: normal;
-  font-weight: bold;
+  font-weight: 500;
   font-size: 36px;
-  line-height: 47px;
+  /* line-height: 47px; */
   color: #000000;
   letter-spacing: 1.3px;
 }
@@ -2837,7 +2846,7 @@ section.app-available-section .title-section p {
   font-family: "Plus Jakarta Display";
   font-style: normal;
   font-weight: normal;
-  font-size: 24px;
+  font-size: 18px;
   line-height: 31px;
   /* text-transform: capitalize; */
 
@@ -2880,7 +2889,7 @@ section.app-available-section .newsletter form input[type="email"] {
 section.app-available-section .newsletter form input[type="submit"] {
   background: #ffb703;
   width: 20%;
-  padding: 13px 10px 14px 10px;
+  padding: 13px 10px 15px 10px;
   color: #000;
   font-family: "Plus Jakarta Display";
   font-style: normal;
@@ -5017,8 +5026,15 @@ footer.pattern-style p.copyright {
   .onlymobile {
     display: block;
   }
+  .contactus-form-container {
+    padding-right: 0;
+    border-right: 0px solid #5e5d5d;
+  }
+  .contactus-info-container {
+    padding-left: 0px;
+  }
   .page-title-container {
-    margin: 55px 0 25px 0px;
+    margin: 77px 0 25px 0px;
     padding: 0 40px;
   }
   .page-title {
