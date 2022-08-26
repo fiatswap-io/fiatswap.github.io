@@ -15,6 +15,7 @@
       name="viewport"
       content="width=device-width, initial-scale=1, maximum-scale=1"
     />
+    <meta name="viewport" width="device-width" />
 
     <link
       rel="stylesheet"
@@ -53,7 +54,7 @@
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
               <div class="header-box">
-                <button
+                <!-- <button
                   type="button"
                   class="navbar-toggle collapsed"
                   data-toggle="collapse"
@@ -63,7 +64,7 @@
                   <span class="icon-bar"></span>
                   <span class="icon-bar"></span>
                   <span class="icon-bar"></span>
-                </button>
+                </button> -->
                 <!-- <p>Join Fiatswap</p> -->
 
                 <img
@@ -81,11 +82,11 @@
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse joinWaitlist">
+            <!-- <div class="collapse navbar-collapse joinWaitlist">
               <a class="button-two target-link" href="#newsletter-area"
                 >Join Waitlist</a
               >
-            </div>
+            </div> -->
             <!-- /.navbar-collapse -->
           </div>
           <!-- /.container-fluid -->
@@ -99,10 +100,12 @@
         <div class="top-block">
           <div class="container">
             <div class="row">
-              <div class="col-sm-6 col-md-6 col-lg-6 one">
-                <h1>Easy,<span>Swift</span>,<br />Better.</h1>
+              <div class="col-sm-12 col-md-6 col-lg-6 one">
+                <h1>Instant,</h1>
+                <h1><span>Borderless,</span></h1>
+                <h1>Secure.</h1>
                 <h2>
-                  Swap USD, GBP and EUR accounts <br />
+                  Swap your USD, GBP, CAD and EUR <br />
                   for all your international transactions
                 </h2>
                 <div class="secured">
@@ -137,17 +140,17 @@
                 </div>
               </div>
 
-              <div class="col-sm-6 col-md-6 col-lg-6 two">
+              <div class="col-sm-12 col-md-6 col-lg-6 two">
                 <div class="card shadow-lg rounded">
                   <p class="title">Calculate exchange amount</p>
                   <div
                     class="switch-fiat"
                     style="text-align: start; margin-left: 21px"
                   >
-                    <p>Switch Fiat</p>
+                    <!-- <p>Switch Fiat</p>
                     <button class="js-click">USD $</button>
                     <button class="js-click">EUR €</button>
-                    <button class="js-click">CNY ¥</button>
+                    <button class="js-click">CNY ¥</button> -->
                   </div>
 
                   <form
@@ -161,17 +164,39 @@
                       id="sending"
                       placeholder="NGN"
                     />
-                    <div class="currency-switcher" style="padding-bottom: 1px">
-                      <div class="dropdown">
-                        <div class="item caption">
+                    <div
+                      class="currency-switcher"
+                      style="padding-bottom: 1px; background-color: #ffb703"
+                    >
+                      <div class="dropdown" style="z-index: 6">
+                        <div
+                          class="item1 caption dropdown"
+                          style="display: inline-block; z-index: 5"
+                        >
                           <div
                             class="currency-flag currency-flag-ngn"
                             data-item="ngn"
                           ></div>
+                          <p>NGN</p>
                         </div>
-                        <div id="list" class="list"></div>
+                        <div style="display: inline">
+                          <img
+                            style="
+                              margin-left: -20px;
+                              margin-top: -1px;
+                              z-index: 0;
+                            "
+                            src="images/icons8-expand-arrow-24.png"
+                            width="12px"
+                          />
+                        </div>
+
+                        <div id="list" class="list" style="z-index: 99"></div>
                       </div>
+                      <!-- <p style="display: inline">></p> -->
                     </div>
+
+                    <p class="ex-rate" id="ex-rate" style="display: none"></p>
 
                     <p class="switch-currencies">
                       <img src="images/switch.png" alt="" /> Switch Currencies
@@ -179,29 +204,66 @@
 
                     <p style="margin-top: 30px">Recieving</p>
                     <input
-                      type="number"
+                      type="text"
                       name="recieving"
                       id="recieving"
                       placeholder="USD"
+                      readonly
                     />
-                    <div class="currency-switcher">
-                      <div class="dropdown">
-                        <div class="item2 caption">
+                    <div
+                      class="currency-switcher"
+                      style="background-color: #ffb703"
+                    >
+                      <div class="dropdown" style="z-index: 4">
+                        <div
+                          class="item2 caption dropdown"
+                          style="display: inline-block; z-index: 3"
+                        >
                           <div
                             class="currency-flag currency-flag-usd"
                             data-item="usd"
                           ></div>
+                          <p>USD</p>
                         </div>
-                        <div id="list2" class="list"></div>
+                        <div style="display: inline">
+                          <img
+                            style="
+                              margin-left: -20px;
+                              margin-top: -1px;
+                              z-index: 0;
+                            "
+                            src="images/icons8-expand-arrow-24.png"
+                            width="12px"
+                          />
+                        </div>
+                        <!-- </div> -->
+                        <div id="list2" class="list" style="z-index: 99"></div>
                       </div>
                     </div>
                   </form>
 
-                  <a class="button-three target-link calculate-btn"
+                  <a
+                    class="button-three target-link calculate-btn"
+                    id="calculate-btn"
                     >Calculate</a
                   >
 
-                  <!-- <p class="last-updated"><span> US Dollar to Nigerian Naira conversion</span> — Last updated Feb 10, 2022, 11:33 UTC</p> -->
+                  <a
+                    class="button-three target-link calculate-btn2"
+                    id="loader"
+                    style="display: none"
+                  >
+                    <div><img src="images/bx_loader.gif" /></div>
+                  </a>
+
+                  <p
+                    class="last-updated"
+                    id="last-updated"
+                    style="display: none"
+                  >
+                    <!-- <span> US Dollar to Nigerian Naira conversion</span> — Last
+                    updated Feb 10, 2022, 11:33 UTC -->
+                  </p>
                 </div>
               </div>
             </div>
@@ -214,10 +276,12 @@
 			================================================== -->
       <section id="features-section2">
         <div class="container">
-          <ul class="client-list"></ul>
+          <!-- <ul class="client-list"></ul> -->
           <div class="send-chill">
-            <h1>Send & chill</h1>
-            <p>Send Money across boarder send to friends & family</p>
+            <h1 style="font-size: 40px">Send & Chill</h1>
+            <p style="margin-top: -10px">
+              Send money across borders to friends & family.
+            </p>
           </div>
         </div>
       </section>
@@ -226,15 +290,17 @@
       <!-- app-available-section 
 			================================================== -->
       <section class="app-available-section second-style" id="download-area">
-        <div class="container">
-          <div class="row">
-            <div class="col-sm-6">
-              <img src="images/grid.png" alt="" />
-            </div>
+        <div class="row">
+          <div class="col-sm-6">
+            <img src="images/grid.png" alt="" />
+          </div>
+          <div class="container">
             <div class="col-sm-6" style="margin-top: 9%">
               <div class="title-section">
-                <h1>Be the first to know</h1>
-                <p>Get updates, news and launch date</p>
+                <h1 style="font-size: 40px">Be the first to know</h1>
+                <p style="margin-top: -10px">
+                  Get updates, news and the launch date.
+                </p>
               </div>
 
               <div class="newsletter" id="newsletter-area">
@@ -280,8 +346,8 @@
                   class="telegram-button target-link"
                   href="https://t.me/joinchat/v-N8hXdHx-dlYjdk"
                   target="_blank"
-                  ><img src="images/telegram-icon.svg" />Join our Community on
-                  Telegram
+                  ><img src="images/icons8-telegram-app-96.png" />Join our
+                  Community on Telegram
                 </a>
               </div>
             </div>
@@ -293,8 +359,118 @@
       <!-- footer 
 			================================================== -->
       <footer class="white-style" id="title-section">
-        <div class="title-section">
-          <p>© Copyright 2022. Fiatswap.io. All rights reserved.</p>
+        <div class="row">
+          <div class="col-sm-12 col-md-8 col-lg-8 text-left">
+            <div class="row" style="margin-bottom: 20px">
+              <div class="onlydesktop">
+                <p
+                  class="text-black"
+                  style="float: left; display: inline-block"
+                >
+                  Follow Us
+                </p>
+                <div
+                  class="col-sm-1 col-md-1 col-lg-1"
+                  style="width: 5.333333%"
+                >
+                  <a href="https://www.facebook.com/fiatswap/" target="_blank"
+                    ><img src="images/Facebook.svg" width="30px" height="30px"
+                  /></a>
+                </div>
+
+                <div
+                  class="col-sm-1 col-md-1 col-lg-1"
+                  style="width: 5.333333%"
+                >
+                  <a href="https://www.twitter.com/fiatswap/" target="_blank"
+                    ><img src="images/Twitter2.svg" width="30px" height="30px"
+                  /></a>
+                </div>
+                <div
+                  class="col-sm-1 col-md-1 col-lg-1"
+                  style="width: 5.333333%"
+                >
+                  <a href="https://www.instagram.com/fiatswap/" target="_blank"
+                    ><img src="images/Instagram.svg" width="30px" height="30px"
+                  /></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-12 col-md-4 col-lg-4 onlydesktop">
+            <div class="row">
+              <div class="col-sm-6 col-md-6 col-lg-6 text-right">
+                <a href="help-and-support.html">
+                  <p class="text-black" style="font-weight: 500">
+                    Help & Support
+                  </p>
+                </a>
+              </div>
+              <div class="col-sm-6 col-md-6 col-lg-6 text-left">
+                <a href="contactus.html"
+                  ><p class="text-black" style="font-weight: 500">
+                    Contact Us
+                  </p></a
+                >
+              </div>
+            </div>
+          </div>
+          <section
+            id="lab_social_icon_footer"
+            class="onlymobile"
+            style="margin-bottom: 10px"
+          >
+            <!-- Include Font Awesome Stylesheet in Header -->
+            <link
+              href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css"
+              rel="stylesheet"
+            />
+
+            <div class="container" style="margin-bottom: 40px">
+              <div class="text-center center-block">
+                <a
+                  href="help-and-support.html"
+                  class="text-black"
+                  style="display: inline; margin-right: 15px; font-weight: 500"
+                  >Help & Support</a
+                >
+
+                <a
+                  href="contactus.html"
+                  class="text-black"
+                  style="display: inline; font-weight: 500"
+                  >Contact Us</a
+                >
+              </div>
+            </div>
+
+            <div class="container">
+              <div class="text-center center-block">
+                <p
+                  class="text-black"
+                  style="display: inline-block; margin-right: 2px"
+                >
+                  Follow Us
+                </p>
+                <a href="https://www.facebook.com/fiatswap/" target="”_blank”"
+                  ><img src="images/Facebook.svg" width="25px" height="25px"
+                /></a>
+                <a href="https://www.twitter.com/fiatswap/" target="”_blank”"
+                  ><img src="images/Twitter2.svg" width="25px" height="25px"
+                /></a>
+                <a href="https://www.instagram.com/fiatswap/" target="”_blank”"
+                  ><img src="images/Instagram.svg" width="25px" height="25px"
+                /></a>
+              </div>
+            </div>
+          </section>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <div class="title-section">
+              <p>© Copyright 2022. Fiatswap.io. All rights reserved.</p>
+            </div>
+          </div>
         </div>
       </footer>
       <!-- End footer -->
@@ -317,11 +493,11 @@
           $("#email2").focus();
         });
 
-        var arr = ["NGN", "USD", "GBP", "EUR"];
+        var arr = ["NGN", "USD", "GBP", "EUR", "CAD"];
         $.each(arr, function (index, value) {
           $("#list")
             .append(
-              '<div id="triple-container" class="item" data-item=' +
+              '<div id="triple-container" class="item1" data-item=' +
                 value +
                 '><div class="caption"  data-item=' +
                 value +
@@ -329,7 +505,9 @@
                 value.toLowerCase() +
                 '"  data-item=' +
                 value +
-                "></div></div></div>"
+                "></div><P style='display:inline'>" +
+                value +
+                "</P></div></div>"
             )
             .html();
         });
@@ -337,7 +515,7 @@
         $.each(arr, function (index, value) {
           $("#list2")
             .append(
-              '<div id="triple-container" class="item2" data-item=' +
+              '<div id="triple-container" class="item2" data-item2=' +
                 value +
                 '><div class="caption"  data-item2=' +
                 value +
@@ -345,7 +523,9 @@
                 value.toLowerCase() +
                 '"  data-item=' +
                 value +
-                "></div></div></div>"
+                "></div><P style='display:inline'>" +
+                value +
+                "</P></div></div>"
             )
             .html();
         });
@@ -358,9 +538,9 @@
         $(this).data("data-item2", secondCurrencyInput);
         console.log("Second Currency " + secondCurrencyInput);
 
-        $(".dropdown > .list > .item").on("click", function () {
-          $(".dropdown > .list > .item").removeClass("selected");
-          $(".dropdown > .list > .item")
+        $(".dropdown > .list > .item1 .caption").on("click", function () {
+          $(".dropdown > .list > .item1").removeClass("selected");
+          $(".dropdown > .list > .item1")
             .parent()
             .parent()
             .removeClass("open")
@@ -369,13 +549,13 @@
 
           baseCurrencyInput = $(this).data("item");
           console.log("Base Currency " + baseCurrencyInput);
-          $(".dropdown > .item > .currency-flag").data(
+          $(".dropdown > .item1 > .currency-flag").data(
             "item",
             baseCurrencyInput
           );
           $("#sending").attr("placeholder", baseCurrencyInput);
           if (baseCurrencyInput != "NGN") {
-            $(".dropdown > .list > .item2").removeClass("selected");
+            $(".dropdown > .list > .item1").removeClass("selected");
             $(".dropdown > .list > .item2")
               .parent()
               .parent()
@@ -383,7 +563,7 @@
               .children(".caption")
               .html(
                 $(
-                  '<div class="caption" data-item="NGN"><div class="currency-flag currency-flag-ngn" data-item="NGN"></div></div>'
+                  '<div class="caption" data-item="NGN"><div class="currency-flag currency-flag-ngn" data-item="NGN"></div><p>NGN </p></div>'
                 ).html()
               );
             $(".dropdown > .item2 .caption").attr("data-item2", "NGN");
@@ -398,8 +578,6 @@
         });
 
         $(".dropdown > .list > .item2 .caption").on("click", function () {
-          $(".dropdown > .list > .item2").removeClass("selected");
-          // $(this).addClass('selected').parent().parent().removeClass('open').children('.caption').html($(this).html());
           $(".dropdown > .list > .item2")
             .parent()
             .parent()
@@ -408,18 +586,17 @@
             .html($(this).html());
           secondCurrencyInput = $(this).data("item2");
           console.log("Second Currency " + secondCurrencyInput);
-          // console.log($('.dropdown > .item2 .caption').attr("data-item2"));
           $("#recieving").attr("placeholder", secondCurrencyInput);
           if (secondCurrencyInput != "NGN") {
-            $(".dropdown > .list > .item").removeClass("selected");
-            $(".dropdown > .list > .item")
+            $(".dropdown > .list > .item1").removeClass("selected");
+            $(".dropdown > .list > .item1")
               .parent()
               .parent()
               .removeClass("open")
               .children(".caption")
               .html(
                 $(
-                  '<div class="caption" data-item="NGN"><div class="currency-flag currency-flag-ngn" data-item="NGN"></div></div>'
+                  '<div class="caption" data-item="NGN"><div class="currency-flag currency-flag-ngn" data-item="NGN"></div><p>NGN </p></div>'
                 ).html()
               );
             baseCurrencyInput = "NGN";
@@ -429,26 +606,35 @@
         });
       });
 
-      $(".dropdown > .caption").on("click", function () {
+      $(".dropdown > .item1").on("click", function () {
         $(this).parent().toggleClass("open");
+        $(".dropdown > .item2").parent().removeClass("open");
+      });
+
+      $(".dropdown > .item2").on("click", function () {
+        $(this).parent().toggleClass("open");
+        $(".dropdown > .item1").parent().removeClass("open");
       });
 
       $(".switch-currencies").on("click", function () {
-        var base = $(".dropdown > .item").html();
+        var base = $(".dropdown > .item1").html();
         var second = $(".dropdown > .item2").html();
+        console.log("base Currency " + base);
+        console.log("Second Currency " + second);
 
-        $(".dropdown > .list > .item")
+        $(".dropdown > .list > .item1")
           .parent()
           .parent()
           .removeClass("open")
           .children(".caption")
           .html(second);
-        if ($(".dropdown > .item > .currency-flag").data("item") == null) {
-          baseCurrencyInput = $(".dropdown > .item ")
+
+        if ($(".dropdown > .item1 > .currency-flag").data("item") == null) {
+          baseCurrencyInput = $(".dropdown > .item1 ")
             .children(".caption")
             .data("item");
         } else {
-          baseCurrencyInput = $(".dropdown > .item > .currency-flag").data(
+          baseCurrencyInput = $(".dropdown > .item1 > .currency-flag").data(
             "item"
           );
         }
@@ -461,6 +647,7 @@
           .removeClass("open")
           .children(".caption")
           .html(base);
+
         if ($(".dropdown > .item2 > .currency-flag").data("item") == null) {
           secondCurrencyInput = $(".dropdown > .item2 ")
             .children(".caption")
@@ -480,6 +667,14 @@
         }
       });
 
+      function formatAmount(number) {
+        return new Intl.NumberFormat("en", {
+          style: "decimal",
+          minimumFractionDigits: 2,
+          maximumFractionDigits: 2,
+        }).format(number);
+      }
+
       var btn = document.querySelector(".calculate-btn");
       var amountInput = document.getElementById("sending");
       function convertCurrency(event) {
@@ -488,30 +683,68 @@
         console.log("Second Currency " + secondCurrencyInput);
         event.preventDefault();
         var amount = $("input[name=sending]").val();
-        // var from = baseCurrencyInput;
-        // var to = secondCurrencyInput;
+
         var result = 0;
         var dataString =
-          "quote=" +
+          "from=" +
           baseCurrencyInput +
-          "&base=" +
+          "&to=" +
           secondCurrencyInput +
           "&amount=" +
           amount;
-        // $.getJSON("../fiatswap?" + dataString).success(function (data) {
-        //   $("input[name=recieving]").val(data.finalPrice);
-        // });
 
-        $.getJSON(
-          "https://fn1igg1ngk.execute-api.eu-west-3.amazonaws.com/getPrices?" +
-            dataString
-        ).success(function (data) {
-          // result = data * amount;
-          console.log("price ticker data");
-          console.log(data);
-
-          $("input[name=recieving]").val(data);
-        });
+        if (baseCurrencyInput === secondCurrencyInput) {
+          $("input[name=recieving]").val(amount);
+          $("#ex-rate").html(
+            baseCurrencyInput + "/" + secondCurrencyInput + "=" + amount
+          );
+        } else {
+          $("#loader").show();
+          $("#calculate-btn").hide();
+          $.getJSON(
+            "https://fn1igg1ngk.execute-api.eu-west-3.amazonaws.com/getPrices?" +
+              dataString
+          ).success(function (data) {
+            if (+data.rate < 1) {
+              var rates = formatAmount(1 / +data.rate);
+              var formattedFinalAmount = formatAmount(data.finalAmount);
+              $("input[name=recieving]").val(formattedFinalAmount);
+              $("#loader").hide();
+              $("#calculate-btn").show();
+              $("#ex-rate").html(
+                secondCurrencyInput +
+                  "/" +
+                  baseCurrencyInput +
+                  "=" +
+                  formatAmount(rates)
+              );
+              $("#ex-rate").show();
+              $("#last-updated").html(
+                "<span> US Dollar to Nigerian Naira conversion</span> — Last updated " +
+                  new Date($.now()).toLocaleString()
+              );
+              $("#last-updated").show();
+            } else {
+              var formattedFinalAmount = formatAmount(data.finalAmount);
+              $("input[name=recieving]").val(formattedFinalAmount);
+              $("#loader").hide();
+              $("#calculate-btn").show();
+              $("#ex-rate").html(
+                baseCurrencyInput +
+                  "/" +
+                  secondCurrencyInput +
+                  "=" +
+                  formatAmount(data.rate)
+              );
+              $("#ex-rate").show();
+              $("#last-updated").html(
+                "<span> US Dollar to Nigerian Naira conversion</span> — Last updated " +
+                  new Date($.now()).toLocaleString()
+              );
+              $("#last-updated").show();
+            }
+          });
+        }
       }
       btn.addEventListener("click", convertCurrency);
 
