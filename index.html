@@ -159,7 +159,7 @@
                   >
                     <p>Sending</p>
                     <input
-                      type="number"
+                      type="text"
                       name="sending"
                       id="sending"
                       placeholder="NGN"
@@ -208,7 +208,6 @@
                       name="recieving"
                       id="recieving"
                       placeholder="USD"
-                      readonly
                     />
                     <div
                       class="currency-switcher"
@@ -493,6 +492,14 @@
           $("#email2").focus();
         });
 
+        $("#sending").keydown(function(){
+            $("#recieving").val("");
+        })
+
+        $("#recieving").keydown(function(){
+            $("#sending").val("");
+        })
+
         var arr = ["NGN", "USD", "GBP", "EUR", "CAD"];
         $.each(arr, function (index, value) {
           $("#list")
@@ -682,9 +689,10 @@
         console.log("Sending " + $("input[name=sending]").val());
         console.log("Second Currency " + secondCurrencyInput);
         event.preventDefault();
-        var amount = $("input[name=sending]").val();
-
-        var result = 0;
+        
+        if ($("input[name=sending]").val() > 0 ) {
+          var amount = $("input[name=sending]").val();
+          var result = 0;
         var dataString =
           "from=" +
           baseCurrencyInput +
@@ -692,13 +700,26 @@
           secondCurrencyInput +
           "&amount=" +
           amount;
+        } else {
+          var amount = $("input[name=recieving]").val();
+          var result = 0;
+        var dataString =
+          "from=" +
+          secondCurrencyInput +
+          "&to=" +
+          baseCurrencyInput +
+          "&amount=" +
+          amount;
+        }
+        
 
         if (baseCurrencyInput === secondCurrencyInput) {
           $("input[name=recieving]").val(amount);
           $("#ex-rate").html(
             baseCurrencyInput + "/" + secondCurrencyInput + "=" + amount
           );
-        } else {
+        }
+         else {
           $("#loader").show();
           $("#calculate-btn").hide();
           $.getJSON(
@@ -708,7 +729,13 @@
             if (+data.rate < 1) {
               var rates = formatAmount(1 / +data.rate);
               var formattedFinalAmount = formatAmount(data.finalAmount);
-              $("input[name=recieving]").val(formattedFinalAmount);
+              // $("input[name=recieving]").val(formattedFinalAmount);
+              // $("input[name=sending]").val(formattedFinalAmount);
+              if ($("input[name=recieving]").val() > 0 ) {
+                $("input[name=sending]").val(formattedFinalAmount);
+              } else {
+                $("input[name=recieving]").val(formattedFinalAmount);
+              }
               $("#loader").hide();
               $("#calculate-btn").show();
               $("#ex-rate").html(
@@ -726,7 +753,13 @@
               $("#last-updated").show();
             } else {
               var formattedFinalAmount = formatAmount(data.finalAmount);
-              $("input[name=recieving]").val(formattedFinalAmount);
+              // $("input[name=recieving]").val(formattedFinalAmount);
+              if ($("input[name=sending]").val() > 0 ) {
+                $("input[name=recieving]").val(formattedFinalAmount);
+              } else {
+                $("input[name=sending]").val(formattedFinalAmount);
+              }
+              
               $("#loader").hide();
               $("#calculate-btn").show();
               $("#ex-rate").html(
