@@ -492,13 +492,13 @@
           $("#email2").focus();
         });
 
-        $("#sending").keydown(function(){
-            $("#recieving").val("");
-        })
+        $("#sending").keydown(function () {
+          $("#recieving").val("");
+        });
 
-        $("#recieving").keydown(function(){
-            $("#sending").val("");
-        })
+        $("#recieving").keydown(function () {
+          $("#sending").val("");
+        });
 
         var arr = ["NGN", "USD", "GBP", "EUR", "CAD"];
         $.each(arr, function (index, value) {
@@ -636,7 +636,7 @@
           .children(".caption")
           .html(second);
 
-        if ($(".dropdown > .item1 > .currency-flag").data("item") == null) {
+        if ($(".dropdown > .item1 > .currency-flag").data("item") === null) {
           baseCurrencyInput = $(".dropdown > .item1 ")
             .children(".caption")
             .data("item");
@@ -684,99 +684,97 @@
 
       var btn = document.querySelector(".calculate-btn");
       var amountInput = document.getElementById("sending");
+
       function convertCurrency(event) {
         console.log("Base Currency " + baseCurrencyInput);
         console.log("Sending " + $("input[name=sending]").val());
         console.log("Second Currency " + secondCurrencyInput);
+        console.log("Receiving " + $("input[name=recieving]").val());
+
         event.preventDefault();
-        
-        if ($("input[name=sending]").val() > 0 ) {
-          var amount = $("input[name=sending]").val();
-          var result = 0;
-        var dataString =
-          "from=" +
-          baseCurrencyInput +
-          "&to=" +
-          secondCurrencyInput +
-          "&amount=" +
-          amount;
+
+        let amount;
+        let dataString = "";
+        let result = 0;
+
+        const applyRates = function ({ data, baseCurrency, secondCurrency }) {
+          let formattedFinalAmount;
+          let rates;
+
+          if (+data.rate < 1) {
+            rates = formatAmount(1 / +data.rate);
+          } else {
+            rates = formatAmount(+data.rate);
+          }
+          formattedFinalAmount = formatAmount(data.finalAmount);
+
+          if (+$("input[name=sending]").val() > 0) {
+            $("input[name=recieving]").val(formattedFinalAmount);
+          } else {
+            $("input[name=sending]").val(
+              formatAmount(+data.amount * +data.rate)
+            );
+          }
+
+          // {"rate":856.66,"fee":0,"finalAmount":"0.00","currency":"NGN","amount":"1"}
+
+          let finalBaseCurrency = baseCurrency;
+          let finalsecondCurrency = secondCurrency;
+
+          if (+data.rate < 1) {
+            finalBaseCurrency = secondCurrency;
+            finalsecondCurrency = baseCurrency;
+          }
+
+          $("#loader").hide();
+          $("#calculate-btn").show();
+          $("#ex-rate").html(
+            finalBaseCurrency + "/" + finalsecondCurrency + "=" + rates
+          );
+          $("#ex-rate").show();
+          $("#last-updated").html(
+            `<span> ${finalBaseCurrency.toUpperCase()} to ${finalsecondCurrency.toUpperCase()} conversion</span> — Last updated ` +
+              new Date($.now()).toLocaleString()
+          );
+          $("#last-updated").show();
+        };
+
+        if ($("input[name=sending]").val() > 0) {
+          amount = $("input[name=sending]").val();
         } else {
-          var amount = $("input[name=recieving]").val();
-          var result = 0;
-        var dataString =
+          amount = $("input[name=recieving]").val();
+        }
+
+        if (!amount) {
+          return;
+        }
+
+        dataString =
           "from=" +
-          secondCurrencyInput +
-          "&to=" +
           baseCurrencyInput +
+          "&to=" +
+          secondCurrencyInput +
           "&amount=" +
           amount;
-        }
-        
 
         if (baseCurrencyInput === secondCurrencyInput) {
           $("input[name=recieving]").val(amount);
           $("#ex-rate").html(
             baseCurrencyInput + "/" + secondCurrencyInput + "=" + amount
           );
-        }
-         else {
+        } else {
           $("#loader").show();
           $("#calculate-btn").hide();
           $.getJSON(
             "https://fn1igg1ngk.execute-api.eu-west-3.amazonaws.com/getPrices?" +
               dataString
-          ).success(function (data) {
-            if (+data.rate < 1) {
-              var rates = formatAmount(1 / +data.rate);
-              var formattedFinalAmount = formatAmount(data.finalAmount);
-              // $("input[name=recieving]").val(formattedFinalAmount);
-              // $("input[name=sending]").val(formattedFinalAmount);
-              if ($("input[name=recieving]").val() > 0 ) {
-                $("input[name=sending]").val(formattedFinalAmount);
-              } else {
-                $("input[name=recieving]").val(formattedFinalAmount);
-              }
-              $("#loader").hide();
-              $("#calculate-btn").show();
-              $("#ex-rate").html(
-                secondCurrencyInput +
-                  "/" +
-                  baseCurrencyInput +
-                  "=" +
-                  formatAmount(rates)
-              );
-              $("#ex-rate").show();
-              $("#last-updated").html(
-                "<span> US Dollar to Nigerian Naira conversion</span> — Last updated " +
-                  new Date($.now()).toLocaleString()
-              );
-              $("#last-updated").show();
-            } else {
-              var formattedFinalAmount = formatAmount(data.finalAmount);
-              // $("input[name=recieving]").val(formattedFinalAmount);
-              if ($("input[name=sending]").val() > 0 ) {
-                $("input[name=recieving]").val(formattedFinalAmount);
-              } else {
-                $("input[name=sending]").val(formattedFinalAmount);
-              }
-              
-              $("#loader").hide();
-              $("#calculate-btn").show();
-              $("#ex-rate").html(
-                baseCurrencyInput +
-                  "/" +
-                  secondCurrencyInput +
-                  "=" +
-                  formatAmount(data.rate)
-              );
-              $("#ex-rate").show();
-              $("#last-updated").html(
-                "<span> US Dollar to Nigerian Naira conversion</span> — Last updated " +
-                  new Date($.now()).toLocaleString()
-              );
-              $("#last-updated").show();
-            }
-          });
+          ).success((data) =>
+            applyRates({
+              data,
+              baseCurrency: baseCurrencyInput,
+              secondCurrency: secondCurrencyInput,
+            })
+          );
         }
       }
       btn.addEventListener("click", convertCurrency);
