@@ -1,7 +1,7 @@
 function submitEmail(event) {
   const API_URL = "https://api.sendgrid.com/v3/marketing/contacts";
   const NEWSLETTER_ID = "328b3f49-b814-4379-b2e9-b54cd01138cc";
-  const API_KEY = "";
+  const API_KEY = "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";
 
   const prepSub = function (email) {
     return JSON.stringify({
@@ -51,7 +51,7 @@ function submitEmail(event) {
 function submitContactUs(event) {
   const API_URL = "https://api.sendgrid.com/v3/marketing/contacts";
   const CONTACTUS_ID = "8178cf41-6377-44aa-b54d-18767e5c4fa7";
-  const API_KEY = "";
+  const API_KEY = "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";
 
   const prepSub = function (email) {
     return JSON.stringify({
